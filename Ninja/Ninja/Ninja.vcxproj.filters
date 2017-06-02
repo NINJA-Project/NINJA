@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Main\Application">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Main\Application\Scene">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Main\Application\Scene\LogoScene">
+      <UniqueIdentifier>{76b02509-5083-4089-82b0-d47e3376fd18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\TitleScene">
+      <UniqueIdentifier>{0128eabb-12ce-4c70-bbbf-79e94664038c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\Logo">
+      <UniqueIdentifier>{ff6c473c-c3f8-40c9-9af1-bd83ce514683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\Button">
+      <UniqueIdentifier>{e21fd274-2f17-457f-8ec0-a16f5238700d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\MainScene">
+      <UniqueIdentifier>{66aac4f2-36cf-4d2e-a2b3-c50b1c6ad108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\MainScene\Collision">
+      <UniqueIdentifier>{54136618-5cc4-474a-9c35-06c5ee5b8666}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>Main\Application\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneTransition.cpp">
+      <Filter>Main\Application\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Application.cpp">
+      <Filter>Main\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneFactory.cpp">
+      <Filter>Main\Application\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\LogoScene.cpp">
+      <Filter>Main\Application\Scene\LogoScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo\Logo.cpp">
+      <Filter>Main\Application\Scene\Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="Button\Button.cpp">
+      <Filter>Main\Application\Scene\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\MainScene.cpp">
+      <Filter>Main\Application\Scene\MainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\TitleScene.cpp">
+      <Filter>Main\Application\Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision\Collision.cpp">
+      <Filter>Main\Application\Scene\MainScene\Collision</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene\Scene.h">
+      <Filter>Main\Application\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneTransition.h">
+      <Filter>Main\Application\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Application.h">
+      <Filter>Main\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneFactory.h">
+      <Filter>Main\Application\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\LogoScene.h">
+      <Filter>Main\Application\Scene\LogoScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo\Logo.h">
+      <Filter>Main\Application\Scene\Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="Button\Button.h">
+      <Filter>Main\Application\Scene\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\MainScene.h">
+      <Filter>Main\Application\Scene\MainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TitleScene.h">
+      <Filter>Main\Application\Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision\Collision.h">
+      <Filter>Main\Application\Scene\MainScene\Collision</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
