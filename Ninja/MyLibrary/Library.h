@@ -16,6 +16,7 @@
 /// 頂点フォーマット
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
+#pragma region 前方宣言
 class DirectX9;
 class InputManager;
 class InputDevice;
@@ -25,6 +26,7 @@ class TextureFileManager;
 class VerticesManager;
 class SoundFileManager;
 class XFileManager;
+#pragma endregion 
 
 /// サウンドを鳴らす状態
 enum SoundMode
@@ -66,15 +68,26 @@ public:		// Libraryクラスのパブリック関数
 	 */
 	void InitLibrary(const char* titleName_, int clientWidth_, int clientHeight_, bool isFullScreen_);
 
-public:		// Windowクラスのパブリック関数
+#pragma region Windowクラスのパブリック関数
+public:
 	/**ウィンドウの更新関数*/
 	bool Update();
 
+	/**
+	 * ウィンドウ幅のサイズを取得してくる関数
+	 * @return ウィンドウ幅
+	 */
 	int GetWinWidth();
 
+	/**
+	 * ウィンドウ高さのサイズを取得してくる関数
+	 * @return ウィンドウ高さ
+	 */
 	int GetWinHeight();
+#pragma endregion
 
-public:		// DirectX9クラスのパブリック関数
+#pragma region DirectX9クラスのパブリック関数
+public:
 	/**
 	* 頂点フォーマットの設定関数
 	* @param [in] fvf_ 頂点フォーマットの設定
@@ -94,9 +107,15 @@ public:		// DirectX9クラスのパブリック関数
 	*/
 	void Init3DDraw();
 
+	/**
+	 * デバイス情報の取得関数
+	 * @return デバイス情報
+	 */
 	LPDIRECT3DDEVICE9 GetDevice();
+#pragma endregion 
 
-public:		// InputManagerクラスのパブリック関数
+#pragma region InputManagerクラスのパブリック関数
+public:
 	/**DI系をすべて更新する関数*/
 	void UpdateDI();
 
@@ -109,8 +128,10 @@ public:		// InputManagerクラスのパブリック関数
 	* @return			state	キーの状態
 	*/
 	KeyState CheckKey(int dik_);
+#pragma endregion 
 
-public:		// TextureFileManagerクラスのパブリック関数
+#pragma region TextureFileManagerクラスのパブリック関数
+public:
 	/**
 	* 画像を読み込む関数
 	* @param [in]	index_		読み込む画像の配列番号
@@ -140,8 +161,10 @@ public:		// TextureFileManagerクラスのパブリック関数
 	* @param [in] index_	解放する配列番号
 	*/
 	void ReleaseTexture(int index_);
+#pragma endregion
 
-public:		// VerticesManagerのパブリック関数
+#pragma region VerticesManagerのパブリック関数
+public:
 	/**
 	* 画像サイズの設定する関数
 	* @param [in] index_	頂点情報の配列番号
@@ -194,8 +217,10 @@ public:		// VerticesManagerのパブリック関数
 	* @param [in] index_	解放する配列番号
 	*/
 	void ReleaseVirtices(int index_);
+#pragma endregion
 
-public:		// SoundFileManagerクラスのパブリック関数
+#pragma region SoundFileManagerクラスのパブリック関数
+public:
 	/**
 	* 音楽ファイル(wav)の読み込み関数
 	* @param [in]	index_		読み込む音楽の配列番号
@@ -218,8 +243,10 @@ public:		// SoundFileManagerクラスのパブリック関数
 	* @param [in] index_	解放する配列番号
 	*/
 	void ReleaseSoundData(int index_);
+#pragma endregion
 
-public:		// XFileManagerクラスのパブリック関数
+#pragma region XFileManagerクラスのパブリック関数
+public:
 	/**
 	* Xファイルの読み込み関数
 	* @param [in]	index_		Xファイルの配列番号
@@ -241,8 +268,10 @@ public:		// XFileManagerクラスのパブリック関数
 	* @param [in] index_	解放する配列番号
 	*/
 	void ReleaseXFile(int index_);
+#pragma endregion
 
-public:		// Fontクラスのパブリック関数
+#pragma region Fontクラスのパブリック関数
+public:
 	/**
 	* 文字を描画する関数
 	* @param [in] pString_		描画する文字列
@@ -272,8 +301,9 @@ public:		// Fontクラスのパブリック関数
 	* @note RGBのデフォルト値は255
 	*/
 	void DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_ = DT_LEFT, int red_ = 255, int green_ = 255, int blue_ = 255);
-
+#pragma endregion
 private:
+#pragma region メンバ変数
 	DirectX9*				m_pDirectX9;
 	InputDevice*			m_pInputDevice;
 	SoundInterface*			m_pSoundInterface;
@@ -283,8 +313,10 @@ private:
 	VerticesManager*		m_pVerticesManager;
 	SoundFileManager*		m_pSoundFileManager;
 	XFileManager*			m_pXFileManager;
+#pragma endregion
 };
 
+#pragma region libファイル
 #pragma comment(lib, "dsound.lib" )
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "winmm.lib")
@@ -292,5 +324,5 @@ private:
 #pragma comment(lib, "d3dx9.lib")
 #pragma comment(lib, "dinput8.lib")
 #pragma comment(lib, "Xinput.lib")
-
+#pragma endregion
 #endif // !LIBRARY_H

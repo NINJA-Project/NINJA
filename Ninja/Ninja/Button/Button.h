@@ -32,12 +32,14 @@ public:
 	void Draw();
 
 private:
+#pragma region メンバ変数
 	Library&	m_rLibrary;
 	float		m_width;		// ボタンの描画時の幅
 	float		m_height;		// ボタンの描画時の高さ
 	float		m_posX;			// ボタンのX軸の位置
 	float		m_posY;			// ボタンのY軸の位置
 	int			m_texIndex;		// ボタンを描画するときのID番号
+#pragma endregion
 };
 
 #endif // !BUTTON_H

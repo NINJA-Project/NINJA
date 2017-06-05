@@ -18,8 +18,10 @@ public:
 	bool Run();
 
 private:
+#pragma region メンバ変数
 	Library&	m_rLibrary;
 	bool		m_isGameEnd;
+#pragma endregion
 };
 
 #endif // !APPLICATION_H

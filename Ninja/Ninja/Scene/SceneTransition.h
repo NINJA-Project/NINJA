@@ -28,12 +28,14 @@ private:
 	};
 
 private:
+#pragma region メンバ変数
 	SceneFactory*	m_pSceneFactory;
 	Scene*			m_pScene;
 	Scene::ID		m_nextSceneID;
 	Scene::ID		m_currentSceneID;
 	State			m_state;
 	bool			m_isControlEnd;
+#pragma endregion 
 };
 
 #endif // !SCENETRANSITION_H

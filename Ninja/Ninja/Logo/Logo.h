@@ -30,6 +30,7 @@ public:
 	void Draw();
 
 private:
+#pragma region メンバ変数
 	Library&	m_rLibrary;
 	float		m_width;		// ロゴの描画時の幅を格納
 	float		m_height;		// ロゴの描画時の高さを格納
@@ -37,6 +38,7 @@ private:
 	float		m_posY;			// ロゴの表示するY座標を格納
 	int			m_texindex;		// ロゴのID番号を格納
 	const char* m_pFilePath;	// 読み込むロゴのファイルパスを格納
+#pragma endregion 
 };
 
 #endif // !LOGO_H
