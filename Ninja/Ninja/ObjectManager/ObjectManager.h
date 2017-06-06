@@ -20,7 +20,10 @@ public:
 public:
 	enum TexID
 	{
-		MAP_CHIP_NORMAL,
+		MAP_CHIP1,
+		MAP_CHIP2,
+		MAP_CHIP3
+
 	};
 #pragma endregion
 
