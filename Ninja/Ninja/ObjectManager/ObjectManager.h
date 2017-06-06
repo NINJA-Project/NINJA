@@ -16,17 +16,6 @@ public:
 	void Control();
 	void Draw();
 
-#pragma region テクスチャID
-public:
-	enum TexID
-	{
-		MAP_CHIP1,
-		MAP_CHIP2,
-		MAP_CHIP3
-
-	};
-#pragma endregion
-
 private:
 
 
