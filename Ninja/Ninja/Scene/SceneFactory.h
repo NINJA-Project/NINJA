@@ -15,10 +15,10 @@ class SceneFactory : public Singleton<SceneFactory>
 {
 private:
 	friend Singleton<SceneFactory>;
-
-public:
 	SceneFactory();
 	virtual ~SceneFactory();
+
+public:
 
 	Scene* CreateScene(Scene::ID nextSceneID_);
 };
