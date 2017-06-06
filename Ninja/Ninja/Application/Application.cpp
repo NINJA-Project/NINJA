@@ -23,5 +23,5 @@ Application::~Application()
 
 bool Application::Run()
 {
-
+	return false;
 }
