@@ -4,17 +4,21 @@
 * @atuhor	shibata
 */
 
+#include <Library\DebugSystem.h>
+#include <Library\Define.h>
 #include "MainScene.h"
+#include "../ObjectManager/ObjectManager.h"
 
 MainScene::MainScene() : 
-Scene(Scene::ID::MAIN_SCENE)
+Scene(Scene::ID::MAIN_SCENE),
+m_pObjectManager(New ObjectManager)
 {
-
+	MyAssert(m_pObjectManager, "データが入っていません");
 }
 
 MainScene::~MainScene()
 {
-
+	SafeDelete(m_pObjectManager);
 }
 
 Scene::ID MainScene::Control()

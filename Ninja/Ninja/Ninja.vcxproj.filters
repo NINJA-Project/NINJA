@@ -37,6 +37,18 @@
     <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Map">
       <UniqueIdentifier>{a677ac95-bec7-4c7c-8f57-e938c00a6395}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Application\ResourceManager">
+      <UniqueIdentifier>{9b522173-c9bc-406e-b8e7-3732c2183d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\GameDataManager">
+      <UniqueIdentifier>{5fc21a16-bad0-4de0-b926-da860a6ca733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Character">
+      <UniqueIdentifier>{dfcab47f-f8f8-42d8-810a-e8115c88c075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Ui">
+      <UniqueIdentifier>{be134094-6383-4af8-9d87-fd4386bab3c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -81,6 +93,36 @@
     <ClCompile Include="ObjectManager\ObjectManager.cpp">
       <Filter>Main\Application\Scene\MainScene\ObjectManager</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceManager\ResourceManager.cpp">
+      <Filter>Main\Application\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDataManager\GameDataManager.cpp">
+      <Filter>Main\Application\GameDataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\Character.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\CharacterManager.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\Player.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\Ninja.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Ui.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\UiManager.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Life.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui\Score.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\Scene.h">
@@ -121,6 +163,36 @@
     </ClInclude>
     <ClInclude Include="Application\Application.h">
       <Filter>Main\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceManager.h">
+      <Filter>Main\Application\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDataManager\GameDataManager.h">
+      <Filter>Main\Application\GameDataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Character.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterManager.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Ninja.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Ui.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\UiManager.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Life.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui\Score.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

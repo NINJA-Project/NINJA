@@ -9,6 +9,8 @@
 
 #include "Scene.h"
 
+class ObjectManager;
+
 class MainScene : public Scene
 {
 public:
@@ -17,6 +19,12 @@ public:
 
 	virtual Scene::ID Control();
 	virtual void Draw();
+
+#pragma region メンバ変数
+private:
+	ObjectManager*	m_pObjectManager;
+#pragma endregion
+
 };
 
 #endif // !MAINSCENE_H
