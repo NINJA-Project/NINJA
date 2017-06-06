@@ -7,6 +7,8 @@
 #ifndef MAP_H
 #define MAP_H
 
+class Library;
+
 class Map
 {
 public:
@@ -20,6 +22,13 @@ public:
 private:
 	void LoadCSV(const char* filePath_);
 #pragma endregion
+
+private:
+	Library&	m_rLibrary;
+	const int	m_mapWidth;
+	const int	m_mapHeight;
+	const float	m_blockWidth;
+	const float	m_blockHeight;
 
 };
 
