@@ -78,6 +78,9 @@
     <ClCompile Include="Collision\Collision.cpp" />
     <ClCompile Include="Logo\Logo.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map\Map.cpp" />
+    <ClCompile Include="Map\MapManager.cpp" />
+    <ClCompile Include="ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="Scene\LogoScene.cpp" />
     <ClCompile Include="Scene\MainScene.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
@@ -90,6 +93,9 @@
     <ClInclude Include="Button\Button.h" />
     <ClInclude Include="Collision\Collision.h" />
     <ClInclude Include="Logo\Logo.h" />
+    <ClInclude Include="Map\Map.h" />
+    <ClInclude Include="Map\MapManager.h" />
+    <ClInclude Include="ObjectManager\ObjectManager.h" />
     <ClInclude Include="Scene\LogoScene.h" />
     <ClInclude Include="Scene\MainScene.h" />
     <ClInclude Include="Scene\Scene.h" />

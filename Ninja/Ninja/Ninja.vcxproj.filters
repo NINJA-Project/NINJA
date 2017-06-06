@@ -31,6 +31,12 @@
     <Filter Include="Main\Application\Scene\MainScene\Collision">
       <UniqueIdentifier>{54136618-5cc4-474a-9c35-06c5ee5b8666}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Application\Scene\MainScene\ObjectManager">
+      <UniqueIdentifier>{65f84c9d-ab0f-4d3e-9083-d6deb480667c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Map">
+      <UniqueIdentifier>{a677ac95-bec7-4c7c-8f57-e938c00a6395}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -66,6 +72,15 @@
     <ClCompile Include="Collision\Collision.cpp">
       <Filter>Main\Application\Scene\MainScene\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Map\Map.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Map\MapManager.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager\ObjectManager.cpp">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\Scene.h">
@@ -73,9 +88,6 @@
     </ClInclude>
     <ClInclude Include="Scene\SceneTransition.h">
       <Filter>Main\Application\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Application\Application.h">
-      <Filter>Main\Application</Filter>
     </ClInclude>
     <ClInclude Include="Scene\SceneFactory.h">
       <Filter>Main\Application\Scene</Filter>
@@ -97,6 +109,18 @@
     </ClInclude>
     <ClInclude Include="Collision\Collision.h">
       <Filter>Main\Application\Scene\MainScene\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Map.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\MapManager.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager\ObjectManager.h">
+      <Filter>Main\Application\Scene\MainScene\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Application.h">
+      <Filter>Main\Application</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
