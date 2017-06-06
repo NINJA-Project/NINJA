@@ -20,8 +20,8 @@ public:
 	virtual Scene::ID Control();
 	virtual void Draw();
 
-#pragma region メンバ変数
 private:
+#pragma region メンバ変数
 	ObjectManager*	m_pObjectManager;
 #pragma endregion
 
