@@ -18,18 +18,14 @@ public:
 	void Control();
 	void Draw();
 
-#pragma region プライベート関数
-private:
-	void LoadCSV(const char* filePath_);
-#pragma endregion
-
+#pragma region メンバ変数
 private:
 	Library&	m_rLibrary;
 	const int	m_mapWidth;
 	const int	m_mapHeight;
 	const float	m_blockWidth;
 	const float	m_blockHeight;
-
+#pragma endregion
 };
 
 #endif // !MAP_H
