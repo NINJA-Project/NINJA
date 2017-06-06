@@ -79,7 +79,6 @@
     <ClCompile Include="Character\CharacterManager.cpp" />
     <ClCompile Include="Character\Ninja.cpp" />
     <ClCompile Include="Character\Player.cpp" />
-    <ClCompile Include="Collision\Collision.cpp" />
     <ClCompile Include="GameDataManager\GameDataManager.cpp" />
     <ClCompile Include="Logo\Logo.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -105,7 +104,6 @@
     <ClInclude Include="Character\CharacterManager.h" />
     <ClInclude Include="Character\Ninja.h" />
     <ClInclude Include="Character\Player.h" />
-    <ClInclude Include="Collision\Collision.h" />
     <ClInclude Include="GameDataManager\GameDataManager.h" />
     <ClInclude Include="Logo\Logo.h" />
     <ClInclude Include="Map\Map.h" />

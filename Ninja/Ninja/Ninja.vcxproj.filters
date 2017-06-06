@@ -28,9 +28,6 @@
     <Filter Include="Main\Application\Scene\MainScene">
       <UniqueIdentifier>{66aac4f2-36cf-4d2e-a2b3-c50b1c6ad108}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\MainScene\Collision">
-      <UniqueIdentifier>{54136618-5cc4-474a-9c35-06c5ee5b8666}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main\Application\Scene\MainScene\ObjectManager">
       <UniqueIdentifier>{65f84c9d-ab0f-4d3e-9083-d6deb480667c}</UniqueIdentifier>
     </Filter>
@@ -53,9 +50,6 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\Scene.cpp">
-      <Filter>Main\Application\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Scene\SceneTransition.cpp">
       <Filter>Main\Application\Scene</Filter>
@@ -80,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>Main\Application\Scene\TitleScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Collision\Collision.cpp">
-      <Filter>Main\Application\Scene\MainScene\Collision</Filter>
     </ClCompile>
     <ClCompile Include="Map\Map.cpp">
       <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
@@ -123,6 +114,9 @@
     <ClCompile Include="Ui\Score.cpp">
       <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\Scene.h">
@@ -148,9 +142,6 @@
     </ClInclude>
     <ClInclude Include="Scene\TitleScene.h">
       <Filter>Main\Application\Scene\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Collision\Collision.h">
-      <Filter>Main\Application\Scene\MainScene\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Map\Map.h">
       <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
