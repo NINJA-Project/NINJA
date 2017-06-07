@@ -12,12 +12,15 @@
 SceneTransition::SceneTransition() :
 m_pSceneFactory(&SceneFactory::Instance()),
 m_pScene(NULL),
-m_nextSceneID(Scene::ID::MAIN_SCENE),
-m_currentSceneID(Scene::ID::MAIN_SCENE),
+m_nextSceneID(Scene::ID::LOGO_SCENE),
+m_currentSceneID(Scene::ID::LOGO_SCENE),
 m_state(CREATE),
 m_isControlEnd(false)
 {
-
+#if _DEBUG
+	m_currentSceneID = Scene::ID::MAIN_SCENE;
+	m_nextSceneID = Scene::ID::MAIN_SCENE;
+#endif
 }
 
 SceneTransition::~SceneTransition()
@@ -39,10 +42,10 @@ bool SceneTransition::Control()
 		else
 		{
 			m_pScene = m_pSceneFactory->CreateScene(m_currentSceneID);
-			m_state = RUN;
+			m_state = UPDATE;
 		}
 		break;
-	case RUN:
+	case UPDATE:
 		if ((m_nextSceneID = m_pScene->Control()) != m_currentSceneID)
 		{
 			m_state = RELEASE;
@@ -59,7 +62,7 @@ bool SceneTransition::Control()
 
 void SceneTransition::Render()
 {
-	if (m_state == RUN && m_pScene != NULL)
+	if (m_state == UPDATE && m_pScene != NULL)
 	{
 		m_pScene->Draw();
 	}

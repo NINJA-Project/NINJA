@@ -19,13 +19,15 @@ public:
 	bool Control();
 	void Render();
 
+#pragma region シーン状態ID
 private:
 	enum State
 	{
 		CREATE,
-		RUN,
+		UPDATE,
 		RELEASE
 	};
+#pragma endregion
 
 private:
 #pragma region メンバ変数
