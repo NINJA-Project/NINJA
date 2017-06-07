@@ -5,46 +5,46 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Main\Application">
+    <Filter Include="Main\GameManager">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Main\Application\Scene">
+    <Filter Include="Main\GameManager\Scene">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Main\Application\Scene\LogoScene">
+    <Filter Include="Main\GameManager\Scene\LogoScene">
       <UniqueIdentifier>{76b02509-5083-4089-82b0-d47e3376fd18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\TitleScene">
+    <Filter Include="Main\GameManager\Scene\TitleScene">
       <UniqueIdentifier>{0128eabb-12ce-4c70-bbbf-79e94664038c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\Logo">
+    <Filter Include="Main\GameManager\Scene\Logo">
       <UniqueIdentifier>{ff6c473c-c3f8-40c9-9af1-bd83ce514683}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\Button">
+    <Filter Include="Main\GameManager\Scene\Button">
       <UniqueIdentifier>{e21fd274-2f17-457f-8ec0-a16f5238700d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\MainScene">
+    <Filter Include="Main\GameManager\Scene\MainScene">
       <UniqueIdentifier>{66aac4f2-36cf-4d2e-a2b3-c50b1c6ad108}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\MainScene\ObjectManager">
+    <Filter Include="Main\GameManager\Scene\MainScene\ObjectManager">
       <UniqueIdentifier>{65f84c9d-ab0f-4d3e-9083-d6deb480667c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Map">
+    <Filter Include="Main\GameManager\Scene\MainScene\ObjectManager\Map">
       <UniqueIdentifier>{a677ac95-bec7-4c7c-8f57-e938c00a6395}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\ResourceManager">
-      <UniqueIdentifier>{9b522173-c9bc-406e-b8e7-3732c2183d55}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main\Application\GameDataManager">
-      <UniqueIdentifier>{5fc21a16-bad0-4de0-b926-da860a6ca733}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Character">
+    <Filter Include="Main\GameManager\Scene\MainScene\ObjectManager\Character">
       <UniqueIdentifier>{dfcab47f-f8f8-42d8-810a-e8115c88c075}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Application\Scene\MainScene\ObjectManager\Ui">
+    <Filter Include="Main\GameManager\Scene\MainScene\ObjectManager\Ui">
       <UniqueIdentifier>{be134094-6383-4af8-9d87-fd4386bab3c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\GameManager\ResourceManager">
+      <UniqueIdentifier>{9b522173-c9bc-406e-b8e7-3732c2183d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\GameManager\GameDataManager">
+      <UniqueIdentifier>{5fc21a16-bad0-4de0-b926-da860a6ca733}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,138 +52,138 @@
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Scene\SceneTransition.cpp">
-      <Filter>Main\Application\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Application\Application.cpp">
-      <Filter>Main\Application</Filter>
+      <Filter>Main\GameManager\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Scene\SceneFactory.cpp">
-      <Filter>Main\Application\Scene</Filter>
+      <Filter>Main\GameManager\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Scene\LogoScene.cpp">
-      <Filter>Main\Application\Scene\LogoScene</Filter>
+      <Filter>Main\GameManager\Scene\LogoScene</Filter>
     </ClCompile>
     <ClCompile Include="Logo\Logo.cpp">
-      <Filter>Main\Application\Scene\Logo</Filter>
+      <Filter>Main\GameManager\Scene\Logo</Filter>
     </ClCompile>
     <ClCompile Include="Button\Button.cpp">
-      <Filter>Main\Application\Scene\Button</Filter>
+      <Filter>Main\GameManager\Scene\Button</Filter>
     </ClCompile>
     <ClCompile Include="Scene\MainScene.cpp">
-      <Filter>Main\Application\Scene\MainScene</Filter>
+      <Filter>Main\GameManager\Scene\MainScene</Filter>
     </ClCompile>
     <ClCompile Include="Scene\TitleScene.cpp">
-      <Filter>Main\Application\Scene\TitleScene</Filter>
+      <Filter>Main\GameManager\Scene\TitleScene</Filter>
     </ClCompile>
     <ClCompile Include="Map\Map.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Map</Filter>
     </ClCompile>
     <ClCompile Include="Map\MapManager.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Map</Filter>
     </ClCompile>
     <ClCompile Include="ObjectManager\ObjectManager.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager\ResourceManager.cpp">
-      <Filter>Main\Application\ResourceManager</Filter>
+      <Filter>Main\GameManager\ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="GameDataManager\GameDataManager.cpp">
-      <Filter>Main\Application\GameDataManager</Filter>
+      <Filter>Main\GameManager\GameDataManager</Filter>
     </ClCompile>
     <ClCompile Include="Character\Character.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClCompile>
     <ClCompile Include="Character\CharacterManager.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClCompile>
     <ClCompile Include="Character\Player.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClCompile>
     <ClCompile Include="Character\Ninja.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClCompile>
     <ClCompile Include="Ui\Ui.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClCompile>
     <ClCompile Include="Ui\UiManager.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClCompile>
     <ClCompile Include="Ui\Life.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClCompile>
     <ClCompile Include="Ui\Score.cpp">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClCompile>
     <ClCompile Include="Scene\Scene.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager\GameManager.cpp">
+      <Filter>Main\GameManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\Scene.h">
-      <Filter>Main\Application\Scene</Filter>
+      <Filter>Main\GameManager\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene\SceneTransition.h">
-      <Filter>Main\Application\Scene</Filter>
+      <Filter>Main\GameManager\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene\SceneFactory.h">
-      <Filter>Main\Application\Scene</Filter>
+      <Filter>Main\GameManager\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene\LogoScene.h">
-      <Filter>Main\Application\Scene\LogoScene</Filter>
+      <Filter>Main\GameManager\Scene\LogoScene</Filter>
     </ClInclude>
     <ClInclude Include="Logo\Logo.h">
-      <Filter>Main\Application\Scene\Logo</Filter>
+      <Filter>Main\GameManager\Scene\Logo</Filter>
     </ClInclude>
     <ClInclude Include="Button\Button.h">
-      <Filter>Main\Application\Scene\Button</Filter>
+      <Filter>Main\GameManager\Scene\Button</Filter>
     </ClInclude>
     <ClInclude Include="Scene\MainScene.h">
-      <Filter>Main\Application\Scene\MainScene</Filter>
+      <Filter>Main\GameManager\Scene\MainScene</Filter>
     </ClInclude>
     <ClInclude Include="Scene\TitleScene.h">
-      <Filter>Main\Application\Scene\TitleScene</Filter>
+      <Filter>Main\GameManager\Scene\TitleScene</Filter>
     </ClInclude>
     <ClInclude Include="Map\Map.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Map</Filter>
     </ClInclude>
     <ClInclude Include="Map\MapManager.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Map</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Map</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager\ObjectManager.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Application\Application.h">
-      <Filter>Main\Application</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager\ResourceManager.h">
-      <Filter>Main\Application\ResourceManager</Filter>
+      <Filter>Main\GameManager\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="GameDataManager\GameDataManager.h">
-      <Filter>Main\Application\GameDataManager</Filter>
+      <Filter>Main\GameManager\GameDataManager</Filter>
     </ClInclude>
     <ClInclude Include="Character\Character.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClInclude>
     <ClInclude Include="Character\CharacterManager.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClInclude>
     <ClInclude Include="Character\Player.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClInclude>
     <ClInclude Include="Character\Ninja.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Character</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Ui.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClInclude>
     <ClInclude Include="Ui\UiManager.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Life.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClInclude>
     <ClInclude Include="Ui\Score.h">
-      <Filter>Main\Application\Scene\MainScene\ObjectManager\Ui</Filter>
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager\GameManager.h">
+      <Filter>Main\GameManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
 #include <Library.h>
 #include <Library\DebugSystem.h>
 #include <Library\Define.h>
-#include "Application\Application.h"
+#include "GameManager\GameManager.h"
 
 namespace
 {
@@ -21,14 +21,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	Library*		pLibrary = &Library::Instance();
 	DebugSystem*	pDebugSystem = New DebugSystem;
-	Application*	pApplication = NULL;
+	GameManager*	pGameManager = NULL;
 
 	pDebugSystem->CheckMemoryLeaK();
 
 	pLibrary->InitLibrary(title, clientWidth, clientHeight, false);
 	pLibrary->Init3DDraw();
 
-	pApplication = New Application;
+	pGameManager = New GameManager;
 	DWORD currentTime;
 	DWORD oldTime = gameFPS * timeGetTime();
 
@@ -37,7 +37,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		currentTime = gameFPS * timeGetTime();
 		if (currentTime - oldTime >= 1000)
 		{
-			if (pApplication->Run())
+			if (pGameManager->Update())
 			{
 				break;
 			}
@@ -46,6 +46,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		}
 	}
 	SafeDelete(pDebugSystem);
-	SafeDelete(pApplication);
+	SafeDelete(pGameManager);
 	return 0;
 }
