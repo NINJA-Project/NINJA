@@ -8,11 +8,13 @@
 #include <Library\Define.h>
 #include "MainScene.h"
 #include "../ObjectManager/ObjectManager.h"
+#include "../ResourceManager/ResourceManager.h"
 
 MainScene::MainScene() : 
 Scene(Scene::ID::MAIN_SCENE),
 m_pObjectManager(New ObjectManager)
 {
+	ResourceManager::Instance().TexLoader(Scene::ID::MAIN_SCENE);
 	MyAssert(m_pObjectManager, "データが入っていません");
 }
 

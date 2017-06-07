@@ -8,6 +8,7 @@
 #include "ResourceManager.h"
 #include "../Scene/Scene.h"
 #include <Library.h>
+#include <stdio.h>
 
 ResourceManager::ResourceManager() :
 m_rLibrary(Library::Instance())
@@ -37,12 +38,17 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 		// ここに読み込むテクスチャを書く
 		// 新規で読み込む際はhの対応するenumにテクスチャIDを追加すること
 		m_rLibrary.LoadTextureFile(MAP_CHIP, "Resource/Texture/MapChip.png");
-
 		break;
 	}
 }
 
 void ResourceManager::CSVLoader()
 {
+	FILE* fp;
+	fp = fopen("Resource/File/NinjaMap.csv", "r");
+	MyAssert(fp, "データが入っていません");
 
+
+
+	fclose(fp);
 }

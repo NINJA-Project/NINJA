@@ -6,11 +6,12 @@
 
 #include "LogoScene.h"
 #include <Library.h>
+#include "../ResourceManager/ResourceManager.h"
 
 LogoScene::LogoScene() : 
 Scene(Scene::ID::LOGO_SCENE)
 {
-
+	ResourceManager::Instance().TexLoader(Scene::ID::LOGO_SCENE);
 }
 
 LogoScene::~LogoScene()
