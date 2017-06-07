@@ -17,9 +17,9 @@ m_mapHeight(20),
 m_blockWidth(64.0f),
 m_blockHeight(64.0f)
 {
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP1, m_blockWidth, m_blockHeight, 0.5f, 0.2f, 0.2f, 0.2f, 0.2f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP2, m_blockWidth, m_blockHeight, 0.5f, 0.2f, 0.2f, 0.2f, 0.2f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP3, m_blockWidth, m_blockHeight, 0.5f, 0.2f, 0.2f, 0.2f, 0.2f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_blockWidth, m_blockHeight, 0.2f, 0.2f, 0.2f, 0.2f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_blockWidth, m_blockHeight, 0.4f, 0.4f, 0.2f, 0.2f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_blockWidth, m_blockHeight, 0.2f, 0.2f, 0.2f, 0.2f);
 }
 
 Map::~Map()

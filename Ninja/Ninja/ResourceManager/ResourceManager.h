@@ -38,9 +38,7 @@ public:
 #pragma region メインシーンのテクスチャID
 	enum MainTex
 	{
-		MAP_CHIP1,
-		MAP_CHIP2,
-		MAP_CHIP3,
+		MAP_CHIP,
 	};
 #pragma endregion
 
