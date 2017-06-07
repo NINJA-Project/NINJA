@@ -146,9 +146,9 @@ void Library::ReleaseTexture(int index_)
 }
 
 //---------------------VerticesManagerクラスのパブリック関数-------------------------
-void Library::SetTexSize(int index_, float width_, float height_, float depth_, float maxTu_, float maxTv_, float minTu_, float minTv_)
+void Library::SetTexSize(int index_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
-	m_pVerticesManager->SetTexSize(index_, width_, height_, depth_, maxTu_, maxTv_, minTu_, minTv_);
+	m_pVerticesManager->SetTexSize(index_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
 }
 
 void Library::DrawLeftTop(int index_, float posX_, float posY_)

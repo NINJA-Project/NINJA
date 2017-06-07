@@ -28,15 +28,15 @@ Vertices::~Vertices()
 
 }
 
-void Vertices::SetTexSize(float width_, float height_, float depth_, float maxTu_, float maxTv_, float minTu_, float minTv_)
+void Vertices::SetTexSize(float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
 	m_texWidth  = width_;
 	m_texHeight = height_;
-	m_texDepth  = depth_;
 	m_texMaxTu  = maxTu_;
 	m_texMaxTv  = maxTv_;
 	m_texMinTu  = minTu_;
 	m_texMinTv  = minTv_;
+	m_texDepth = depth_;
 }
 
 void Vertices::DrawLeftTop(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_)

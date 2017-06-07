@@ -170,16 +170,16 @@ public:
 	* @param [in] index_	頂点情報の配列番号
 	* @param [in] width_	描画の横幅
 	* @param [in] height_	描画の縦幅
-	* @param [in] depth_	描画の奥行き
 	* @param [in] maxTu_	テクスチャの最大x座標
 	* @param [in] maxTv_	テクスチャの最大y座標
 	* @param [in] minTu_	テクスチャの最小x座標
 	* @param [in] minTv_	テクスチャの最小y座標
+	* @param [in] depth_	描画の奥行き
 	* @note depth_のデフォルト値は0.5f
 	* @note maxTu, maxTvのデフォルト値は1.0f
 	* @note minTu, minTvのデフォルト値は0.0f
 	*/
-	void SetTexSize(int index_, float width_, float height_, float depth_ = 0.5f, float maxTu_ = 1.0f, float maxTv_ = 1.0f, float minTu_ = 0.0f, float minTv_ = 0.0f);
+	void SetTexSize(int index_, float width_, float height_, float maxTu_ = 1.0f, float maxTv_ = 1.0f, float minTu_ = 0.0f, float minTv_ = 0.0f, float depth_ = 0.5f);
 
 	/**
 	* 左上からの描画関数

@@ -18,10 +18,10 @@ VerticesManager::~VerticesManager()
 	ReleaseAllVirtices();
 }
 
-void VerticesManager::SetTexSize(int index_, float width_, float height_, float depth_, float maxTu_, float maxTv_, float minTu_, float minTv_)
+void VerticesManager::SetTexSize(int index_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
 	m_pVertices.emplace_back(New Vertices);
-	m_pVertices[index_]->SetTexSize(width_, height_, depth_, maxTu_, maxTv_, minTu_, minTv_);
+	m_pVertices[index_]->SetTexSize(width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
 }
 
 void VerticesManager::DrawLeftTop(int index_, float posX_, float posY_, const LPDIRECT3DTEXTURE9 pTextureData_)
