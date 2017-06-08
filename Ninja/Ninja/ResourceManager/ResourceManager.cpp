@@ -11,7 +11,9 @@
 #include <stdio.h>
 
 ResourceManager::ResourceManager() :
-m_rLibrary(Library::Instance())
+m_rLibrary(Library::Instance()),
+m_kCsvWidth(15),
+m_kCsvHeight(20)
 {
 
 }
@@ -45,10 +47,16 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 void ResourceManager::CSVLoader()
 {
 	FILE* fp;
-	fp = fopen("Resource/File/NinjaMap.csv", "r");
+	fopen_s(&fp, "Resource/File/NinjaMap.csv", "r");
 	MyAssert(fp, "ƒf[ƒ^‚ª“ü‚Á‚Ä‚¢‚Ü‚¹‚ñ");
 
-
+	for (int i = 0; i < m_kCsvHeight; i++)
+	{
+		for (int j = 0; j < m_kCsvWidth; j++)
+		{
+			fscanf_s(fp, "%d,", )
+		}
+	}
 
 	fclose(fp);
 }

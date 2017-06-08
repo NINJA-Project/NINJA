@@ -48,6 +48,8 @@ public:
 
 private:
 	Library&	m_rLibrary;
+	const int	m_kCsvWidth;
+	const int	m_kCsvHeight;
 };
 
 #endif // !RESOURCEMANAGER_H

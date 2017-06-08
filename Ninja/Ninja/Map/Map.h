@@ -21,10 +21,10 @@ public:
 #pragma region ƒƒ“ƒo•Ï”
 private:
 	Library&	m_rLibrary;
-	const int	m_mapWidth;
-	const int	m_mapHeight;
-	const float	m_blockWidth;
-	const float	m_blockHeight;
+	const int	m_kMapWidth;
+	const int	m_kMapHeight;
+	const float	m_kBlockWidth;
+	const float	m_kBlockHeight;
 #pragma endregion
 };
 
