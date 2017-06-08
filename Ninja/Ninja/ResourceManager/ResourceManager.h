@@ -8,8 +8,10 @@
 #define RESOURCEMANAGER_H
 
 #include "../Scene/Scene.h"
+#include <vector>
 
 class Library;
+class GameDataManager;
 
 class ResourceManager
 {
@@ -54,9 +56,11 @@ public:
 	void CSVLoader();
 
 private:
-	Library&	m_rLibrary;
-	const int	m_kCsvWidth;		// csv‚Ì•
-	const int	m_kCsvHeight;		// csv‚Ì‚‚³
+	Library&			m_rLibrary;
+	GameDataManager*	m_pGameData;
+	const int			m_kCsvWidth;		// csv‚Ì•
+	const int			m_kCsvHeight;		// csv‚Ì‚‚³
+	std::vector<std::vector<int>>	m_csvMap;
 };
 
 #endif // !RESOURCEMANAGER_H

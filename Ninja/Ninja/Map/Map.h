@@ -8,6 +8,7 @@
 #define MAP_H
 
 class Library;
+class GameDataManager;
 
 class Map
 {
@@ -18,13 +19,15 @@ public:
 	void Control();
 	void Draw();
 
-#pragma region ƒƒ“ƒo•Ï”
 private:
-	Library&	m_rLibrary;
-	const int	m_kMapWidth;
-	const int	m_kMapHeight;
-	const float	m_kBlockWidth;
-	const float	m_kBlockHeight;
+#pragma region ƒƒ“ƒo•Ï”
+	Library&			m_rLibrary;
+	GameDataManager*	m_pGameData;
+	const int			m_kMapWidth;
+	const int			m_kMapHeight;
+	const float			m_kBlockWidth;
+	const float			m_kBlockHeight;
+	int**				m_ppMap;
 #pragma endregion
 };
 

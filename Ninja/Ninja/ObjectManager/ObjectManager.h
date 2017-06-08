@@ -7,6 +7,8 @@
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
 
+class MapManager;
+
 class ObjectManager
 {
 public:
@@ -17,7 +19,7 @@ public:
 	void Draw();
 
 private:
-
+	MapManager*	m_pMapManager;
 
 };
 

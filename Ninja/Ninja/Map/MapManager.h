@@ -7,6 +7,8 @@
 #ifndef MAPMANAGER_H
 #define MAPMANAGER_H
 
+class Map;
+
 class MapManager
 {
 public:
@@ -15,6 +17,9 @@ public:
 
 	void Control();
 	void Draw();
+
+private:
+	Map*	m_pMap;
 };
 
 #endif // !MAPMANAGER_H

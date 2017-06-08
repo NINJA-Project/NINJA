@@ -27,10 +27,11 @@ MainScene::~MainScene()
 
 Scene::ID MainScene::Control()
 {
+	m_pObjectManager->Control();
 	return Scene::ID::MAIN_SCENE;
 }
 
 void MainScene::Draw()
 {
-
+	m_pObjectManager->Draw();
 }
