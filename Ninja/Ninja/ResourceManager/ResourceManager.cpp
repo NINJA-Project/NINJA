@@ -10,6 +10,11 @@
 #include <Library.h>
 #include <stdio.h>
 
+namespace
+{
+	int g_csvMap[15][20];
+}
+
 ResourceManager::ResourceManager() :
 m_rLibrary(Library::Instance()),
 m_kCsvWidth(15),
@@ -50,13 +55,20 @@ void ResourceManager::CSVLoader()
 	fopen_s(&fp, "Resource/File/NinjaMap.csv", "r");
 	MyAssert(fp, "データが入っていません");
 
+	/*
+	エネミーやゴールポイント配置時に使用する
 	for (int i = 0; i < m_kCsvHeight; i++)
 	{
 		for (int j = 0; j < m_kCsvWidth; j++)
 		{
-			fscanf_s(fp, "%d,", )
+			fscanf_s(fp, "%d,", g_csvMap[i][j],sizeof(int));
+			switch (g_csvMap[i][j])
+			{
+
+			}
 		}
 	}
+	*/
 
 	fclose(fp);
 }

@@ -14,7 +14,9 @@ MainScene::MainScene() :
 Scene(Scene::ID::MAIN_SCENE),
 m_pObjectManager(New ObjectManager)
 {
-	ResourceManager::Instance().TexLoader(Scene::ID::MAIN_SCENE);
+	ResourceManager mainSceneResource;
+	mainSceneResource.TexLoader(Scene::ID::MAIN_SCENE);
+	mainSceneResource.CSVLoader();
 	MyAssert(m_pObjectManager, "データが入っていません");
 }
 

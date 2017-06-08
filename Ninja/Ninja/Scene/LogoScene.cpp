@@ -11,7 +11,8 @@
 LogoScene::LogoScene() : 
 Scene(Scene::ID::LOGO_SCENE)
 {
-	ResourceManager::Instance().TexLoader(Scene::ID::LOGO_SCENE);
+	ResourceManager logoSceneResource;
+	logoSceneResource.TexLoader(Scene::ID::LOGO_SCENE);
 }
 
 LogoScene::~LogoScene()

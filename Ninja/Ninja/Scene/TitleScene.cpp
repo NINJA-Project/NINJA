@@ -10,7 +10,8 @@
 TitleScene::TitleScene() : 
 Scene(Scene::ID::TITLE_SCENE)
 {
-	ResourceManager::Instance().TexLoader(Scene::ID::TITLE_SCENE);
+	ResourceManager titleSceneResource;
+	titleSceneResource.TexLoader(Scene::ID::TITLE_SCENE);
 }
 
 TitleScene::~TitleScene()
