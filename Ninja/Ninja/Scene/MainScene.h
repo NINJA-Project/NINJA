@@ -25,6 +25,7 @@ private:
 	ObjectManager*	m_pObjectManager;
 #pragma endregion
 
+
 };
 
 #endif // !MAINSCENE_H

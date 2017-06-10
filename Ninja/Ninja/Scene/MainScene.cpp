@@ -23,10 +23,12 @@ MainScene::~MainScene()
 
 Scene::ID MainScene::Control()
 {
+	// プレイヤーの挙動の更新 
+
 	return Scene::ID::MAIN_SCENE;
 }
 
 void MainScene::Draw()
 {
-
+	
 }

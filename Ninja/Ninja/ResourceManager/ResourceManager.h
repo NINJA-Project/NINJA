@@ -39,6 +39,11 @@ public:
 	enum MainTex
 	{
 		MAP_CHIP,
+		Player_Standing1,		//プレイヤー立ち絵
+		Player_Standeing2,		//プレイヤー立ち絵2
+		Player_Run1,			//プレイヤー走り
+		Player_Run2,			//プレイヤー走り2
+		Player_Run3,			//プレイヤー走り3
 	};
 #pragma endregion
 
