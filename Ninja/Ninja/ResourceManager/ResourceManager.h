@@ -9,9 +9,9 @@
 
 #include "../Scene/Scene.h"
 #include <vector>
+#include <string>
 
 class Library;
-class GameDataManager;
 
 class ResourceManager
 {
@@ -34,7 +34,9 @@ public:
 #pragma region メインシーンのテクスチャID
 	enum MainTex
 	{
-		MAP_CHIP,
+		MAP_CHIP1,
+		MAP_CHIP2,
+		MAP_CHIP3,
 	};
 #pragma endregion
 #pragma region マップチップID
@@ -53,14 +55,10 @@ public:
 	~ResourceManager();
 
 	void TexLoader(Scene::ID currentID_);
-	void CSVLoader();
+	bool CSVLoader(std::vector<std::vector<std::string>>& data_, const char delim_ = ',');
 
 private:
 	Library&			m_rLibrary;
-	GameDataManager*	m_pGameData;
-	const int			m_kCsvWidth;		// csvの幅
-	const int			m_kCsvHeight;		// csvの高さ
-	std::vector<std::vector<int>>	m_csvMap;
 };
 
 #endif // !RESOURCEMANAGER_H

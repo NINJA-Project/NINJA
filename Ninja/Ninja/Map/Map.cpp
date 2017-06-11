@@ -9,21 +9,18 @@
 #include <Library\DebugSystem.h>
 #include <Library.h>
 #include "../ResourceManager/ResourceManager.h"
-#include "../GameDataManager/GameDataManager.h"
+#include <iostream>
 
 Map::Map() : 
 m_rLibrary(Library::Instance()),
-m_pGameData(&GameDataManager::Instance()),
-m_kMapWidth(15),
-m_kMapHeight(20),
 m_kBlockWidth(64.0f),
 m_kBlockHeight(64.0f)
 {
-
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_kBlockWidth, m_kBlockHeight, 0.2f, 0.2f, 0.2f, 0.2f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_kBlockWidth, m_kBlockHeight, 0.4f, 0.4f, 0.2f, 0.2f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_kBlockWidth, m_kBlockHeight, 0.6f, 0.6f, 0.4f, 0.4f);
-	m_ppMap = m_pGameData->GetMapArray();
+	ResourceManager mapLoad;
+	mapLoad.CSVLoader(m_csvData);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP1, m_kBlockWidth, m_kBlockHeight, 0.2f, 1.0f, 0.0f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP2, m_kBlockWidth, m_kBlockHeight, 0.4f, 1.0f, 0.2f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP3, m_kBlockWidth, m_kBlockHeight, 0.6f, 1.0f, 0.4f, 0.0f);
 }
 
 Map::~Map()
@@ -38,14 +35,16 @@ void Map::Control()
 
 void Map::Draw()
 {
-	for (int y = 0; y < m_pGameData->GetCsvHeight() -1; y++)
+	for (unsigned int row = 0; row < m_csvData.size(); row++)
 	{
-		for (int x = 0; x < m_pGameData->GetCsvWidth() - 1; x++)
+		std::vector<std::string> rec = m_csvData[row];
+		for (unsigned int col = 0; col < rec.size(); col++)
 		{
-			if (m_ppMap[y][x] == ResourceManager::ChipID::NORMAL_BLOCK)
+			if (m_csvData[row][col] == "1")
 			{
-				m_rLibrary.DrawCenter(ResourceManager::MainTex::MAP_CHIP, (x * m_kBlockWidth), (y * m_kBlockHeight));
+				m_rLibrary.DrawLeftTop(ResourceManager::MainTex::MAP_CHIP, (col * m_kBlockWidth), (row * m_kBlockHeight));
 			}
 		}
+		
 	}
 }

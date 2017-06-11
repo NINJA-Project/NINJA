@@ -6,16 +6,14 @@
 
 
 #include "ResourceManager.h"
-#include "../GameDataManager/GameDataManager.h"
 #include "../Scene/Scene.h"
 #include <Library.h>
-#include <stdio.h>
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 ResourceManager::ResourceManager() :
-m_rLibrary(Library::Instance()),
-m_pGameData(&GameDataManager::Instance()),
-m_kCsvWidth(15),
-m_kCsvHeight(20)
+m_rLibrary(Library::Instance())
 {
 
 }
@@ -41,27 +39,37 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 	case Scene::ID::MAIN_SCENE:
 		// ここに読み込むテクスチャを書く
 		// 新規で読み込む際はhの対応するenumにテクスチャIDを追加すること
-		m_rLibrary.LoadTextureFile(MAP_CHIP, "Resource/Texture/MapChip.png");
+		m_rLibrary.LoadTextureFile(MAP_CHIP1, "Resource/Texture/MapChip.png");
+		m_rLibrary.LoadTextureFile(MAP_CHIP2, "Resource/Texture/MapChip.png");
+		m_rLibrary.LoadTextureFile(MAP_CHIP3, "Resource/Texture/MapChip.png");
 		break;
 	}
 }
 
-void ResourceManager::CSVLoader()
+bool ResourceManager::CSVLoader(std::vector<std::vector<std::string>>& data_, const char delim_)
 {
-	FILE* fp;
-	fopen_s(&fp, "Resource/File/NinjaMap.csv", "r");
-	MyAssert(fp, "データが入っていません");
+	std::ifstream csvFile("Resource/File/NinjaMap.csv");
+	MyAssert(csvFile, "データが入っていません");
 
+	std::string buf;
 
-	for (int i = 0; i < m_kCsvHeight; i++)
+	while (getline(csvFile, buf))
 	{
-		for (int j = 0; j < m_kCsvWidth; j++)
+		std::vector<std::string> rec;
+		std::istringstream iss(buf);
+		std::string field;
+
+		while (getline(iss, field, delim_))
 		{
-			fscanf_s(fp, "%d,", &m_csvMap[i][j], sizeof(int));
+			rec.push_back(field);
+		}
+
+		if (rec.size() != 0)
+		{
+			data_.push_back(rec);
 		}
 	}
-	m_pGameData->SetCsvWidth(m_kCsvWidth);
-	m_pGameData->SetCsvHeight(m_kCsvHeight);
 
-	fclose(fp);
+
+	return true;
 }

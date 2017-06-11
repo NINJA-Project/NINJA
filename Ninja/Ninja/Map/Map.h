@@ -7,8 +7,10 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <vector>
+#include <string>
+
 class Library;
-class GameDataManager;
 
 class Map
 {
@@ -21,13 +23,10 @@ public:
 
 private:
 #pragma region ƒƒ“ƒo•Ï”
-	Library&			m_rLibrary;
-	GameDataManager*	m_pGameData;
-	const int			m_kMapWidth;
-	const int			m_kMapHeight;
-	const float			m_kBlockWidth;
-	const float			m_kBlockHeight;
-	int**				m_ppMap;
+	Library&								m_rLibrary;
+	std::vector<std::vector<std::string>>	m_csvData;
+	const float								m_kBlockWidth;
+	const float								m_kBlockHeight;
 #pragma endregion
 };
 
