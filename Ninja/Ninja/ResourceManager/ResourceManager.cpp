@@ -70,6 +70,5 @@ bool ResourceManager::CSVLoader(std::vector<std::vector<std::string>>& data_, co
 		}
 	}
 
-
 	return true;
 }

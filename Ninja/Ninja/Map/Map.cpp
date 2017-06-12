@@ -42,7 +42,7 @@ void Map::Draw()
 		{
 			if (m_csvData[row][col] == "1")
 			{
-				m_rLibrary.DrawLeftTop(ResourceManager::MainTex::MAP_CHIP, (col * m_kBlockWidth), (row * m_kBlockHeight));
+				m_rLibrary.DrawLeftTop(ResourceManager::MainTex::MAP_CHIP1, (col * m_kBlockWidth), (row * m_kBlockHeight));
 			}
 		}
 		
