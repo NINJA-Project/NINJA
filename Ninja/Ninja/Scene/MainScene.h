@@ -22,7 +22,7 @@ public:
 
 private:
 #pragma region メンバ変数
-	ObjectManager*	m_pObjectManager;
+	ObjectManager*		m_pObjectManager;
 #pragma endregion
 
 

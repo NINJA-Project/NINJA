@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file	ResourceManager.h
  * @breif	ゲーム上で必要なリソース読み込みクラスヘッダ
  * @author	shibata
@@ -38,10 +38,10 @@ public:
 		MAP_CHIP2,
 		MAP_CHIP3,
 		Player_Standing1,		//プレイヤー立ち絵
-		Player_Standeing2,		//プレイヤー立ち絵2
-		Player_Run1,			//プレイヤー走り
-		Player_Run2,			//プレイヤー走り2
-		Player_Run3,			//プレイヤー走り3
+		//Player_Standeing2,		//プレイヤー立ち絵2
+	//	Player_Run1,			//プレイヤー走り
+	//	Player_Run2,			//プレイヤー走り2
+	//	Player_Run3,			//プレイヤー走り3
 
 	};
 #pragma endregion

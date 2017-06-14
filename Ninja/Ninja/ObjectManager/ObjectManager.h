@@ -1,14 +1,14 @@
-/**
+﻿/**
  * @file	ObjectManager.h
- * @breif	出てくるオブジェクトを管理しているクラスヘッダ
+ * @breif	ゲーム上のオブジェクトを管理するクラスヘッダ
  * @author	shibata
  */
-#include"../Character/CharacterManager.h"
 
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
 
 class MapManager;
+class CharacterManager;
 
 class ObjectManager
 {
@@ -20,9 +20,8 @@ public:
 	void Draw();
 
 private:
-	CharacterManager* m_pCharamanager;
 	MapManager*	m_pMapManager;
-
+	CharacterManager* m_pCharamanager;
 };
 
 #endif // !OBJECTMANAGER_H

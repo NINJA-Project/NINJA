@@ -14,8 +14,8 @@ MainScene::MainScene() :
 Scene(Scene::ID::MAIN_SCENE),
 m_pObjectManager(New ObjectManager)
 {
-	ResourceManager mainSceneResource;
-	mainSceneResource.TexLoader(Scene::ID::MAIN_SCENE);
+	ResourceManager mainResource;
+	mainResource.TexLoader(Scene::ID::MAIN_SCENE);
 	MyAssert(m_pObjectManager, "データが入っていません");
 }
 

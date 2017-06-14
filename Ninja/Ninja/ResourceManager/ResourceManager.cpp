@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file	ResourceManager.cpp
  * @breif	ゲーム上で必要なリソース読み込みクラス実装
  * @author	shibata
@@ -39,7 +39,7 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 	case Scene::ID::MAIN_SCENE:
 		// ここに読み込むテクスチャを書く
 		// 新規で読み込む際はhの対応するenumにテクスチャIDを追加すること
-    m_rLibrary.LoadTextureFile(MAP_CHIP1, "Resource/Texture/MapChip.png");
+		m_rLibrary.LoadTextureFile(MAP_CHIP1, "Resource/Texture/MapChip.png");
 		m_rLibrary.LoadTextureFile(MAP_CHIP2, "Resource/Texture/MapChip.png");
 		m_rLibrary.LoadTextureFile(MAP_CHIP3, "Resource/Texture/MapChip.png");
 		m_rLibrary.LoadTextureFile(ResourceManager::MainTex::Player_Standing1, "Resource/Texture/Player_Standing1.png");
