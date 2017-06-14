@@ -10,9 +10,9 @@
 class Library;
 class SceneTransition;
 
-
 class GameManager
 {
+
 public:
 	GameManager();
 	~GameManager();

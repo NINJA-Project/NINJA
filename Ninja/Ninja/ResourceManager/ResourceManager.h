@@ -1,6 +1,6 @@
 /**
  * @file	ResourceManager.h
- * @breif	ƒQ[ƒ€ã‚Å•K—v‚ÈƒŠƒ\[ƒX“Ç‚İ‚İƒNƒ‰ƒXƒwƒbƒ_
+ * @breif	ã‚²ãƒ¼ãƒ ä¸Šã§å¿…è¦ãªãƒªã‚½ãƒ¼ã‚¹èª­ã¿è¾¼ã¿ã‚¯ãƒ©ã‚¹ãƒ˜ãƒƒãƒ€
  * @author	shibata
  */
 
@@ -16,13 +16,13 @@ class Library;
 class ResourceManager
 {
 public:
-#pragma region ƒƒSƒV[ƒ“‚ÌƒeƒNƒXƒ`ƒƒID
+#pragma region ãƒ­ã‚´ã‚·ãƒ¼ãƒ³ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ID
 	enum LogoTex
 	{
 		LOGO
 	};
 #pragma endregion
-#pragma region ƒ^ƒCƒgƒ‹ƒV[ƒ“‚ÌƒeƒNƒXƒ`ƒƒID
+#pragma region ã‚¿ã‚¤ãƒˆãƒ«ã‚·ãƒ¼ãƒ³ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ID
 	enum TitleTex
 	{
 		TITLE_LOGO,
@@ -31,21 +31,27 @@ public:
 		HOWTOPLAY_LOGO
 	};
 #pragma endregion
-#pragma region ƒƒCƒ“ƒV[ƒ“‚ÌƒeƒNƒXƒ`ƒƒID
+#pragma region ãƒ¡ã‚¤ãƒ³ã‚·ãƒ¼ãƒ³ã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ID
 	enum MainTex
 	{
 		MAP_CHIP1,
 		MAP_CHIP2,
 		MAP_CHIP3,
+		Player_Standing1,		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç«‹ã¡çµµ
+		Player_Standeing2,		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç«‹ã¡çµµ2
+		Player_Run1,			//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼èµ°ã‚Š
+		Player_Run2,			//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼èµ°ã‚Š2
+		Player_Run3,			//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼èµ°ã‚Š3
+
 	};
 #pragma endregion
-#pragma region ƒ}ƒbƒvƒ`ƒbƒvID
+#pragma region ãƒãƒƒãƒ—ãƒãƒƒãƒ—ID
 	enum ChipID
 	{
-		NONE,			// ‚È‚É‚à‚È‚µ
-		NORMAL_BLOCK,	// ’Êí‚ÌƒuƒƒbƒN
-		LANDING_BLOCK,	// æ‚èêƒuƒƒbƒN
-		LANDING_BLOCK2,	// ‰¼‚Ì–¼‘O
+		NONE,			// ãªã«ã‚‚ãªã—
+		NORMAL_BLOCK,	// é€šå¸¸ã®ãƒ–ãƒ­ãƒƒã‚¯
+		LANDING_BLOCK,	// ä¹—ã‚Šå ´ãƒ–ãƒ­ãƒƒã‚¯
+		LANDING_BLOCK2,	// ä»®ã®åå‰
 	};
 #pragma endregion
 

@@ -1,16 +1,18 @@
 /**
  * @file	ObjectManager.cpp
- * @breif	o‚Ä‚­‚éƒIƒuƒWƒFƒNƒg‚ðŠÇ—‚µ‚Ä‚¢‚éƒNƒ‰ƒXŽÀ‘•
+ * @breif	å‡ºã¦ãã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç®¡ç†ã—ã¦ã„ã‚‹ã‚¯ãƒ©ã‚¹å®Ÿè£…
  * @author	shibata
  */
+#include <Library\DebugSystem.h>
+#include <Library\Define.h>
 
 #include "ObjectManager.h"
 #include "../Map/MapManager.h"
 #include <Library\DebugSystem.h>
 #include <Library\Define.h>
 
-
-ObjectManager::ObjectManager() : 
+ObjectManager::ObjectManager():
+m_pCharamanager(New CharacterManager),
 m_pMapManager(New MapManager)
 {
 
@@ -23,10 +25,11 @@ ObjectManager::~ObjectManager()
 
 void ObjectManager::Control()
 {
-
+	m_pCharamanager->Control();
 }
 
 void ObjectManager::Draw()
 {
+	m_pCharamanager->Draw();
 	m_pMapManager->Draw();
 }

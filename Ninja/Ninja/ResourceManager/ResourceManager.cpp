@@ -1,6 +1,6 @@
 /**
  * @file	ResourceManager.cpp
- * @breif	ƒQ[ƒ€ã‚Å•K—v‚ÈƒŠƒ\[ƒX“Ç‚İ‚İƒNƒ‰ƒXÀ‘•
+ * @breif	ã‚²ãƒ¼ãƒ ä¸Šã§å¿…è¦ãªãƒªã‚½ãƒ¼ã‚¹èª­ã¿è¾¼ã¿ã‚¯ãƒ©ã‚¹å®Ÿè£…
  * @author	shibata
  */
 
@@ -28,20 +28,21 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 	switch (currentID_)
 	{
 	case Scene::ID::LOGO_SCENE:
-		// ‚±‚±‚É“Ç‚İ‚ŞƒeƒNƒXƒ`ƒƒ‚ğ‘‚­
-		// V‹K‚Å“Ç‚İ‚ŞÛ‚Íh‚Ì‘Î‰‚·‚éenum‚ÉƒeƒNƒXƒ`ƒƒID‚ğ’Ç‰Á‚·‚é‚±‚Æ
+		// ã“ã“ã«èª­ã¿è¾¼ã‚€ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’æ›¸ã
+		// æ–°è¦ã§èª­ã¿è¾¼ã‚€éš›ã¯hã®å¯¾å¿œã™ã‚‹enumã«ãƒ†ã‚¯ã‚¹ãƒãƒ£IDã‚’è¿½åŠ ã™ã‚‹ã“ã¨
 		break;
 	case Scene::ID::TITLE_SCENE:
-		// ‚±‚±‚É“Ç‚İ‚ŞƒeƒNƒXƒ`ƒƒ‚ğ‘‚­
-		// V‹K‚Å“Ç‚İ‚ŞÛ‚Íh‚Ì‘Î‰‚·‚éenum‚ÉƒeƒNƒXƒ`ƒƒID‚ğ’Ç‰Á‚·‚é‚±‚Æ
+		// ã“ã“ã«èª­ã¿è¾¼ã‚€ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’æ›¸ã
+		// æ–°è¦ã§èª­ã¿è¾¼ã‚€éš›ã¯hã®å¯¾å¿œã™ã‚‹enumã«ãƒ†ã‚¯ã‚¹ãƒãƒ£IDã‚’è¿½åŠ ã™ã‚‹ã“ã¨
 
 		break;
 	case Scene::ID::MAIN_SCENE:
-		// ‚±‚±‚É“Ç‚İ‚ŞƒeƒNƒXƒ`ƒƒ‚ğ‘‚­
-		// V‹K‚Å“Ç‚İ‚ŞÛ‚Íh‚Ì‘Î‰‚·‚éenum‚ÉƒeƒNƒXƒ`ƒƒID‚ğ’Ç‰Á‚·‚é‚±‚Æ
-		m_rLibrary.LoadTextureFile(MAP_CHIP1, "Resource/Texture/MapChip.png");
+		// ã“ã“ã«èª­ã¿è¾¼ã‚€ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’æ›¸ã
+		// æ–°è¦ã§èª­ã¿è¾¼ã‚€éš›ã¯hã®å¯¾å¿œã™ã‚‹enumã«ãƒ†ã‚¯ã‚¹ãƒãƒ£IDã‚’è¿½åŠ ã™ã‚‹ã“ã¨
+    m_rLibrary.LoadTextureFile(MAP_CHIP1, "Resource/Texture/MapChip.png");
 		m_rLibrary.LoadTextureFile(MAP_CHIP2, "Resource/Texture/MapChip.png");
 		m_rLibrary.LoadTextureFile(MAP_CHIP3, "Resource/Texture/MapChip.png");
+		m_rLibrary.LoadTextureFile(ResourceManager::MainTex::Player_Standing1, "Resource/Texture/Player_Standing1.png");
 		break;
 	}
 }
@@ -49,7 +50,7 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 bool ResourceManager::CSVLoader(std::vector<std::vector<std::string>>& data_, const char delim_)
 {
 	std::ifstream csvFile("Resource/File/NinjaMap.csv");
-	MyAssert(csvFile, "ƒf[ƒ^‚ª“ü‚Á‚Ä‚¢‚Ü‚¹‚ñ");
+	MyAssert(csvFile, "ãƒ‡ãƒ¼ã‚¿ãŒå…¥ã£ã¦ã„ã¾ã›ã‚“");
 
 	std::string buf;
 
