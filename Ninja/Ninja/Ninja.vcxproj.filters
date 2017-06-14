@@ -111,11 +111,11 @@
     <ClCompile Include="Ui\Score.cpp">
       <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Ui</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Scene.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="GameManager\GameManager.cpp">
       <Filter>Main\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>Main\GameManager\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

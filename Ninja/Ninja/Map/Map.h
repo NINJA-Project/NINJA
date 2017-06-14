@@ -7,6 +7,9 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <vector>
+#include <string>
+
 class Library;
 
 class Map
@@ -18,13 +21,12 @@ public:
 	void Control();
 	void Draw();
 
-#pragma region ƒƒ“ƒo•Ï”
 private:
-	Library&	m_rLibrary;
-	const int	m_mapWidth;
-	const int	m_mapHeight;
-	const float	m_blockWidth;
-	const float	m_blockHeight;
+#pragma region ƒƒ“ƒo•Ï”
+	Library&								m_rLibrary;
+	std::vector<std::vector<std::string>>	m_csvData;
+	const float								m_kBlockWidth;
+	const float								m_kBlockHeight;
 #pragma endregion
 };
 

@@ -9,17 +9,18 @@
 #include <Library\DebugSystem.h>
 #include <Library.h>
 #include "../ResourceManager/ResourceManager.h"
+#include <iostream>
 
 Map::Map() : 
 m_rLibrary(Library::Instance()),
-m_mapWidth(15),
-m_mapHeight(20),
-m_blockWidth(64.0f),
-m_blockHeight(64.0f)
+m_kBlockWidth(64.0f),
+m_kBlockHeight(64.0f)
 {
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_blockWidth, m_blockHeight, 0.2f, 0.2f, 0.2f, 0.2f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_blockWidth, m_blockHeight, 0.4f, 0.4f, 0.2f, 0.2f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, m_blockWidth, m_blockHeight, 0.2f, 0.2f, 0.2f, 0.2f);
+	ResourceManager mapLoad;
+	mapLoad.CSVLoader(m_csvData);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP1, m_kBlockWidth, m_kBlockHeight, 0.2f, 1.0f, 0.0f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP2, m_kBlockWidth, m_kBlockHeight, 0.4f, 1.0f, 0.2f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP3, m_kBlockWidth, m_kBlockHeight, 0.6f, 1.0f, 0.4f, 0.0f);
 }
 
 Map::~Map()
@@ -34,5 +35,16 @@ void Map::Control()
 
 void Map::Draw()
 {
-
+	for (unsigned int row = 0; row < m_csvData.size(); row++)
+	{
+		std::vector<std::string> rec = m_csvData[row];
+		for (unsigned int col = 0; col < rec.size(); col++)
+		{
+			if (m_csvData[row][col] == "1")
+			{
+				m_rLibrary.DrawLeftTop(ResourceManager::MainTex::MAP_CHIP1, (col * m_kBlockWidth), (row * m_kBlockHeight));
+			}
+		}
+		
+	}
 }

@@ -5,11 +5,13 @@
 */
 
 #include "TitleScene.h"
+#include "../ResourceManager/ResourceManager.h"
 
 TitleScene::TitleScene() : 
 Scene(Scene::ID::TITLE_SCENE)
 {
-
+	ResourceManager titleSceneResource;
+	titleSceneResource.TexLoader(Scene::ID::TITLE_SCENE);
 }
 
 TitleScene::~TitleScene()

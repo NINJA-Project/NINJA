@@ -11,8 +11,8 @@
 
 namespace
 {
-	const int	clientWidth		= 1280;
-	const int	clientHeight	= 720;
+	const int	clientWidth		= 1920;
+	const int	clientHeight	= 1080;
 	const char*	title			= "Ninja";
 	const int	gameFPS			= 60;
 }

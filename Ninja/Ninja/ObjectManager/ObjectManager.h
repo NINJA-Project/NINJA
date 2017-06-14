@@ -1,12 +1,14 @@
 /**
  * @file	ObjectManager.h
- * @breif	o‚Ä‚­‚éƒIƒuƒWƒFƒNƒg‚ğŠÇ—‚µ‚Ä‚¢‚éƒNƒ‰ƒXƒwƒbƒ_
+ * @breif	å‡ºã¦ãã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç®¡ç†ã—ã¦ã„ã‚‹ã‚¯ãƒ©ã‚¹ãƒ˜ãƒƒãƒ€
  * @author	shibata
  */
 #include"../Character/CharacterManager.h"
 
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
+
+class MapManager;
 
 class ObjectManager
 {
@@ -19,6 +21,7 @@ public:
 
 private:
 	CharacterManager* m_pCharamanager;
+	MapManager*	m_pMapManager;
 
 };
 

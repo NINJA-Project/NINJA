@@ -14,6 +14,7 @@
 */
 #include <Library\Singleton.h>
 
+
 class GameDataManager : public Singleton<GameDataManager>
 {
 private:
@@ -23,7 +24,10 @@ private:
 
 public:
 
-};
+private:
+#pragma region ƒƒ“ƒo•Ï”
 
+#pragma endregion
+};
 
 #endif // !GAMEDATAMANAGER_H

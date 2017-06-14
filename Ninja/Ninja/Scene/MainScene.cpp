@@ -8,11 +8,14 @@
 #include <Library\Define.h>
 #include "MainScene.h"
 #include "../ObjectManager/ObjectManager.h"
+#include "../ResourceManager/ResourceManager.h"
 
 MainScene::MainScene() : 
 Scene(Scene::ID::MAIN_SCENE),
 m_pObjectManager(New ObjectManager)
 {
+	ResourceManager mainSceneResource;
+	mainSceneResource.TexLoader(Scene::ID::MAIN_SCENE);
 	MyAssert(m_pObjectManager, "データが入っていません");
 }
 
@@ -23,7 +26,6 @@ MainScene::~MainScene()
 
 Scene::ID MainScene::Control()
 {
-	// プレイヤーの挙動の更新 
 	m_pObjectManager->Control();
 	return Scene::ID::MAIN_SCENE;
 }

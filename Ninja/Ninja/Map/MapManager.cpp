@@ -5,15 +5,19 @@
  */
 
 #include "MapManager.h"
+#include "Map.h"
+#include <Library\DebugSystem.h>
+#include <Library\Define.h>
 
-MapManager::MapManager()
+MapManager::MapManager() : 
+m_pMap(New Map)
 {
 
 }
 
 MapManager::~MapManager()
 {
-
+	SafeDelete(m_pMap);
 }
 
 void MapManager::Control()
@@ -23,5 +27,5 @@ void MapManager::Control()
 
 void MapManager::Draw()
 {
-
+	m_pMap->Draw();
 }
