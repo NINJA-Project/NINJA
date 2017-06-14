@@ -24,11 +24,11 @@ MainScene::~MainScene()
 Scene::ID MainScene::Control()
 {
 	// プレイヤーの挙動の更新 
-
+	m_pObjectManager->Control();
 	return Scene::ID::MAIN_SCENE;
 }
 
 void MainScene::Draw()
 {
-	
+	m_pObjectManager->Draw();
 }

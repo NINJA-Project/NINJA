@@ -3,6 +3,7 @@
  * @breif	出てくるオブジェクトを管理しているクラスヘッダ
  * @author	shibata
  */
+#include"../Character/CharacterManager.h"
 
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
@@ -17,7 +18,7 @@ public:
 	void Draw();
 
 private:
-
+	CharacterManager* m_pCharamanager;
 
 };
 

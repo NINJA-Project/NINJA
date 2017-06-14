@@ -1,3 +1,9 @@
+/**
+* @file	CharacterManager.h
+* @breif	CharacterManagerクラスのヘッダ
+* @author	ichikawa
+*/
+
 #ifndef CHARACTERMANAGER_H
 #define CHARACTERMANAGER_H
 
@@ -20,10 +26,10 @@ public:
 
 private:
 #pragma region メンバ変数
-	Player* p_mPlayer;
+	Player* m_pPlayer;
 #pragma endregion
 
-	int player;
+	
 
 };
 #endif
