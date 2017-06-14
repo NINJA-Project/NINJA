@@ -146,24 +146,24 @@ void Library::ReleaseTexture(int index_)
 }
 
 //---------------------VerticesManagerクラスのパブリック関数-------------------------
-void Library::SetTexSize(int index_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
+void Library::SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
-	m_pVerticesManager->SetTexSize(index_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
+	m_pVerticesManager->SetTexSize(loadIndex_, drawIndex_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
 }
 
-void Library::DrawLeftTop(int index_, float posX_, float posY_)
+void Library::DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
-	m_pVerticesManager->DrawLeftTop(index_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(index_));
+	m_pVerticesManager->DrawLeftTop(loadIndex_, drawIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
-void Library::DrawCenter(int index_, float posX_, float posY_)
+void Library::DrawCenter(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
-	m_pVerticesManager->DrawCenter(index_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(index_));
+	m_pVerticesManager->DrawCenter(loadIndex_, drawIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
-void Library::SetColor(int index_, DWORD color_, int alpha_, int red_, int green_, int blue_)
+void Library::SetColor(int loadIndex_, int drawIndex_, DWORD color_, int alpha_, int red_, int green_, int blue_)
 {
-	m_pVerticesManager->SetColor(index_, color_, alpha_, red_, green_, blue_);
+	m_pVerticesManager->SetColor(loadIndex_, drawIndex_, color_, alpha_, red_, green_, blue_);
 }
 
 void Library::ReleaseAllVirtices()
@@ -171,9 +171,9 @@ void Library::ReleaseAllVirtices()
 	m_pVerticesManager->ReleaseAllVirtices();
 }
 
-void Library::ReleaseVirtices(int index_)
+void Library::ReleaseVirtices(int loadIndex_, int drawIndex_)
 {
-	m_pVerticesManager->ReleaseVirtices(index_);
+	m_pVerticesManager->ReleaseVirtices(loadIndex_, drawIndex_);
 }
 
 //---------------------SoundFileManagerクラスのパブリック関数--------------------------
