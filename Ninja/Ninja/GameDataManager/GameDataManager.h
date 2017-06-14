@@ -23,10 +23,30 @@ private:
 	virtual ~GameDataManager();
 
 public:
+	void SetPlayerLife(const int life_)
+	{
+		m_playerLife = life_;
+	}
 
-private:
+	int GetPlayerLife() const
+	{
+		return m_playerLife;
+	}
+
+	void SetScore(const int score_)
+	{
+		m_currentScore = score_;
+	}
+
+	int GetScore() const
+	{
+		return m_currentScore;
+	}
+
 #pragma region ƒƒ“ƒo•Ï”
-
+private:
+	int m_playerLife;
+	int m_currentScore;
 #pragma endregion
 };
 

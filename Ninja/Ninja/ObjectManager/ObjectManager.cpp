@@ -8,12 +8,14 @@
 #include "ObjectManager.h"
 #include "../Map/MapManager.h"
 #include "../Character/CharacterManager.h"
+#include "../Ui/UiManager.h"
 #include <Library\DebugSystem.h>
 #include <Library\Define.h>
 
 ObjectManager::ObjectManager():
 m_pMapManager(New MapManager),
-m_pCharamanager(New CharacterManager)
+m_pCharamanager(New CharacterManager),
+m_pUiManager(New UiManager)
 {
 
 }
@@ -21,6 +23,7 @@ m_pCharamanager(New CharacterManager)
 ObjectManager::~ObjectManager()
 {
 	SafeDelete(m_pMapManager);
+	SafeDelete(m_pUiManager);
 }
 
 void ObjectManager::Control()
@@ -32,4 +35,5 @@ void ObjectManager::Draw()
 {
 	m_pCharamanager->Draw();
 	m_pMapManager->Draw();
+	m_pUiManager->Draw();
 }
