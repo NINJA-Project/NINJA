@@ -32,10 +32,6 @@ protected:
 
 	//ƒ‰ƒCƒt•Ï”
 	int m_Life;
-
-	//ˆÚ“®‘¬“x•Ï”
-	float m_RunSpeed;
-
 };
 
 #endif

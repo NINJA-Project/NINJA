@@ -18,17 +18,19 @@ m_pPlayer(New Player)
 
 CharacterManager::~CharacterManager()
 {
-
+	SafeDelete(m_pPlayer);
 }
 
 void CharacterManager::Control()
 {
 	//Player‚Ì‹““®‚ðXV‚·‚é
 	m_pPlayer->Control();
+
+	m_pPlayer->Move();
 }
 
 void CharacterManager::Draw()
 {
-	// Player‚ð•`‰æ ntk
+	// Player‚ð•`‰æ
 	m_pPlayer->Draw();
 }

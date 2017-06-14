@@ -27,20 +27,31 @@ public:
 	//プレイヤー操作
 	void Control();
 
+	//プレイヤー移動処理
+	void Move();
+
 private:
 	Library& m_rLibrary;
 	
 	//プレイヤー影攻撃チェック変数
 	bool m_CanShadowAttack;
 
-	//プレイヤー移動処理
-	void Move();
+
 
 	//プレイヤー攻撃処理
 	void Attack();
 
 	//プレイヤー影攻撃
 	void ShadowAttack();
+
+	//プレイヤー高さ
+	const float m_kHeight;
+
+	//プレイヤー横幅
+	const float m_kWidth;
+
+	//移動速度変数
+	const float m_kRunSpeed;
 };
 
 #endif 
