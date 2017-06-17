@@ -10,7 +10,7 @@
 #include <Library\Define.h>
 
 
-CharacterManager::CharacterManager():
+CharacterManager::CharacterManager() : 
 m_pPlayer(New Player)
 {
 
@@ -18,7 +18,7 @@ m_pPlayer(New Player)
 
 CharacterManager::~CharacterManager()
 {
-
+	SafeDelete(m_pPlayer);
 }
 
 void CharacterManager::Control()

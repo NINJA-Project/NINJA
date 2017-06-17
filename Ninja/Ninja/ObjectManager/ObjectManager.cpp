@@ -23,6 +23,7 @@ m_pUiManager(New UiManager)
 ObjectManager::~ObjectManager()
 {
 	SafeDelete(m_pMapManager);
+	SafeDelete(m_pCharamanager);
 	SafeDelete(m_pUiManager);
 }
 
