@@ -18,9 +18,9 @@ m_kBlockHeight(64.0f)
 {
 	ResourceManager mapLoad;
 	mapLoad.CSVLoader(m_csvData);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP1, m_kBlockWidth, m_kBlockHeight, 0.2f, 1.0f, 0.0f, 0.0f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP2, m_kBlockWidth, m_kBlockHeight, 0.4f, 1.0f, 0.2f, 0.0f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP3, m_kBlockWidth, m_kBlockHeight, 0.6f, 1.0f, 0.4f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP1, m_kBlockWidth, m_kBlockHeight, 0.25f, 1.0f, 0.0f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP2, m_kBlockWidth, m_kBlockHeight, 0.5f, 1.0f, 0.25f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP3, m_kBlockWidth, m_kBlockHeight, 0.75f, 1.0f, 0.5f, 0.0f);
 }
 
 Map::~Map()
