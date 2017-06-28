@@ -8,7 +8,7 @@
 #include <Library.h>
 
 Logo::Logo(float width_, float height_, float posX_, float posY_, int texindex_, const char* pFilePath_) :
-m_rLibrary(Library::Instance()),
+m_rLibrary(Library::GetInstance()),
 m_posX(posX_),
 m_posY(posY_),
 m_width(width_),

@@ -1,15 +1,15 @@
 ﻿/**
- * @file	Define.h
+ * @file	Release.h
  * @breif	メモリリークの場所を教えてくれる定義ヘッダ
  * @author	shibata
  */
 
-#ifndef DEFINE_H
-#define DEFINE_H
+#ifndef RELEASE_H
+#define RELEASE_H
 
 // Release関数を使う開放関数
 template<typename Type>
-void SafeRelease(Type* type_)
+void SafeRelease(const Type& type_)
 {
 	if (type_ != NULL)
 	{
@@ -20,7 +20,7 @@ void SafeRelease(Type* type_)
 
 // 動的に確保したものを開放する関数
 template<typename Type>
-void SafeDelete(Type* type_)
+void SafeDelete(const Type& type_)
 {
 	if (type_ != NULL)
 	{
@@ -31,7 +31,7 @@ void SafeDelete(Type* type_)
 
 // 動的配列の開放関数
 template<typename Type>
-void SafeArrayDelete(Type* type_)
+void SafeArrayDelete(const Type& type_)
 {
 	if (type_ != NULL)
 	{
@@ -40,4 +40,4 @@ void SafeArrayDelete(Type* type_)
 	}
 }
 
-#endif // !DEFINE_H
+#endif // !RELEASE_H

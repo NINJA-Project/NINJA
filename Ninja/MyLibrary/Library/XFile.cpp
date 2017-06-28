@@ -6,10 +6,10 @@
 
 #include "XFile.h"
 #include "DirectX9.h"
-#include "Define.h"
+#include "CommoSystem.h"
 
 XFile::XFile() : 
-m_pD3Device(DirectX9::Instance().GetDevice()),
+m_pD3Device(DirectX9::GetInstance().GetDevice()),
 m_pMesh(NULL),
 m_pMeshMaterials(NULL),
 m_pMeshTextures(NULL),

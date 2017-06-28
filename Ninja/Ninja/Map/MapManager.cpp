@@ -6,8 +6,7 @@
 
 #include "MapManager.h"
 #include "Map.h"
-#include <Library\DebugSystem.h>
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 
 MapManager::MapManager() : 
 m_pMap(New Map)

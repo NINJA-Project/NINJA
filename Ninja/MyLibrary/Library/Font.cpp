@@ -6,11 +6,11 @@
 
 #include "Font.h"
 #include "DirectX9.h"
-#include "Define.h"
+#include "CommoSystem.h"
 
 Font::Font() : 
 m_pFont(NULL),
-m_pGraphicsDevice(DirectX9::Instance().GetDevice())
+m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
 		m_pGraphicsDevice,
@@ -32,7 +32,7 @@ m_pGraphicsDevice(DirectX9::Instance().GetDevice())
 
 Font::Font(int width_, int height_) : 
 m_pFont(NULL),
-m_pGraphicsDevice(DirectX9::Instance().GetDevice())
+m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
 		m_pGraphicsDevice,

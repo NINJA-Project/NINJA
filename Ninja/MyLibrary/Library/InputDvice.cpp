@@ -5,7 +5,7 @@
  */
 
 #include "InputDvice.h"
-#include "Define.h"
+#include "CommoSystem.h"
 
 InputDevice::InputDevice() :
 m_pDinput(NULL),

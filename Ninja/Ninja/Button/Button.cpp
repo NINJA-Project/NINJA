@@ -8,7 +8,7 @@
 #include <Library.h>
 
 Button::Button(float posX_, float posY_, int texindex_) :
-m_rLibrary(Library::Instance()),
+m_rLibrary(Library::GetInstance()),
 m_width(64.0f),
 m_height(64.0f),
 m_posX(posX_),

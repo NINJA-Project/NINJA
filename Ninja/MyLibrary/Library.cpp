@@ -15,8 +15,7 @@
 #include "Library\SoundFileManager.h"
 #include "Library\XFileManager.h"
 #include "Library\Font.h"
-#include "Library\Define.h"
-#include "Library\DebugSystem.h"
+#include "Library\CommoSystem.h"
 
 Library::Library() :
 m_pDirectX9(NULL),

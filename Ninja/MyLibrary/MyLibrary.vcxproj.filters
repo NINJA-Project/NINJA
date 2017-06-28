@@ -52,23 +52,23 @@
     <Filter Include="Library\Font">
       <UniqueIdentifier>{30827307-f3fa-4984-ac96-35f67bd2628e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="OftenUseSystem">
+    <Filter Include="CommonSystem">
       <UniqueIdentifier>{d806dacc-e3a5-464e-95ca-ae927016d7e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="OftenUseSystem\DebugSystem">
-      <UniqueIdentifier>{52ad21a9-b71f-4a98-8686-1c5701672515}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OftenUseSystem\Camera">
+    <Filter Include="CommonSystem\Camera">
       <UniqueIdentifier>{0144ea49-fa6f-416b-beaf-ba7416e270bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="OftenUseSystem\Light">
+    <Filter Include="CommonSystem\Light">
       <UniqueIdentifier>{d80fd5d6-f444-4fe1-a6d8-60f243361d0c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="OftenUseSystem\Define">
-      <UniqueIdentifier>{9b7642dd-0ba7-4d34-adae-4be432cbe0b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OftenUseSystem\Singleton">
+    <Filter Include="CommonSystem\Singleton">
       <UniqueIdentifier>{3fb2c811-9ea9-4ce5-a08e-c3cab82f8cf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Debug">
+      <UniqueIdentifier>{52ad21a9-b71f-4a98-8686-1c5701672515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Release">
+      <UniqueIdentifier>{9b7642dd-0ba7-4d34-adae-4be432cbe0b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,9 +111,6 @@
     <ClCompile Include="Library\Window.cpp">
       <Filter>Library\Window</Filter>
     </ClCompile>
-    <ClCompile Include="Library\DebugSystem.cpp">
-      <Filter>OftenUseSystem\DebugSystem</Filter>
-    </ClCompile>
     <ClCompile Include="Library\InputManager.cpp">
       <Filter>Library\InputManager</Filter>
     </ClCompile>
@@ -124,10 +121,13 @@
       <Filter>Library\Font</Filter>
     </ClCompile>
     <ClCompile Include="Library\Camera.cpp">
-      <Filter>OftenUseSystem\Camera</Filter>
+      <Filter>CommonSystem\Camera</Filter>
     </ClCompile>
     <ClCompile Include="Library\Light.cpp">
-      <Filter>OftenUseSystem\Light</Filter>
+      <Filter>CommonSystem\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Debug.cpp">
+      <Filter>CommonSystem\Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,9 +170,6 @@
     <ClInclude Include="Library\Window.h">
       <Filter>Library\Window</Filter>
     </ClInclude>
-    <ClInclude Include="Library\DebugSystem.h">
-      <Filter>OftenUseSystem\DebugSystem</Filter>
-    </ClInclude>
     <ClInclude Include="Library\InputManager.h">
       <Filter>Library\InputManager</Filter>
     </ClInclude>
@@ -183,16 +180,22 @@
       <Filter>Library\Font</Filter>
     </ClInclude>
     <ClInclude Include="Library\Camera.h">
-      <Filter>OftenUseSystem\Camera</Filter>
+      <Filter>CommonSystem\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Library\Light.h">
-      <Filter>OftenUseSystem\Light</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\Define.h">
-      <Filter>OftenUseSystem\Define</Filter>
+      <Filter>CommonSystem\Light</Filter>
     </ClInclude>
     <ClInclude Include="Library\Singleton.h">
-      <Filter>OftenUseSystem\Singleton</Filter>
+      <Filter>CommonSystem\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Debug.h">
+      <Filter>CommonSystem\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Release.h">
+      <Filter>CommonSystem\Release</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\CommoSystem.h">
+      <Filter>CommonSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,11 +6,11 @@
 
 #include "TextureFile.h"
 #include "DirectX9.h"
-#include "Define.h"
+#include "CommoSystem.h"
 
 TextureFile::TextureFile() : 
 m_pTexture(NULL),
-m_pGraphicsDevice(DirectX9::Instance().GetDevice())
+m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
 {
 
 }

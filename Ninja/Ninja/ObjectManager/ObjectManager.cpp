@@ -9,8 +9,7 @@
 #include "../Map/MapManager.h"
 #include "../Character/CharacterManager.h"
 #include "../Ui/UiManager.h"
-#include <Library\DebugSystem.h>
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 
 ObjectManager::ObjectManager():
 m_pMapManager(New MapManager),

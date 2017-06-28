@@ -6,8 +6,7 @@
 
 #include "CharacterManager.h"
 #include "Player.h"
-#include <Library\DebugSystem.h>
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 
 
 CharacterManager::CharacterManager():

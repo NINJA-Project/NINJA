@@ -9,9 +9,9 @@
 #include "../GameDataManager/GameDataManager.h"
 
 Ui::Ui() : 
-m_rLibrary(Library::Instance()),
+m_rLibrary(Library::GetInstance()),
 m_pos(0.0f, 0.0f),
-m_pGameData(&GameDataManager::Instance())
+m_pGameData(&GameDataManager::GetInstance())
 {
 
 }

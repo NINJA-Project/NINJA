@@ -7,10 +7,10 @@
 #include "SceneTransition.h"
 #include "Scene.h"
 #include "SceneFactory.h"
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 
 SceneTransition::SceneTransition() :
-m_pSceneFactory(&SceneFactory::Instance()),
+m_pSceneFactory(&SceneFactory::GetInstance()),
 m_pScene(NULL),
 m_nextSceneID(Scene::ID::LOGO_SCENE),
 m_currentSceneID(Scene::ID::LOGO_SCENE),

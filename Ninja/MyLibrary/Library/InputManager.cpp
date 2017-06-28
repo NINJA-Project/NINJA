@@ -6,13 +6,12 @@
 
 #include "InputManager.h"
 #include "InputKey.h"
-#include "Define.h"
-#include "DebugSystem.h"
+#include "CommoSystem.h"
 
 InputManager::InputManager() : 
 m_pInputKey(New InputKey)
 {
-	MyAssert(m_pInputKey, "NULLが入っています");
+//	MyAssert(m_pInputKey);
 }
 
 InputManager::~InputManager()

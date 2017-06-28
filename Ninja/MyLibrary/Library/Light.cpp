@@ -8,7 +8,7 @@
 #include "DirectX9.h"
 
 Light::Light() : 
-m_pGraphicsdevice(DirectX9::Instance().GetDevice())
+m_pGraphicsdevice(DirectX9::GetInstance().GetDevice())
 {
 	D3DXVECTOR3 direction_ = { 0.0f, 0.0f, 1.0f };
 	ZeroMemory(&m_light, sizeof(D3DLIGHT9));
@@ -25,7 +25,7 @@ m_pGraphicsdevice(DirectX9::Instance().GetDevice())
 }
 
 Light::Light(const D3DXVECTOR3& direction_) : 
-m_pGraphicsdevice(DirectX9::Instance().GetDevice())
+m_pGraphicsdevice(DirectX9::GetInstance().GetDevice())
 {
 	ZeroMemory(&m_light, sizeof(D3DLIGHT9));
 	m_light.Type = D3DLIGHT_DIRECTIONAL;

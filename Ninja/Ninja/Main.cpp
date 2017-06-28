@@ -5,8 +5,7 @@
  */
 
 #include <Library.h>
-#include <Library\DebugSystem.h>
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 #include "GameManager\GameManager.h"
 
 namespace
@@ -19,11 +18,11 @@ namespace
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
-	Library*		pLibrary = &Library::Instance();
-	DebugSystem*	pDebugSystem = New DebugSystem;
+	Library*		pLibrary = &Library::GetInstance();
+	Debug*			pDebug = New Debug;
 	GameManager*	pGameManager = NULL;
 
-	pDebugSystem->CheckMemoryLeaK();
+	pDebug->CheckMemoryLeaK();
 
 	pLibrary->InitLibrary(title, clientWidth, clientHeight, false);
 	pLibrary->Init3DDraw();
@@ -45,7 +44,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			Sleep(10);
 		}
 	}
-	SafeDelete(pDebugSystem);
+	SafeDelete(pDebug);
 	SafeDelete(pGameManager);
 	return 0;
 }

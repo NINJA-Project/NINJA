@@ -7,11 +7,11 @@
 
 #include "SoundFile.h"
 #include "SoundInterface.h"
-#include "Define.h"
+#include "CommoSystem.h"
 #include <tchar.h>
 
 SoundFile::SoundFile() :
-m_pDsound8(SoundInterface::Instance().GetSoundData()),
+m_pDsound8(SoundInterface::GetInstance().GetSoundData()),
 m_pDsoundBuffer(NULL)
 {
 }

@@ -11,7 +11,7 @@
 
 //コンストラクタ
 Player::Player():
-m_rLibrary(Library::Instance())
+m_rLibrary(Library::GetInstance())
 {
 	m_rLibrary.SetTexSize(ResourceManager::MainTex::Player_Standing1, 60.0f, 120.0f, 0.5f, 1.0f, 1.0f, 0.0f, 0.0f);
 }

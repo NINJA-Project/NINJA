@@ -6,7 +6,7 @@
 
 #include "TextureFileManager.h"
 #include "TextureFile.h"
-#include "DebugSystem.h"
+#include "CommoSystem.h"
 
 TextureFileManager::TextureFileManager()
 {

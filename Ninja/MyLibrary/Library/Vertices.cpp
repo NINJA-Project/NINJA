@@ -8,7 +8,7 @@
 #include "DirectX9.h"
 
 Vertices::Vertices() :
-m_pGraphicsDevice(DirectX9::Instance().GetDevice()),
+m_pGraphicsDevice(DirectX9::GetInstance().GetDevice()),
 m_texWidth(NULL),
 m_texHeight(NULL),
 m_texDepth(NULL),

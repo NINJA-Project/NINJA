@@ -6,13 +6,13 @@
 
 #include "Map.h"
 #include <stdio.h>
-#include <Library\DebugSystem.h>
+#include <Library\CommoSystem.h>
 #include <Library.h>
 #include "../ResourceManager/ResourceManager.h"
 #include <iostream>
 
 Map::Map() : 
-m_rLibrary(Library::Instance()),
+m_rLibrary(Library::GetInstance()),
 m_kBlockWidth(64.0f),
 m_kBlockHeight(64.0f)
 {

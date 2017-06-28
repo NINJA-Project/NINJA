@@ -4,8 +4,7 @@
 * @atuhor	shibata
 */
 
-#include <Library\DebugSystem.h>
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 #include "MainScene.h"
 #include "../ObjectManager/ObjectManager.h"
 #include "../ResourceManager/ResourceManager.h"
@@ -16,7 +15,7 @@ m_pObjectManager(New ObjectManager)
 {
 	ResourceManager mainResource;
 	mainResource.TexLoader(Scene::ID::MAIN_SCENE);
-	MyAssert(m_pObjectManager, "データが入っていません");
+//	MyAssert(m_pObjectManager, "データが入っていません");
 }
 
 MainScene::~MainScene()

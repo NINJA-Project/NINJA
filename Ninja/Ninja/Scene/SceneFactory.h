@@ -8,7 +8,6 @@
 #define SCENEFACTORY_H
 
 #include "Scene.h"
-#include <Library\DebugSystem.h>
 #include <Library\Singleton.h>
 
 class SceneFactory : public Singleton<SceneFactory>

@@ -7,15 +7,14 @@
 #include "GameManager.h"
 #include "../Scene/SceneTransition.h"
 #include <Library.h>
-#include <Library\DebugSystem.h>
-#include <Library\Define.h>
+#include <Library\CommoSystem.h>
 
 GameManager::GameManager() :
-m_rLibrary(Library::Instance()),
+m_rLibrary(Library::GetInstance()),
 m_pSceneTransition(New SceneTransition),
 m_isGameEnd(false)
 {
-	MyAssert(m_pSceneTransition, "データが入っていません");
+//	MyAssert(m_pSceneTransition, "データが入っていません");
 }
 
 GameManager::~GameManager()

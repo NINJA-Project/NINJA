@@ -8,7 +8,7 @@
 #include "InputDvice.h"
 
 InputKey::InputKey() : 
-m_pKeyDevice(InputDevice::Instance().GetKeyDevice())
+m_pKeyDevice(InputDevice::GetInstance().GetKeyDevice())
 {
 	for (int i = 0; i < 256; i++)
 	{

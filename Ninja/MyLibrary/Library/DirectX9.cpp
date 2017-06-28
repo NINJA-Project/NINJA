@@ -5,7 +5,7 @@
  */
 
 #include "DirectX9.h"
-#include "Define.h"
+#include "CommoSystem.h"
 
 DirectX9::DirectX9() :
 m_pDirect3D(NULL),

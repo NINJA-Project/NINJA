@@ -6,7 +6,7 @@
 
 #include "SoundFileManager.h"
 #include "SoundFile.h"
-#include "DebugSystem.h"
+#include "CommoSystem.h"
 
 SoundFileManager::SoundFileManager()
 {

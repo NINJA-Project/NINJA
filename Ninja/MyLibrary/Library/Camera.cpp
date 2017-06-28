@@ -8,7 +8,7 @@
 #include "DirectX9.h"
 
 Camera::Camera() : 
-m_pGraphicsDevice(DirectX9::Instance().GetDevice()),
+m_pGraphicsDevice(DirectX9::GetInstance().GetDevice()),
 m_winWidth(0),
 m_winHeight(0)
 {
