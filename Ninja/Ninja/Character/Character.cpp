@@ -8,8 +8,7 @@
 
 //コンストラクタ
 Character::Character():
-m_Pos(D3DXVECTOR2(0, 0)),
-m_RunSpeed(Character::m_RunSpeed)
+m_Pos(D3DXVECTOR2(100, 200))
 {
 
 }

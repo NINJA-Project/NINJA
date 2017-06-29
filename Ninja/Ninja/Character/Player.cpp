@@ -11,9 +11,13 @@
 
 //コンストラクタ
 Player::Player():
-m_rLibrary(Library::GetInstance())
+m_rLibrary(Library::Instance()),
+m_kWidth(80.0f),
+m_kHeight(120.0f),
+m_kRunSpeed(5.0f)
 {
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::Player_Standing1, 60.0f, 120.0f, 0.5f, 1.0f, 1.0f, 0.0f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::Player_Standing1, m_kWidth, m_kHeight, 1.0f, 1.0f, 0.0f, 0.0f, 0.5f);
+	
 }
 
 //デストラクタ
@@ -39,21 +43,21 @@ void Player::Move()
 {
 	if (m_rLibrary.CheckKey(DIK_W) == ON)
 	{
-		m_Pos.x += m_RunSpeed;
+		m_Pos.y -= m_kRunSpeed;
 	}
 
 	if (m_rLibrary.CheckKey(DIK_S) == ON)
 	{
-		m_Pos.x -= m_RunSpeed;
+		m_Pos.y += m_kRunSpeed;
 	}
 
 	if (m_rLibrary.CheckKey(DIK_A) == ON)
 	{
-		m_Pos.y -= m_RunSpeed;
+		m_Pos.x -= m_kRunSpeed;
 	}
 
 	if (m_rLibrary.CheckKey(DIK_D) == ON)
 	{
-		m_Pos.y += m_RunSpeed;
+		m_Pos.x += m_kRunSpeed;
 	}
 }
