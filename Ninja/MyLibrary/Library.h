@@ -179,7 +179,7 @@ public:
 	* @note maxTu, maxTvのデフォルト値は1.0f
 	* @note minTu, minTvのデフォルト値は0.0f
 	*/
-	void SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_);
+	void SetTexSize(int index_, float width_, float height_, float maxTu_ = 1.0f, float maxTv_ = 1.0f, float minTu_ = 0.0f, float minTv_ = 0.0f, float depth_ = 0.5f);
 
 	/**
 	* 左上からの描画関数
@@ -187,7 +187,7 @@ public:
 	* @param [in] posX_			x座標
 	* @param [in] posY_			y座標
 	*/
-	void DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_);
+	void DrawLeftTop(int index_, float posX_, float posY_);
 
 	/**
 	* 中心からの描画関数
@@ -195,7 +195,7 @@ public:
 	* @param [in] posX_			x座標
 	* @param [in] posY_			y座標
 	*/
-	void DrawCenter(int loadIndex_, int drawIndex_, float posX_, float posY_);
+	void DrawCenter(int index_, float posX_, float posY_);
 
 	/**
 	* 色の変更する関数
@@ -207,7 +207,7 @@ public:
 	* @param [in] blue_	変更する青の値
 	* @note rbgaのデフォルト値は255
 	*/
-	void SetColor(int loadIndex_, int drawIndex_, DWORD color_, int alpha_ = 255, int red_ = 255, int green_ = 255, int blue_ = 255);
+	void SetColor(int index_, DWORD color_, int alpha_ = 255, int red_ = 255, int green_ = 255, int blue_ = 255);
 
 	/**全ての頂点データの解放関数*/
 	void ReleaseAllVirtices();
@@ -216,7 +216,7 @@ public:
 	* 一部の頂点データの解放関数
 	* @param [in] index_	解放する配列番号
 	*/
-	void ReleaseVirtices(int loadIndex_, int drawIndex_);
+	void ReleaseVirtices(int index_);
 #pragma endregion
 
 #pragma region SoundFileManagerクラスのパブリック関数

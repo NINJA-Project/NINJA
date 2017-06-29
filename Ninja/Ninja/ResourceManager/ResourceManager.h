@@ -34,7 +34,9 @@ public:
 #pragma region メインシーンのテクスチャID
 	enum MainTex
 	{
-		MAP_CHIP,
+		MAP_CHIP1,
+		MAP_CHIP2,
+		MAP_CHIP3,
 		Player_Standing1,		//プレイヤー立ち絵
 		//Player_Standeing2,		//プレイヤー立ち絵2
 	//	Player_Run1,			//プレイヤー走り

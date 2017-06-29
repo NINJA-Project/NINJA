@@ -21,13 +21,6 @@ public:
 	void Control();
 	void Draw();
 
-	enum
-	{
-		MAP_CHIP1,
-		MAP_CHIP2,
-		MAP_CHIP3,
-	};
-
 private:
 #pragma region ƒƒ“ƒo•Ï”
 	Library&								m_rLibrary;
