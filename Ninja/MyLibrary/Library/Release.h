@@ -9,7 +9,7 @@
 
 // Release関数を使う開放関数
 template<typename Type>
-void SafeRelease(const Type& type_)
+void SafeRelease(Type& type_)
 {
 	if (type_ != NULL)
 	{
@@ -20,7 +20,7 @@ void SafeRelease(const Type& type_)
 
 // 動的に確保したものを開放する関数
 template<typename Type>
-void SafeDelete(const Type& type_)
+void SafeDelete(Type& type_)
 {
 	if (type_ != NULL)
 	{
@@ -31,7 +31,7 @@ void SafeDelete(const Type& type_)
 
 // 動的配列の開放関数
 template<typename Type>
-void SafeArrayDelete(const Type& type_)
+void SafeArrayDelete(Type& type_)
 {
 	if (type_ != NULL)
 	{

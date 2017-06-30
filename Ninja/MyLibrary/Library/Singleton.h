@@ -21,15 +21,16 @@ public:
 	{
 		if (!m_isCreateInstace)
 		{
-			MyAssert(m_instance, "NULLが入っており生成できません");
+			MyAssert(&m_instance, "NULLが入っており生成できません");
+			CreateInstace();
 		}
-		CreateInstace();
+		
 		return *m_instance;
 	}
 
 protected:
 	Singleton() {}
-	virtual ~Singleton() {}
+	virtual ~Singleton() { DestroyInstance(); }
 
 private:
 #pragma region メンバ関数
