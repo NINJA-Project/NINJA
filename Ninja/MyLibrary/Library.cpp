@@ -46,14 +46,14 @@ void Library::InitLibrary(const char* titleName_, int clientWidth_, int clientHe
 	m_pWindow = New Window;
 	m_pWindow->Create(titleName_, clientWidth_, clientHeight_, isFullScreen_);
 
-	m_pDirectX9 = &DirectX9::Instance();
+	m_pDirectX9 = &DirectX9::GetInstance();
 	m_pDirectX9->InitDirectX(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_);
 
-	m_pInputDevice = &InputDevice::Instance();
+	m_pInputDevice = &InputDevice::GetInstance();
 	m_pInputDevice->InitInput();
 	m_pInputDevice->InitInputKey(m_pWindow->GetHwnd());
 
-	m_pSoundInterface = &SoundInterface::Instance();
+	m_pSoundInterface = &SoundInterface::GetInstance();
 	m_pSoundInterface->InitSound(m_pWindow->GetHwnd());
 
 	m_pInputManager			= New InputManager;

@@ -70,6 +70,9 @@
     <Filter Include="CommonSystem\Release">
       <UniqueIdentifier>{9b7642dd-0ba7-4d34-adae-4be432cbe0b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CommonSystem\Template">
+      <UniqueIdentifier>{924e4f77-5618-4d70-b64f-87a0a3943339}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -196,6 +199,9 @@
     </ClInclude>
     <ClInclude Include="Library\CommoSystem.h">
       <Filter>CommonSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Template.h">
+      <Filter>CommonSystem\Template</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

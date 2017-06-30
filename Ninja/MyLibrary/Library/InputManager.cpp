@@ -11,7 +11,7 @@
 InputManager::InputManager() : 
 m_pInputKey(New InputKey)
 {
-//	MyAssert(m_pInputKey);
+//	MyAssert(&m_pInputKey, "NULL");
 }
 
 InputManager::~InputManager()

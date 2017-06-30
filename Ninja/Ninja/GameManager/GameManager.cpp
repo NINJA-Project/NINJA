@@ -14,7 +14,7 @@ m_rLibrary(Library::GetInstance()),
 m_pSceneTransition(New SceneTransition),
 m_isGameEnd(false)
 {
-//	MyAssert(m_pSceneTransition, "データが入っていません");
+	MyAssert(&m_pSceneTransition, "データが入っていません");
 }
 
 GameManager::~GameManager()

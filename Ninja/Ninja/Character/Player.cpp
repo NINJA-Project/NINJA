@@ -11,7 +11,7 @@
 
 //コンストラクタ
 Player::Player():
-m_rLibrary(Library::Instance()),
+m_rLibrary(Library::GetInstance()),
 m_kWidth(80.0f),
 m_kHeight(120.0f),
 m_kRunSpeed(5.0f)
