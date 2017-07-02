@@ -50,7 +50,9 @@ void ResourceManager::TexLoader(Scene::ID currentID_)
 bool ResourceManager::CSVLoader(std::vector<std::vector<std::string>>& data_, const char delim_)
 {
 	std::ifstream csvFile("Resource/File/NinjaMap.csv");
-//	MyAssert(csvFile, "データが入っていません");
+#if _DEBUG
+	MyAssert(csvFile, "データが入っていません");
+#endif // _DEBUG	
 
 	std::string buf;
 

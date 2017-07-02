@@ -6,7 +6,7 @@
 
 #include "Debug.h"
 #include <stdarg.h>
-#include <Windows.h>
+#include <stdio.h>
 
 
 namespace

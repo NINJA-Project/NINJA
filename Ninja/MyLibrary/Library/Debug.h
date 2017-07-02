@@ -8,7 +8,6 @@
 #define DEBUG_H
 
 #include <crtdbg.h>
-#include <string>
 #include <Windows.h>
 
 // メモリを動的に確保するときに使うnewは必ずNewの方を使ってください
@@ -21,15 +20,12 @@
 #pragma endregion
 // 意図しない動作を防ぐためのマクロ
 #pragma region カスタムAssertの定義
-template<typename Type>
-void MyAssert(const Type&& type_, std::string str_)
-{
-	if (nullptr == type_)
-	{
-		const std::string outputStr(str_);
-		OutputDebugString(outputStr.c_str());
-		DebugBreak();
-	}
+#define MyAssert(expression_, str_)																										\
+if(!expression_)																														\
+{																																		\
+	Debug debug;																														\
+	debug.OutputDebugLog("\nAssert!! : %s\n Factor : %s\n FileName : %s\n Line : %d\n\n", #expression_, str_, __FILE__, __LINE__);		\
+	DebugBreak();																														\
 }
 #pragma endregion
 
