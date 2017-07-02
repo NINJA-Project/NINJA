@@ -1,11 +1,11 @@
 ﻿/**
  * @file	Library.cpp
- * @breif	ライブラリ全体の通り道のクラス実装
+ * @breif	ライブラリ全体の統括クラス実装
  * @author	shibata
  */
 
 #include "Library.h"
-#include "Library\DirectX9.h"
+#include "Library\GraphicsDevice.h"
 #include "Library\InputDvice.h"
 #include "Library\SoundInterface.h"
 #include "Library\InputManager.h"
@@ -18,7 +18,7 @@
 #include "Library\CommoSystem.h"
 
 Library::Library() :
-m_pDirectX9(NULL),
+m_pGraphicsDevice(nullptr),
 m_pInputDevice(NULL),
 m_pSoundInterface(NULL),
 m_pInputManager(NULL),
@@ -39,18 +39,18 @@ Library::~Library()
 	SafeDelete(m_pSoundFileManager);
 	SafeDelete(m_pTextureFileManager);
 	SafeDelete(m_pVerticesManager);
-	m_pDirectX9->DestroyInstance();
-	m_pInputDevice->DestroyInstance();
 	m_pSoundInterface->DestroyInstance();
+	m_pInputDevice->DestroyInstance();
+	m_pGraphicsDevice->DestroyInstance();
 }
 
-void Library::InitLibrary(const char* titleName_, int clientWidth_, int clientHeight_, bool isFullScreen_)
+void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_, bool is3D_)
 {
 	m_pWindow = New Window;
-	m_pWindow->Create(titleName_, clientWidth_, clientHeight_, isFullScreen_);
+	m_pWindow->Create(pWindowName_, clientWidth_, clientHeight_, isFullScreen_);
 
-	m_pDirectX9 = &DirectX9::GetInstance();
-	m_pDirectX9->InitDirectX(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_);
+	m_pGraphicsDevice = &GraphicsDevice::GetInstance();
+	m_pGraphicsDevice->Initialize(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_, is3D_);
 
 	m_pInputDevice = &InputDevice::GetInstance();
 	m_pInputDevice->InitInput();
@@ -86,27 +86,22 @@ int Library::GetWinHeight()
 //---------------------DirectX9クラスのパブリック関数--------------------------------
 void Library::SetFVF(DWORD fvf_)
 {
-	m_pDirectX9->SetFVF(fvf_);
+	m_pGraphicsDevice->SetFVF(fvf_);
 }
 
-void Library::DrawStart()
+void Library::RenderStarting()
 {
-	m_pDirectX9->DrawStart();
+	m_pGraphicsDevice->RenderStarting();
 }
 
-void Library::DrawEnd()
+void Library::RenderEnding()
 {
-	m_pDirectX9->DrawEnd();
-}
-
-void Library::Init3DDraw()
-{
-	m_pDirectX9->Init3DDraw();
+	m_pGraphicsDevice->RenderEnding();
 }
 
 LPDIRECT3DDEVICE9 Library::GetDevice()
 {
-	return m_pDirectX9->GetDevice();
+	return m_pGraphicsDevice->GetDevice();
 }
 
 //---------------------InputManagerクラスのパブリック関数----------------------------

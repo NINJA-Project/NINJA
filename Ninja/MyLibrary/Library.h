@@ -1,6 +1,6 @@
 ﻿/**
  * @file	Library.h
- * @breif	ライブラリ全体の通り道のクラスヘッダ
+ * @breif	ライブラリ全体の統括クラスヘッダ
  * @author	shibata
  */
 
@@ -17,7 +17,7 @@
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
 #pragma region 前方宣言
-class DirectX9;
+class GraphicsDevice;
 class InputManager;
 class InputDevice;
 class SoundInterface;
@@ -28,6 +28,7 @@ class SoundFileManager;
 class XFileManager;
 #pragma endregion 
 
+#pragma region サウンド状態のenum
 /// サウンドを鳴らす状態
 enum SoundMode
 {
@@ -38,7 +39,9 @@ enum SoundMode
 	RESET_PLAY,
 	RESET_STOP,
 };
+#pragma endregion
 
+#pragma region キー状態のenum
 /// キーの状態
 enum KeyState
 {
@@ -47,6 +50,7 @@ enum KeyState
 	ON,
 	OFF
 };
+#pragma endregion
 
 class Library : public Singleton<Library>
 {
@@ -55,18 +59,19 @@ private:
 	/**コンストラクタ*/
 	Library();
 	/**デストラクタ*/
-	virtual ~Library();
+	~Library();
 
 public:		// Libraryクラスのパブリック関数
 
 	/**
-	 * ライブラリを使用できるようにする関数
-	 * @param [in] titleName_		ゲームのタイトル
+	 * ライブラリ初期化関数
+	 * @param [in] pWindowName_		ウィンドウタイトル
 	 * @param [in] clientWidth_		画面横幅のサイズ
 	 * @param [in] clientHeiht_		画面縦幅のサイズ
-	 * @param [in] isFullScreen_	フルスクリーンにするかどうか
+	 * @param [in] isFullScreen_	フルスクリーンにするかどうか			@note デフォルト値は false 
+	 * @param [in] is3D_			3Dを使用するかどうか					@note デフォルト値は false
 	 */
-	void InitLibrary(const char* titleName_, int clientWidth_, int clientHeight_, bool isFullScreen_);
+	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_ = false, bool is3D_ = false);
 
 #pragma region Windowクラスのパブリック関数
 public:
@@ -86,29 +91,22 @@ public:
 	int GetWinHeight();
 #pragma endregion
 
-#pragma region DirectX9クラスのパブリック関数
+#pragma region GraphicsDeviceクラスのパブリック関数
 public:
 	/**
-	* 頂点フォーマットの設定関数
-	* @param [in] fvf_ 頂点フォーマットの設定
-	* @note デフォルトはD3DFVF_CUSTOMVERTEXの定義
+	* 頂点フォーマット設定関数
+	* @param [in] fvf_ 頂点フォーマットの設定				@note デフォルト値は D3DFVF_CUSTOMVERTEX
 	*/
 	void SetFVF(DWORD fvf_ = D3DFVF_CUSTOMVERTEX);
 
-	/**描画初めの関数*/
-	void DrawStart();
+	/**描画開始関数*/
+	void RenderStarting();
 
-	/**描画終わりの関数*/
-	void DrawEnd();
-
-	/**
-	* 描画初期化関数
-	* @note 3Dを描画するときに使用
-	*/
-	void Init3DDraw();
+	/**描画終了関数*/
+	void RenderEnding();
 
 	/**
-	 * デバイス情報の取得関数
+	 * デバイス取得関数
 	 * @return デバイス情報
 	 */
 	LPDIRECT3DDEVICE9 GetDevice();
@@ -302,9 +300,10 @@ public:
 	*/
 	void DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_ = DT_LEFT, int red_ = 255, int green_ = 255, int blue_ = 255);
 #pragma endregion
-private:
+
 #pragma region メンバ変数
-	DirectX9*				m_pDirectX9;
+private:
+	GraphicsDevice*			m_pGraphicsDevice;
 	InputDevice*			m_pInputDevice;
 	SoundInterface*			m_pSoundInterface;
 	InputManager*			m_pInputManager;

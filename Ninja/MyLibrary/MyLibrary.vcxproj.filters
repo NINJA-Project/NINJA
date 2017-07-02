@@ -8,10 +8,6 @@
     <Filter Include="Library\InputDvice">
       <UniqueIdentifier>{aaed0762-8042-4f69-b00a-a524d8ca4b43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\DirectX9">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Library\SoundInterface">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -70,13 +66,14 @@
     <Filter Include="CommonSystem\Release">
       <UniqueIdentifier>{9b7642dd-0ba7-4d34-adae-4be432cbe0b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Library\GraphicsDevice">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
       <Filter>Library</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\DirectX9.cpp">
-      <Filter>Library\DirectX9</Filter>
     </ClCompile>
     <ClCompile Include="Library\InputDvice.cpp">
       <Filter>Library\InputDvice</Filter>
@@ -129,13 +126,13 @@
     <ClCompile Include="Library\Debug.cpp">
       <Filter>CommonSystem\Debug</Filter>
     </ClCompile>
+    <ClCompile Include="Library\GraphicsDevice.cpp">
+      <Filter>Library\GraphicsDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library.h">
       <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\DirectX9.h">
-      <Filter>Library\DirectX9</Filter>
     </ClInclude>
     <ClInclude Include="Library\InputDvice.h">
       <Filter>Library\InputDvice</Filter>
@@ -196,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="Library\CommoSystem.h">
       <Filter>CommonSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\GraphicsDevice.h">
+      <Filter>Library\GraphicsDevice</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

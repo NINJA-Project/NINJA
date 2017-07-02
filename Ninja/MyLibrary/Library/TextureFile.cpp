@@ -5,12 +5,12 @@
  */
 
 #include "TextureFile.h"
-#include "DirectX9.h"
+#include "GraphicsDevice.h"
 #include "CommoSystem.h"
 
 TextureFile::TextureFile() : 
 m_pTexture(NULL),
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 
 }

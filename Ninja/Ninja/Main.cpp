@@ -24,8 +24,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	pDebug->CheckMemoryLeaK();
 
-	pLibrary->InitLibrary(title, clientWidth, clientHeight, false);
-	pLibrary->Init3DDraw();
+	pLibrary->Initialize(title, clientWidth, clientHeight);
 
 	pGameManager = New GameManager;
 	DWORD currentTime;

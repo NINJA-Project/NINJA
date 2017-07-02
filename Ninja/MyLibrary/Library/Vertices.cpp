@@ -5,10 +5,10 @@
  */
 
 #include "Vertices.h"
-#include "DirectX9.h"
+#include "GraphicsDevice.h"
 
 Vertices::Vertices() :
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice()),
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice()),
 m_texWidth(NULL),
 m_texHeight(NULL),
 m_texDepth(NULL),

@@ -78,7 +78,7 @@
     <ClCompile Include="Library\Camera.cpp" />
     <ClCompile Include="Library\Font.cpp" />
     <ClCompile Include="Library\Debug.cpp" />
-    <ClCompile Include="Library\DirectX9.cpp" />
+    <ClCompile Include="Library\GraphicsDevice.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="Library\InputDvice.cpp" />
     <ClCompile Include="Library\InputKey.cpp" />
@@ -110,7 +110,7 @@
     <ClInclude Include="Library\VerticesManager.h" />
     <ClInclude Include="Library\XFile.h" />
     <ClInclude Include="Library\XFileManager.h" />
-    <ClInclude Include="Library\DirectX9.h" />
+    <ClInclude Include="Library\GraphicsDevice.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Library\InputDvice.h" />
     <ClInclude Include="Library\SoundInterface.h" />

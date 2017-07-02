@@ -5,12 +5,12 @@
  */
 
 #include "Font.h"
-#include "DirectX9.h"
+#include "GraphicsDevice.h"
 #include "CommoSystem.h"
 
 Font::Font() : 
 m_pFont(NULL),
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
 		m_pGraphicsDevice,
@@ -32,7 +32,7 @@ m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
 
 Font::Font(int width_, int height_) : 
 m_pFont(NULL),
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
 		m_pGraphicsDevice,
