@@ -55,7 +55,7 @@ private:
 	/**コンストラクタ*/
 	Library();
 	/**デストラクタ*/
-	virtual ~Library();
+	~Library();
 
 public:		// Libraryクラスのパブリック関数
 

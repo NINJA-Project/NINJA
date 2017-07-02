@@ -6,7 +6,7 @@
 
 #include "TextureFile.h"
 #include "DirectX9.h"
-#include "CommoSystem.h"
+#include "Release.h"
 
 TextureFile::TextureFile() : 
 m_pTexture(NULL),

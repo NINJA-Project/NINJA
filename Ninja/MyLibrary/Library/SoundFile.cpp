@@ -7,7 +7,7 @@
 
 #include "SoundFile.h"
 #include "SoundInterface.h"
-#include "CommoSystem.h"
+#include "Release.h"
 #include <tchar.h>
 
 SoundFile::SoundFile() :

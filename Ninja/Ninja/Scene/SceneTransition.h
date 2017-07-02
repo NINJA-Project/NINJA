@@ -29,8 +29,9 @@ private:
 	};
 #pragma endregion
 
-private:
+
 #pragma region メンバ変数
+private:
 	SceneFactory*	m_pSceneFactory;
 	Scene*			m_pScene;
 	Scene::ID		m_nextSceneID;

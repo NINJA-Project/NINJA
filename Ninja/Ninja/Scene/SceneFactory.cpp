@@ -8,7 +8,7 @@
 #include "LogoScene.h"
 #include "MainScene.h"
 #include "TitleScene.h"
-#include <Library\CommoSystem.h>
+#include <Library\Debug.h>
 
 SceneFactory::SceneFactory()
 {

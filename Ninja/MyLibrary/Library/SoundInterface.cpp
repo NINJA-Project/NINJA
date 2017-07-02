@@ -5,7 +5,7 @@
 */
 
 #include "SoundInterface.h"
-#include "CommoSystem.h"
+#include "Release.h"
 
 SoundInterface::SoundInterface() :
 m_pDsound8(NULL)

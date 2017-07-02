@@ -6,7 +6,8 @@
 
 #include "XFile.h"
 #include "DirectX9.h"
-#include "CommoSystem.h"
+#include "Release.h"
+
 
 XFile::XFile() : 
 m_pD3Device(DirectX9::GetInstance().GetDevice()),

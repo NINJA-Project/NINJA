@@ -20,7 +20,7 @@ class GameDataManager : public Singleton<GameDataManager>
 private:
 	friend Singleton<GameDataManager>;
 	GameDataManager();
-	virtual ~GameDataManager();
+	~GameDataManager();
 
 public:
 	void SetPlayerLife(const int life_)

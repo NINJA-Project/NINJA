@@ -6,7 +6,7 @@
 
 #include "VerticesManager.h"
 #include "Vertices.h"
-#include "CommoSystem.h"
+#include "Debug.h"
 
 VerticesManager::VerticesManager()
 {

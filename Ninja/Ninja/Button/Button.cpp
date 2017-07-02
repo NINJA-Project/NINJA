@@ -7,6 +7,8 @@
 #include "Button.h"
 #include <Library.h>
 
+/// @TODO 後に、クラスの仕様変更をする
+
 Button::Button(float posX_, float posY_, int texindex_) :
 m_rLibrary(Library::GetInstance()),
 m_width(64.0f),

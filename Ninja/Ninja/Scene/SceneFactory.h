@@ -15,7 +15,7 @@ class SceneFactory : public Singleton<SceneFactory>
 private:
 	friend Singleton<SceneFactory>;
 	SceneFactory();
-	virtual ~SceneFactory();
+	~SceneFactory();
 
 public:
 

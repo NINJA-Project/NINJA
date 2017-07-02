@@ -5,11 +5,8 @@
  */
 
 #include "Map.h"
-#include <stdio.h>
-#include <Library\CommoSystem.h>
 #include <Library.h>
 #include "../ResourceManager/ResourceManager.h"
-#include <iostream>
 
 Map::Map() : 
 m_rLibrary(Library::GetInstance()),

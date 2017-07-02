@@ -7,6 +7,8 @@
 #include "Logo.h"
 #include <Library.h>
 
+/// @TODO 後に、クラスの仕様変更をする
+
 Logo::Logo(float width_, float height_, float posX_, float posY_, int texindex_, const char* pFilePath_) :
 m_rLibrary(Library::GetInstance()),
 m_posX(posX_),

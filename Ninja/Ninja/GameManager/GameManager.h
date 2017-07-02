@@ -19,8 +19,9 @@ public:
 
 	bool Update();
 
-private:
+
 #pragma region メンバ変数
+private:
 	Library&			m_rLibrary;
 	SceneTransition*	m_pSceneTransition;
 	bool				m_isGameEnd;
