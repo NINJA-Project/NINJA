@@ -18,5 +18,5 @@ m_pGameData(&GameDataManager::GetInstance())
 
 Ui::~Ui()
 {
-
+	m_pGameData->DestroyInstance();
 }

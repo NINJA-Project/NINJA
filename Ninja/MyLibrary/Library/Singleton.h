@@ -14,23 +14,28 @@ class Singleton
 {
 public:
 	/**
-	* インスタンス取得関数
-	* @return m_instance インスタンス情報
-	*/
+	 * インスタンス取得関数
+	 * @return *m_instance インスタンス情報
+	 */
 	static Type& GetInstance()
 	{
 		if (!m_isCreateInstace)
 		{
-			MyAssert(&m_instance, "NULLが入っており生成できません");
 			CreateInstace();
 		}
-		
 		return *m_instance;
+	}
+
+	/**インスタンス削除関数*/
+	static void DestroyInstance()
+	{
+		delete m_instance;
+		m_instance = nullptr;
 	}
 
 protected:
 	Singleton() {}
-	virtual ~Singleton() { DestroyInstance(); }
+	virtual ~Singleton() {}
 
 private:
 #pragma region メンバ関数
@@ -39,13 +44,14 @@ private:
 	{
 		m_isCreateInstace = true;
 		m_instance = New Type;
+#if _DEBUG
+		if (nullptr == m_instance)
+		{
+			MyAssert(m_instance, "データが入っていません");
+		}
+#endif // _DEBUG
 	}
 
-	/**インスタンス削除関数*/
-	static void DestroyInstance()
-	{
-		delete m_instance;
-	}
 
 	Singleton(Singleton const&) = delete;
 	Singleton& operator=(Singleton const&) = delete;

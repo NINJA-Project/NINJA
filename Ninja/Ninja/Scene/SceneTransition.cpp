@@ -26,6 +26,7 @@ m_isControlEnd(false)
 SceneTransition::~SceneTransition()
 {
 	SafeDelete(m_pScene);
+	m_pSceneFactory->DestroyInstance();
 }
 
 bool SceneTransition::Control()

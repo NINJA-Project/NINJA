@@ -39,6 +39,9 @@ Library::~Library()
 	SafeDelete(m_pSoundFileManager);
 	SafeDelete(m_pTextureFileManager);
 	SafeDelete(m_pVerticesManager);
+	m_pDirectX9->DestroyInstance();
+	m_pInputDevice->DestroyInstance();
+	m_pSoundInterface->DestroyInstance();
 }
 
 void Library::InitLibrary(const char* titleName_, int clientWidth_, int clientHeight_, bool isFullScreen_)

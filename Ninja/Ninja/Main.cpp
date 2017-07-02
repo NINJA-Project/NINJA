@@ -46,5 +46,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	}
 	SafeDelete(pDebug);
 	SafeDelete(pGameManager);
+	pLibrary->DestroyInstance();
 	return 0;
 }
