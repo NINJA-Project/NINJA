@@ -5,6 +5,7 @@
  */
 
 #include "Window.h"
+#include "Directives.h"
 
 Window::Window() :
 m_clientWidth(0),
@@ -41,7 +42,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hWnd, iMsg, wParam, lParam);
 }
 
-void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, bool isFullScreen_)
+void Window::Create(const char* pWindowName_, int clientWidth_, int clientHeiht_)
 {
 	m_clientWidth	= clientWidth_;
 	m_clientHeight	= clientHeiht_;
@@ -59,17 +60,16 @@ void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, 
 		windowClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
 		windowClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 		windowClass.lpszMenuName  = NULL;
-		windowClass.lpszClassName = titleName_;
+		windowClass.lpszClassName = pWindowName_;
 		windowClass.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
 
 		RegisterClassEx(&windowClass);
 	}
 
-	if (isFullScreen_)
-	{
+#ifdef FULL_SCREEN
 		m_hWnd = CreateWindow(
-			titleName_,
-			titleName_,
+			pWindowName_,
+			pWindowName_,
 			WS_POPUP | WS_VISIBLE,
 			0,
 			0,
@@ -80,12 +80,11 @@ void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, 
 			GetModuleHandle(NULL),
 			NULL
 			);
-	}
-	else
-	{
+#elif defined(WINDOW_SCREEN)
+
 		m_hWnd = CreateWindow(
-			titleName_,
-			titleName_,
+			pWindowName_,
+			pWindowName_,
 			WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 			CW_USEDEFAULT,
 			CW_USEDEFAULT,
@@ -114,8 +113,7 @@ void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, 
 			m_clientHeight,
 			TRUE
 			);
-	}
-
+#endif
 	ShowWindow(m_hWnd, SW_SHOW);
 	UpdateWindow(m_hWnd);
 

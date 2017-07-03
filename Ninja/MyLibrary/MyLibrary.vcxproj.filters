@@ -197,5 +197,8 @@
     <ClInclude Include="Library\GraphicsDevice.h">
       <Filter>Library\GraphicsDevice</Filter>
     </ClInclude>
+    <ClInclude Include="Library\Directives.h">
+      <Filter>CommonSystem</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

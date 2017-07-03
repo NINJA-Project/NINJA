@@ -19,7 +19,7 @@
 
 Library::Library() :
 m_pGraphicsDevice(nullptr),
-m_pInputDevice(NULL),
+m_pInputDevice(nullptr),
 m_pSoundInterface(NULL),
 m_pInputManager(NULL),
 m_pWindow(NULL),
@@ -44,17 +44,16 @@ Library::~Library()
 	m_pGraphicsDevice->DestroyInstance();
 }
 
-void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_, bool is3D_)
+void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_)
 {
 	m_pWindow = New Window;
-	m_pWindow->Create(pWindowName_, clientWidth_, clientHeight_, isFullScreen_);
+	m_pWindow->Create(pWindowName_, clientWidth_, clientHeight_);
 
 	m_pGraphicsDevice = &GraphicsDevice::GetInstance();
-	m_pGraphicsDevice->Initialize(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_, is3D_);
+	m_pGraphicsDevice->Initialize(m_pWindow->GetHwnd(), clientWidth_, clientHeight_);
 
 	m_pInputDevice = &InputDevice::GetInstance();
-	m_pInputDevice->InitInput();
-	m_pInputDevice->InitInputKey(m_pWindow->GetHwnd());
+	m_pInputDevice->Initialize(m_pWindow->GetHwnd());
 
 	m_pSoundInterface = &SoundInterface::GetInstance();
 	m_pSoundInterface->InitSound(m_pWindow->GetHwnd());

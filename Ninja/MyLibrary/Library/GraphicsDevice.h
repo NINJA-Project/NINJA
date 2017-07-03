@@ -25,10 +25,8 @@ public:
 	 * @param [in]	hwnd_			ウィンドウハンドル
 	 * @param [in]	clientWidth_	画面横幅のサイズ
 	 * @param [in]	clientHeight_	画面縦幅のサイズ
-	 * @param [in]	isFullScreen_	フルスクリーンにするかどうか		@note デフォルト値はLibraryクラスで false に設定している
-	 * @param [in]	is3D_			3Dを使用するかどうか				@note デフォルト値はLibraryクラスで false に設定している
 	 */
-	void Initialize(HWND hwnd_, int clientWidth_, int clientHeight_, bool isFullScreen_, bool is3D_);
+	void Initialize(HWND hwnd_, int clientWidth_, int clientHeight_);
 
 	/**
 	 * 頂点フォーマット設定関数

@@ -68,10 +68,8 @@ public:		// Libraryクラスのパブリック関数
 	 * @param [in] pWindowName_		ウィンドウタイトル
 	 * @param [in] clientWidth_		画面横幅のサイズ
 	 * @param [in] clientHeiht_		画面縦幅のサイズ
-	 * @param [in] isFullScreen_	フルスクリーンにするかどうか			@note デフォルト値は false 
-	 * @param [in] is3D_			3Dを使用するかどうか					@note デフォルト値は false
 	 */
-	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_ = false, bool is3D_ = false);
+	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_);
 
 #pragma region Windowクラスのパブリック関数
 public:

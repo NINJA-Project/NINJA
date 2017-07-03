@@ -6,6 +6,7 @@
 
 #include "InputDvice.h"
 #include "CommoSystem.h"
+#include "Directives.h"
 
 InputDevice::InputDevice() :
 m_pDinput(NULL),
@@ -21,43 +22,46 @@ InputDevice::~InputDevice()
 	SafeRelease(m_pDinput);
 }
 
-bool InputDevice::InitInput()
+void InputDevice::Initialize(HWND hwnd_)
 {
-	if (FAILED(DirectInput8Create(GetModuleHandle(NULL),
-		DIRECTINPUT_VERSION, IID_IDirectInput8,
+	if (FAILED(DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8,
 		(VOID**)&m_pDinput, NULL)))
 	{
-		MessageBox(0, "DirectInputオブジェクト生成に失敗しました。", NULL, MB_OK);
-		return false;
+		MyAssert(m_pDinput, "初期化に失敗しました");
 	}
-	return true;
+
+#ifdef KEY
+	InitializeKeyDevice(hwnd_);
+#elif defined(MOUSE)
+	InitializeMouseDevice(hwnd_);
+#elif defined(GAMEPAD)
+
+#endif
 }
 
-bool InputDevice::InitInputKey(HWND hWnd_)
+void InputDevice::InitializeKeyDevice(HWND hwnd_)
 {
-	if (FAILED(m_pDinput->CreateDevice(GUID_SysKeyboard,
-		&m_pKeyDevice, NULL)))
+	if (FAILED(m_pDinput->CreateDevice(GUID_SysKeyboard, &m_pKeyDevice, NULL)))
 	{
-		MessageBox(0, "DirectInputデバイスの生成に失敗しました。", NULL, MB_OK);
-		return false;
+		MyAssert(m_pKeyDevice, "デバイスの初期化に失敗しました");
 	}
 
 	//	データフォーマット
 	if (FAILED(m_pKeyDevice->SetDataFormat(&c_dfDIKeyboard)))
 	{
-		MessageBox(0, "データフォーマットの設定に失敗しました。", NULL, MB_OK);
-		return false;
+		MyAssert(m_pKeyDevice, "データフォーマットの設定に失敗しました");
 	}
 
 	//	協調レベル
-	if (FAILED(m_pKeyDevice->SetCooperativeLevel(
-		hWnd_, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
+	if (FAILED(m_pKeyDevice->SetCooperativeLevel(hwnd_, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
 	{
-		MessageBox(0, "協調levelの設定に失敗しました。", NULL, MB_OK);
-		return false;
+		MyAssert(m_pKeyDevice, "協調レベルの設定に失敗しました");
 	}
 
 	// アクセス許可
 	m_pKeyDevice->Acquire();
-	return true;
+}
+
+void InputDevice::InitializeMouseDevice(HWND hwnd_)
+{
 }
