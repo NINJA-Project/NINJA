@@ -40,24 +40,24 @@ void GraphicsDevice::Initialize(HWND hwnd_, int clientWidth_, int clientHeight_)
 		// フルスクリーンパラメーター
 		D3DPRESENT_PARAMETERS fullScreenPrm;
 		ZeroMemory(&fullScreenPrm, sizeof(D3DPRESENT_PARAMETERS));
-		fullScreenPrm.BackBufferWidth = clientWidth_;
-		fullScreenPrm.BackBufferHeight = clientHeight_;
-		fullScreenPrm.BackBufferFormat = d3ddm.Format;
-		fullScreenPrm.BackBufferCount = 1;
-		fullScreenPrm.SwapEffect = D3DSWAPEFFECT_DISCARD;
-		fullScreenPrm.hDeviceWindow = hwnd_;
-		fullScreenPrm.Windowed = FALSE;
-		fullScreenPrm.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;
-		d3dpp = fullScreenPrm;
+		fullScreenPrm.BackBufferWidth			= clientWidth_;
+		fullScreenPrm.BackBufferHeight			= clientHeight_;
+		fullScreenPrm.BackBufferFormat			= d3ddm.Format;
+		fullScreenPrm.BackBufferCount			= 1;
+		fullScreenPrm.SwapEffect				= D3DSWAPEFFECT_DISCARD;
+		fullScreenPrm.hDeviceWindow				= hwnd_;
+		fullScreenPrm.Windowed					= FALSE;
+		fullScreenPrm.PresentationInterval		= D3DPRESENT_INTERVAL_DEFAULT;
+		d3dpp									= fullScreenPrm;
 #elif defined(WINDOW_SCREEN)
 		// ウィンドウスクリーンパラメーター
 		D3DPRESENT_PARAMETERS windowScreenPrm;
 		ZeroMemory(&windowScreenPrm, sizeof(D3DPRESENT_PARAMETERS));
-		windowScreenPrm.BackBufferFormat = d3ddm.Format;
-		windowScreenPrm.BackBufferCount = 1;
-		windowScreenPrm.SwapEffect = D3DSWAPEFFECT_DISCARD;
-		windowScreenPrm.Windowed = TRUE;
-		d3dpp = windowScreenPrm;
+		windowScreenPrm.BackBufferFormat	= d3ddm.Format;
+		windowScreenPrm.BackBufferCount		= 1;
+		windowScreenPrm.SwapEffect			= D3DSWAPEFFECT_DISCARD;
+		windowScreenPrm.Windowed			= TRUE;
+		d3dpp								= windowScreenPrm;
 #endif
 		m_pDirect3D->CreateDevice(
 			D3DADAPTER_DEFAULT,
