@@ -8,10 +8,6 @@
     <Filter Include="Library\InputDvice">
       <UniqueIdentifier>{aaed0762-8042-4f69-b00a-a524d8ca4b43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\SoundInterface">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Library\TextureFileManager">
       <UniqueIdentifier>{93508dab-db3e-41f9-889b-2f2eaef0435c}</UniqueIdentifier>
     </Filter>
@@ -42,9 +38,6 @@
     <Filter Include="Library\InputManager">
       <UniqueIdentifier>{7669550e-2e22-4460-9ef5-c0a7d4554915}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\InputManager\InputKey">
-      <UniqueIdentifier>{96eb70fe-6c89-4763-9aae-07324d1903e5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\Font">
       <UniqueIdentifier>{30827307-f3fa-4984-ac96-35f67bd2628e}</UniqueIdentifier>
     </Filter>
@@ -70,6 +63,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Library\SoundDevice">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Library\InputManager\KeyDevice">
+      <UniqueIdentifier>{96eb70fe-6c89-4763-9aae-07324d1903e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -77,9 +77,6 @@
     </ClCompile>
     <ClCompile Include="Library\InputDvice.cpp">
       <Filter>Library\InputDvice</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\SoundInterface.cpp">
-      <Filter>Library\SoundInterface</Filter>
     </ClCompile>
     <ClCompile Include="Library\TextureFile.cpp">
       <Filter>Library\TextureFileManager\TextureFile</Filter>
@@ -111,9 +108,6 @@
     <ClCompile Include="Library\InputManager.cpp">
       <Filter>Library\InputManager</Filter>
     </ClCompile>
-    <ClCompile Include="Library\InputKey.cpp">
-      <Filter>Library\InputManager\InputKey</Filter>
-    </ClCompile>
     <ClCompile Include="Library\Font.cpp">
       <Filter>Library\Font</Filter>
     </ClCompile>
@@ -129,6 +123,12 @@
     <ClCompile Include="Library\GraphicsDevice.cpp">
       <Filter>Library\GraphicsDevice</Filter>
     </ClCompile>
+    <ClCompile Include="Library\SoundDevice.cpp">
+      <Filter>Library\SoundDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\KeyDevice.cpp">
+      <Filter>Library\InputManager\KeyDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library.h">
@@ -136,9 +136,6 @@
     </ClInclude>
     <ClInclude Include="Library\InputDvice.h">
       <Filter>Library\InputDvice</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\SoundInterface.h">
-      <Filter>Library\SoundInterface</Filter>
     </ClInclude>
     <ClInclude Include="Library\TextureFile.h">
       <Filter>Library\TextureFileManager\TextureFile</Filter>
@@ -170,9 +167,6 @@
     <ClInclude Include="Library\InputManager.h">
       <Filter>Library\InputManager</Filter>
     </ClInclude>
-    <ClInclude Include="Library\InputKey.h">
-      <Filter>Library\InputManager\InputKey</Filter>
-    </ClInclude>
     <ClInclude Include="Library\Font.h">
       <Filter>Library\Font</Filter>
     </ClInclude>
@@ -198,6 +192,15 @@
       <Filter>Library\GraphicsDevice</Filter>
     </ClInclude>
     <ClInclude Include="Library\Directives.h">
+      <Filter>CommonSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\SoundDevice.h">
+      <Filter>Library\SoundDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\KeyDevice.h">
+      <Filter>Library\InputManager\KeyDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Mystruct.h">
       <Filter>CommonSystem</Filter>
     </ClInclude>
   </ItemGroup>
