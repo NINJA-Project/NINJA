@@ -36,7 +36,7 @@ public:
 	 * @note format_のデフォルト値は左寄せ
 	 * @note RGBのデフォルト値は255
 	 */
-	void DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD format_ = DT_LEFT, int red_ = 255, int green_ = 255, int blue_ = 255);
+	void DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD format_, int red_, int green_, int blue_);
 
 private:
 	LPD3DXFONT				m_pFont;			//!< フォントのインターフェイス
