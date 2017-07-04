@@ -7,7 +7,7 @@
 #include "Library.h"
 #include "Library\GraphicsDevice.h"
 #include "Library\InputDvice.h"
-#include "Library\SoundInterface.h"
+#include "Library\SoundDevice.h"
 #include "Library\InputManager.h"
 #include "Library\Window.h"
 #include "Library\TextureFileManager.h"
@@ -20,8 +20,8 @@
 Library::Library() :
 m_pGraphicsDevice(nullptr),
 m_pInputDevice(nullptr),
-m_pSoundInterface(NULL),
-m_pInputManager(NULL),
+m_pSoundDevice(nullptr),
+m_pInputManager(nullptr),
 m_pWindow(NULL),
 m_pTextureFileManager(NULL),
 m_pVerticesManager(NULL),
@@ -39,7 +39,7 @@ Library::~Library()
 	SafeDelete(m_pSoundFileManager);
 	SafeDelete(m_pTextureFileManager);
 	SafeDelete(m_pVerticesManager);
-	m_pSoundInterface->DestroyInstance();
+	m_pSoundDevice->DestroyInstance();
 	m_pInputDevice->DestroyInstance();
 	m_pGraphicsDevice->DestroyInstance();
 }
@@ -55,8 +55,8 @@ void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientH
 	m_pInputDevice = &InputDevice::GetInstance();
 	m_pInputDevice->Initialize(m_pWindow->GetHwnd());
 
-	m_pSoundInterface = &SoundInterface::GetInstance();
-	m_pSoundInterface->InitSound(m_pWindow->GetHwnd());
+	m_pSoundDevice = &SoundDevice::GetInstance();
+	m_pSoundDevice->Initialize(m_pWindow->GetHwnd());
 
 	m_pInputManager			= New InputManager;
 	m_pTextureFileManager	= New TextureFileManager;
@@ -114,9 +114,9 @@ void Library::UpdateKey()
 	m_pInputManager->UpdateKey();
 }
 
-KeyState Library::CheckKey(int dik_)
+KeyState Library::ChooseKey(int dik_)
 {
-	KeyState keyState = static_cast<KeyState>(m_pInputManager->CheckKey(dik_));
+	KeyState keyState = static_cast<KeyState>(m_pInputManager->ChooseKey(dik_));
 	return keyState;
 }
 

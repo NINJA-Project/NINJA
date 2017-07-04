@@ -13,14 +13,11 @@
 #include <d3dx9.h>
 #include "Library\Singleton.h"
 
-/// 頂点フォーマット
-#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
-
 #pragma region 前方宣言
 class GraphicsDevice;
 class InputManager;
 class InputDevice;
-class SoundInterface;
+class SoundDevice;
 class Window;
 class TextureFileManager;
 class VerticesManager;
@@ -60,6 +57,10 @@ private:
 	Library();
 	/**デストラクタ*/
 	~Library();
+#pragma region 頂点フォーマット
+	// メンバ変数のところにこの変数を置くとGraphicsDeviceのSetFVFでデフォルト設定できないため
+	static const DWORD D3DFVF_CUSTOMVERTEX = (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1);		//!< 頂点フォーマット
+#pragma endregion
 
 public:		// Libraryクラスのパブリック関数
 
@@ -72,7 +73,6 @@ public:		// Libraryクラスのパブリック関数
 	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_);
 
 #pragma region Windowクラスのパブリック関数
-public:
 	/**ウィンドウの更新関数*/
 	bool Update();
 
@@ -90,7 +90,6 @@ public:
 #pragma endregion
 
 #pragma region GraphicsDeviceクラスのパブリック関数
-public:
 	/**
 	* 頂点フォーマット設定関数
 	* @param [in] fvf_ 頂点フォーマットの設定				@note デフォルト値は D3DFVF_CUSTOMVERTEX
@@ -111,7 +110,6 @@ public:
 #pragma endregion 
 
 #pragma region InputManagerクラスのパブリック関数
-public:
 	/**DI系をすべて更新する関数*/
 	void UpdateDI();
 
@@ -123,11 +121,10 @@ public:
 	* @param [in]		dik_	どのキーを使うか
 	* @return			state	キーの状態
 	*/
-	KeyState CheckKey(int dik_);
+	KeyState ChooseKey(int dik_);
 #pragma endregion 
 
 #pragma region TextureFileManagerクラスのパブリック関数
-public:
 	/**
 	* 画像を読み込む関数
 	* @param [in]	index_		読み込む画像の配列番号
@@ -160,7 +157,6 @@ public:
 #pragma endregion
 
 #pragma region VerticesManagerのパブリック関数
-public:
 	/**
 	* 画像サイズの設定する関数
 	* @param [in] index_	頂点情報の配列番号
@@ -216,7 +212,6 @@ public:
 #pragma endregion
 
 #pragma region SoundFileManagerクラスのパブリック関数
-public:
 	/**
 	* 音楽ファイル(wav)の読み込み関数
 	* @param [in]	index_		読み込む音楽の配列番号
@@ -242,7 +237,6 @@ public:
 #pragma endregion
 
 #pragma region XFileManagerクラスのパブリック関数
-public:
 	/**
 	* Xファイルの読み込み関数
 	* @param [in]	index_		Xファイルの配列番号
@@ -267,7 +261,6 @@ public:
 #pragma endregion
 
 #pragma region Fontクラスのパブリック関数
-public:
 	/**
 	* 文字を描画する関数
 	* @param [in] pString_		描画する文字列
@@ -303,7 +296,7 @@ public:
 private:
 	GraphicsDevice*			m_pGraphicsDevice;
 	InputDevice*			m_pInputDevice;
-	SoundInterface*			m_pSoundInterface;
+	SoundDevice*			m_pSoundDevice;
 	InputManager*			m_pInputManager;
 	Window*					m_pWindow;
 	TextureFileManager*		m_pTextureFileManager;
