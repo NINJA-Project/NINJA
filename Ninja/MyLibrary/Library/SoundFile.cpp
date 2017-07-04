@@ -6,12 +6,12 @@
  */
 
 #include "SoundFile.h"
-#include "SoundInterface.h"
+#include "SoundDevice.h"
 #include "CommoSystem.h"
 #include <tchar.h>
 
 SoundFile::SoundFile() :
-m_pDsound8(SoundInterface::GetInstance().GetSoundData()),
+m_pDsound8(SoundDevice::GetInstance().GetSoundData()),
 m_pDsoundBuffer(NULL)
 {
 }
