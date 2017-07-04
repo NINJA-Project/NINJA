@@ -78,6 +78,7 @@
     <ClCompile Include="Library\Camera.cpp" />
     <ClCompile Include="Library\Font.cpp" />
     <ClCompile Include="Library\Debug.cpp" />
+    <ClCompile Include="Library\fRect.cpp" />
     <ClCompile Include="Library\GraphicsDevice.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="Library\InputDvice.cpp" />
@@ -89,6 +90,8 @@
     <ClCompile Include="Library\SoundDevice.cpp" />
     <ClCompile Include="Library\TextureFile.cpp" />
     <ClCompile Include="Library\TextureFileManager.cpp" />
+    <ClCompile Include="Library\Vector2D.cpp" />
+    <ClCompile Include="Library\Vector3D.cpp" />
     <ClCompile Include="Library\Vertices.cpp" />
     <ClCompile Include="Library\VerticesManager.cpp" />
     <ClCompile Include="Library\Window.cpp" />
@@ -99,7 +102,7 @@
     <ClInclude Include="Library\Camera.h" />
     <ClInclude Include="Library\CommoSystem.h" />
     <ClInclude Include="Library\Directives.h" />
-    <ClInclude Include="Library\Mystruct.h" />
+    <ClInclude Include="Library\fRect.h" />
     <ClInclude Include="Library\Release.h" />
     <ClInclude Include="Library\Font.h" />
     <ClInclude Include="Library\Debug.h" />
@@ -108,6 +111,8 @@
     <ClInclude Include="Library\Light.h" />
     <ClInclude Include="Library\SoundFile.h" />
     <ClInclude Include="Library\SoundFileManager.h" />
+    <ClInclude Include="Library\Vector2D.h" />
+    <ClInclude Include="Library\Vector3D.h" />
     <ClInclude Include="Library\Vertices.h" />
     <ClInclude Include="Library\VerticesManager.h" />
     <ClInclude Include="Library\XFile.h" />

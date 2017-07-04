@@ -47,9 +47,6 @@
     <Filter Include="CommonSystem\Camera">
       <UniqueIdentifier>{0144ea49-fa6f-416b-beaf-ba7416e270bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CommonSystem\Light">
-      <UniqueIdentifier>{d80fd5d6-f444-4fe1-a6d8-60f243361d0c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CommonSystem\Singleton">
       <UniqueIdentifier>{3fb2c811-9ea9-4ce5-a08e-c3cab82f8cf1}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,18 @@
     </Filter>
     <Filter Include="Library\InputManager\KeyDevice">
       <UniqueIdentifier>{96eb70fe-6c89-4763-9aae-07324d1903e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Vector2D">
+      <UniqueIdentifier>{31784c21-0f39-49aa-92e1-c2e2ecd111b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Vector3D">
+      <UniqueIdentifier>{ea5150da-765b-44cb-9a83-82f13dc5bce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\fRect">
+      <UniqueIdentifier>{22846e78-7c7c-4c62-bb30-950f667386d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Light">
+      <UniqueIdentifier>{d80fd5d6-f444-4fe1-a6d8-60f243361d0c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +137,15 @@
     </ClCompile>
     <ClCompile Include="Library\KeyDevice.cpp">
       <Filter>Library\InputManager\KeyDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Vector2D.cpp">
+      <Filter>CommonSystem\Vector2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Vector3D.cpp">
+      <Filter>CommonSystem\Vector3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\fRect.cpp">
+      <Filter>CommonSystem\fRect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,8 +218,14 @@
     <ClInclude Include="Library\KeyDevice.h">
       <Filter>Library\InputManager\KeyDevice</Filter>
     </ClInclude>
-    <ClInclude Include="Library\Mystruct.h">
-      <Filter>CommonSystem</Filter>
+    <ClInclude Include="Library\Vector2D.h">
+      <Filter>CommonSystem\Vector2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Vector3D.h">
+      <Filter>CommonSystem\Vector3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fRect.h">
+      <Filter>CommonSystem\fRect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
