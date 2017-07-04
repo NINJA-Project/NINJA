@@ -7,11 +7,12 @@
 #ifndef INPUTMANAGER_H
 #define INPUTMANAGER_H
 
-#include "InputKey.h"
+class KeyDevice;
 
 class InputManager
 {
-public:
+#pragma region キーの状態enum
+private:
 	/// キーの状態
 	enum KeyState
 	{
@@ -20,7 +21,9 @@ public:
 		KEY_ON,
 		KEY_OFF,
 	};
+#pragma endregion
 
+public:
 	/**コンストラクタ*/
 	InputManager();
 	/**デストラクタ*/
@@ -37,10 +40,12 @@ public:
 	 * @param [in]		dik_	どのキーを使うか
 	 * @return			state	キーの状態
 	 */
-	KeyState CheckKey(int dik_);
+	KeyState ChooseKey(int dik_);
 
+#pragma region メンバ変数
 private:
-	InputKey*	m_pInputKey;
+	KeyDevice*	m_pKeyDevice;
+#pragma endregion
 };
 
 #endif // !INPUTMANAGER_H

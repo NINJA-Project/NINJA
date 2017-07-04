@@ -9,8 +9,8 @@
 #include "Directives.h"
 
 InputDevice::InputDevice() :
-m_pDinput(NULL),
-m_pKeyDevice(NULL)
+m_pDinput(nullptr),
+m_pKeyDevice(nullptr)
 {
 
 }

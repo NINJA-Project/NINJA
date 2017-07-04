@@ -25,7 +25,7 @@ Button::~Button()
 
 bool Button::IsPush()
 {
-	if (m_rLibrary.CheckKey(DIK_A) == PUSH)
+	if (m_rLibrary.ChooseKey(DIK_A) == PUSH)
 	{
 		return true;
 	}

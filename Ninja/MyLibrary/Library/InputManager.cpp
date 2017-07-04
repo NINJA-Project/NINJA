@@ -5,34 +5,37 @@
  */
 
 #include "InputManager.h"
-#include "InputKey.h"
+#include "KeyDevice.h"
 #include "CommoSystem.h"
 
 InputManager::InputManager() : 
-m_pInputKey(New InputKey)
+m_pKeyDevice(New KeyDevice)
 {
 #if _DEBUG
-	MyAssert(&m_pInputKey, "NULL");
+	MyAssert(&m_pKeyDevice, "NULL");
 #endif // _DEBUG
 }
 
 InputManager::~InputManager()
 {
-	SafeDelete(m_pInputKey);
+	SafeDelete(m_pKeyDevice);
 }
 
 void InputManager::UpdateDI()
 {
-	m_pInputKey->UpdateKey();
+	m_pKeyDevice->Update();
+	// @todo マウス、ゲームパッドが実装され次第ここにUpdate関数をつける
 }
 
 void InputManager::UpdateKey()
 {
-	m_pInputKey->UpdateKey();
+	m_pKeyDevice->Update();
 }
 
-InputManager::KeyState InputManager::CheckKey(int dik_)
+// @todo マウス、ゲームパッドが実装され次第新規で個別にUpdate関数をつける
+
+InputManager::KeyState InputManager::ChooseKey(int dik_)
 {
-	KeyState state = static_cast<InputManager::KeyState>(m_pInputKey->CheckKey(dik_));
+	KeyState state = static_cast<InputManager::KeyState>(m_pKeyDevice->ChooseKey(dik_));
 	return state;
 }

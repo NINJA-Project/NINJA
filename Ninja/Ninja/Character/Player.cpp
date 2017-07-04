@@ -41,22 +41,22 @@ void Player::Draw()
 //ÉvÉåÉCÉÑÅ[à⁄ìÆèàóù
 void Player::Move()
 {
-	if (m_rLibrary.CheckKey(DIK_W) == ON)
+	if (m_rLibrary.ChooseKey(DIK_W) == ON)
 	{
 		m_Pos.y -= m_kRunSpeed;
 	}
 
-	if (m_rLibrary.CheckKey(DIK_S) == ON)
+	if (m_rLibrary.ChooseKey(DIK_S) == ON)
 	{
 		m_Pos.y += m_kRunSpeed;
 	}
 
-	if (m_rLibrary.CheckKey(DIK_A) == ON)
+	if (m_rLibrary.ChooseKey(DIK_A) == ON)
 	{
 		m_Pos.x -= m_kRunSpeed;
 	}
 
-	if (m_rLibrary.CheckKey(DIK_D) == ON)
+	if (m_rLibrary.ChooseKey(DIK_D) == ON)
 	{
 		m_Pos.x += m_kRunSpeed;
 	}
