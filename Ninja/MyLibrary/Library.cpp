@@ -17,6 +17,7 @@
 #include "Library\Font.h"
 #include "Library\CommoSystem.h"
 
+
 Library::Library() :
 m_pGraphicsDevice(nullptr),
 m_pInputDevice(nullptr),
@@ -44,13 +45,13 @@ Library::~Library()
 	m_pGraphicsDevice->DestroyInstance();
 }
 
-void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_)
+void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_)
 {
 	m_pWindow = New Window;
-	m_pWindow->Create(pWindowName_, clientWidth_, clientHeight_);
+	m_pWindow->Create(pWindowName_, clientWidth_, clientHeight_, isFullScreen_);
 
 	m_pGraphicsDevice = &GraphicsDevice::GetInstance();
-	m_pGraphicsDevice->Initialize(m_pWindow->GetHwnd(), clientWidth_, clientHeight_);
+	m_pGraphicsDevice->Initialize(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_);
 
 	m_pInputDevice = &InputDevice::GetInstance();
 	m_pInputDevice->Initialize(m_pWindow->GetHwnd());

@@ -79,6 +79,9 @@
     <Filter Include="CommonSystem\Light">
       <UniqueIdentifier>{d80fd5d6-f444-4fe1-a6d8-60f243361d0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CommonSystem\RGBAColor">
+      <UniqueIdentifier>{4375aae3-969b-43e6-ac55-78589030e392}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -146,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="Library\fRect.cpp">
       <Filter>CommonSystem\fRect</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\RGBAColor.cpp">
+      <Filter>CommonSystem\RGBAColor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="Library\fRect.h">
       <Filter>CommonSystem\fRect</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\RGBAColor.h">
+      <Filter>CommonSystem\RGBAColor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

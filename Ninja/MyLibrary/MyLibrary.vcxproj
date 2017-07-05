@@ -85,6 +85,7 @@
     <ClCompile Include="Library\KeyDevice.cpp" />
     <ClCompile Include="Library\InputManager.cpp" />
     <ClCompile Include="Library\Light.cpp" />
+    <ClCompile Include="Library\RGBAColor.cpp" />
     <ClCompile Include="Library\SoundFile.cpp" />
     <ClCompile Include="Library\SoundFileManager.cpp" />
     <ClCompile Include="Library\SoundDevice.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="Library\KeyDevice.h" />
     <ClInclude Include="Library\InputManager.h" />
     <ClInclude Include="Library\Light.h" />
+    <ClInclude Include="Library\RGBAColor.h" />
     <ClInclude Include="Library\SoundFile.h" />
     <ClInclude Include="Library\SoundFileManager.h" />
     <ClInclude Include="Library\Vector2D.h" />

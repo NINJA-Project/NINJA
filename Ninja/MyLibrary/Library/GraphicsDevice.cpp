@@ -21,7 +21,7 @@ GraphicsDevice::~GraphicsDevice()
 	SafeRelease(m_pDirect3D);
 }
 
-void GraphicsDevice::Initialize(HWND hwnd_, int clientWidth_, int clientHeight_)
+void GraphicsDevice::Initialize(HWND hwnd_, int clientWidth_, int clientHeight_, bool isFullScreen_)
 {
 	m_pDirect3D = Direct3DCreate9(D3D_SDK_VERSION);
 	MyAssert(m_pDirect3D, "初期化に失敗しました");
@@ -36,7 +36,7 @@ void GraphicsDevice::Initialize(HWND hwnd_, int clientWidth_, int clientHeight_)
 		D3DPRESENT_PARAMETERS d3dpp;
 		ZeroMemory(&d3dpp, sizeof(D3DPRESENT_PARAMETERS));
 
-#ifdef FULL_SCREEN
+
 		// フルスクリーンパラメーター
 		D3DPRESENT_PARAMETERS fullScreenPrm;
 		ZeroMemory(&fullScreenPrm, sizeof(D3DPRESENT_PARAMETERS));
@@ -49,7 +49,7 @@ void GraphicsDevice::Initialize(HWND hwnd_, int clientWidth_, int clientHeight_)
 		fullScreenPrm.Windowed					= FALSE;
 		fullScreenPrm.PresentationInterval		= D3DPRESENT_INTERVAL_DEFAULT;
 		d3dpp									= fullScreenPrm;
-#elif defined(WINDOW_SCREEN)
+
 		// ウィンドウスクリーンパラメーター
 		D3DPRESENT_PARAMETERS windowScreenPrm;
 		ZeroMemory(&windowScreenPrm, sizeof(D3DPRESENT_PARAMETERS));
@@ -58,7 +58,7 @@ void GraphicsDevice::Initialize(HWND hwnd_, int clientWidth_, int clientHeight_)
 		windowScreenPrm.SwapEffect			= D3DSWAPEFFECT_DISCARD;
 		windowScreenPrm.Windowed			= TRUE;
 		d3dpp								= windowScreenPrm;
-#endif
+
 		m_pDirect3D->CreateDevice(
 			D3DADAPTER_DEFAULT,
 			D3DDEVTYPE_HAL,

@@ -13,6 +13,8 @@
 #include <d3dx9.h>
 #include "Library\Singleton.h"
 
+
+
 #pragma region 前方宣言
 class GraphicsDevice;
 class InputManager;
@@ -69,8 +71,9 @@ public:		// Libraryクラスのパブリック関数
 	 * @param [in] pWindowName_		ウィンドウタイトル
 	 * @param [in] clientWidth_		画面横幅のサイズ
 	 * @param [in] clientHeiht_		画面縦幅のサイズ
+	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note デフォルト値は false 
 	 */
-	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_);
+	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_ = false);
 
 #pragma region Windowクラスのパブリック関数
 	/**ウィンドウの更新関数*/

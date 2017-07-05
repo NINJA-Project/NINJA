@@ -7,12 +7,6 @@
 #ifndef DIRECTIVES_H
 #define DIRECTIVES_H
 
-// ウィンドウタイプ
-//-------------------------------
-#define WINDOW_SCREEN
-//#define FULL_SCREEN
-//-------------------------------
-
 //使用デバイス
 //-------------------------------
 #define KEY

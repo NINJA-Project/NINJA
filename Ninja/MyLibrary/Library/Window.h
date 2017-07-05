@@ -22,8 +22,9 @@ public:
 	 * @param [in] pWindowName_		ゲームのタイトル
 	 * @param [in] clientWidth_		画面横幅のサイズ
 	 * @param [in] clientHeiht_		画面縦幅のサイズ
+	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note デフォルトはLibraryクラスで false に設定している
 	 */
-	void Create(const char* pWindowName_, int clientWidth_, int clientHeight_);
+	void Create(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_);
 
 	bool Update();
 
@@ -33,7 +34,7 @@ public:
 	 */
 	HWND GetHwnd()
 	{
-		return m_hWnd;
+		return m_hwnd;
 	}
 
 	int GetWidth()
@@ -49,7 +50,7 @@ public:
 private:
 	int 	m_clientWidth;
 	int 	m_clientHeight;
-	HWND	m_hWnd; //!< ウィンドウハンドル
+	HWND	m_hwnd;				//!< ウィンドウハンドル
 	MSG		m_msg;
 };
 
