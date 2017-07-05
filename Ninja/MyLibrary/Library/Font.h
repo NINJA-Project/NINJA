@@ -38,10 +38,11 @@ public:
 	 */
 	void DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD format_, int red_, int green_, int blue_);
 
+#pragma region メンバ変数
 private:
 	LPD3DXFONT				m_pFont;			//!< フォントのインターフェイス
 	LPDIRECT3DDEVICE9		m_pGraphicsDevice;	//!< Graphicsdeviceから取ってきたデバイス
-
+#pragma endregion
 };
 
 

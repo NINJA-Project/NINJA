@@ -9,7 +9,7 @@
 #include "CommoSystem.h"
 
 Font::Font() : 
-m_pFont(NULL),
+m_pFont(nullptr),
 m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
@@ -26,12 +26,12 @@ m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 		TEXT("ＭＳ　Ｐゴシック"),
 		&m_pFont)))
 	{
-		MessageBox(NULL, "フォントクラスが作成されませんでした", NULL, MB_OK);
+		MyAssert(m_pFont, "Fontの初期化に失敗しました");
 	}
 }
 
 Font::Font(int width_, int height_) : 
-m_pFont(NULL),
+m_pFont(nullptr),
 m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
@@ -48,7 +48,7 @@ m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 		TEXT("ＭＳ　Ｐゴシック"),
 		&m_pFont)))
 	{
-		MessageBox(NULL, "フォントクラスが作成されませんでした", NULL, MB_OK);
+		MyAssert(m_pFont, "Fontの初期化に失敗しました");
 	}
 }
 
@@ -78,5 +78,4 @@ void Font::DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD fo
 		format_,
 		D3DCOLOR_XRGB(red_, green_, blue_)
 		);
-
 }
