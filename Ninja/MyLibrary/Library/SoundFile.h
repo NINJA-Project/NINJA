@@ -32,10 +32,8 @@ public:
 	/**
 	 * 音楽ファイル(wav)の読み込み関数
 	 * @param [in]	filePath_	音楽のファイルパス
-	 * @retval		true		読み込み成功
-	 * @retval		false		読み込み失敗
 	 */
-	bool LoadSoundFile(const char* filePath_);
+	void LoadSoundFile(const char* filePath_);
 
 	/**
 	 * 音楽の再生状態を決める関数
@@ -44,21 +42,24 @@ public:
 	void SoundState(SoundFile::Mode soundMode_);
 
 private:
-
+#pragma region メンバ関数
 	/**
-	 * waveファイルを開く関数
-	 * @param [in]	filePath_		音楽のファイルパス
-	 * @param [out]	waveFormat_		waveフォーマット
-	 * @param [out]	ppData_			waveのデータサイズ
-	 * @param [out]	dataSize_		データサイズ
-	 * @retval		true			読み込み成功
-	 * @retval		false			読み込み失敗
-	 */
+	* waveファイルを開く関数
+	* @param [in]	filePath_		音楽のファイルパス
+	* @param [out]	waveFormat_		waveフォーマット
+	* @param [out]	ppData_			waveのデータサイズ
+	* @param [out]	dataSize_		データサイズ
+	* @retval		true			読み込み成功
+	* @retval		false			読み込み失敗
+	*/
 	bool OpenWave(char* filePath_, WAVEFORMATEX& waveFormat_, char** ppData_, DWORD& dataSize_);
+#pragma endregion
 
+#pragma region メンバ変数
 private:
 	IDirectSound8*			m_pDsound8;			//!< サウンドインターフェイス
 	IDirectSoundBuffer8*	m_pDsoundBuffer;	//!< サウンドバッファ
+#pragma endregion
 };
 
 #endif // !SOUNDFILE_H

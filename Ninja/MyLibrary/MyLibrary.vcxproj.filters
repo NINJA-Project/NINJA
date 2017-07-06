@@ -20,12 +20,6 @@
     <Filter Include="Library\SoundFileManager\SoundFile">
       <UniqueIdentifier>{cb538a3c-cfa3-480a-a04d-fc052c0bc2e1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\VerticesManager">
-      <UniqueIdentifier>{7926de6b-4835-4c92-af05-c05ca46f6553}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Library\VerticesManager\Vertices">
-      <UniqueIdentifier>{10a3bbd3-860a-459a-9f79-b5831f3f7659}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\XFileManager">
       <UniqueIdentifier>{4e46d3e9-0073-464a-9418-503fbf15d686}</UniqueIdentifier>
     </Filter>
@@ -82,6 +76,12 @@
     <Filter Include="CommonSystem\RGBAColor">
       <UniqueIdentifier>{4375aae3-969b-43e6-ac55-78589030e392}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Library\VertexManager">
+      <UniqueIdentifier>{7926de6b-4835-4c92-af05-c05ca46f6553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\VertexManager\Vertices">
+      <UniqueIdentifier>{10a3bbd3-860a-459a-9f79-b5831f3f7659}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -101,12 +101,6 @@
     </ClCompile>
     <ClCompile Include="Library\SoundFileManager.cpp">
       <Filter>Library\SoundFileManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\Vertices.cpp">
-      <Filter>Library\VerticesManager\Vertices</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\VerticesManager.cpp">
-      <Filter>Library\VerticesManager</Filter>
     </ClCompile>
     <ClCompile Include="Library\XFile.cpp">
       <Filter>Library\XFileManager\XFile</Filter>
@@ -153,6 +147,12 @@
     <ClCompile Include="Library\RGBAColor.cpp">
       <Filter>CommonSystem\RGBAColor</Filter>
     </ClCompile>
+    <ClCompile Include="Library\VertexManager.cpp">
+      <Filter>Library\VertexManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Vertices.cpp">
+      <Filter>Library\VertexManager\Vertices</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library.h">
@@ -174,10 +174,7 @@
       <Filter>Library\SoundFileManager</Filter>
     </ClInclude>
     <ClInclude Include="Library\Vertices.h">
-      <Filter>Library\VerticesManager\Vertices</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\VerticesManager.h">
-      <Filter>Library\VerticesManager</Filter>
+      <Filter>Library\VertexManager\Vertices</Filter>
     </ClInclude>
     <ClInclude Include="Library\XFile.h">
       <Filter>Library\XFileManager\XFile</Filter>
@@ -235,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="Library\RGBAColor.h">
       <Filter>CommonSystem\RGBAColor</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\VertexManager.h">
+      <Filter>Library\VertexManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

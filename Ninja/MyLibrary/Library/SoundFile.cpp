@@ -21,7 +21,7 @@ SoundFile::~SoundFile()
 	SafeRelease(m_pDsoundBuffer);
 }
 
-bool SoundFile::LoadSoundFile(const char* filePath_)
+void SoundFile::LoadSoundFile(const char* filePath_)
 {
 	char *pWaveData = NULL;
 
@@ -31,7 +31,8 @@ bool SoundFile::LoadSoundFile(const char* filePath_)
 
 		if (!OpenWave((char*)filePath_, waveFormat, &pWaveData, waveSize))
 		{
-			return false;
+			MessageBox(NULL, "wavファイルの展開に失敗しました", NULL, MB_OK);
+			DebugBreak();
 		}
 
 		DSBUFFERDESC			DSBufferDesc;											// 新しいバッファオブジェクトの特性を書いておく構造体
@@ -58,9 +59,7 @@ bool SoundFile::LoadSoundFile(const char* filePath_)
 			m_pDsoundBuffer->Unlock(lpvwrite, dwlength, NULL, 0);
 		}
 	}
-
 	delete[] pWaveData;
-	return true;
 }
 
 void SoundFile::SoundState(SoundFile::Mode soundMode_)

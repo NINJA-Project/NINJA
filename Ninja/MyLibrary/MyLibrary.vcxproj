@@ -94,7 +94,7 @@
     <ClCompile Include="Library\Vector2D.cpp" />
     <ClCompile Include="Library\Vector3D.cpp" />
     <ClCompile Include="Library\Vertices.cpp" />
-    <ClCompile Include="Library\VerticesManager.cpp" />
+    <ClCompile Include="Library\VertexManager.cpp" />
     <ClCompile Include="Library\Window.cpp" />
     <ClCompile Include="Library\XFile.cpp" />
     <ClCompile Include="Library\XFileManager.cpp" />
@@ -116,7 +116,7 @@
     <ClInclude Include="Library\Vector2D.h" />
     <ClInclude Include="Library\Vector3D.h" />
     <ClInclude Include="Library\Vertices.h" />
-    <ClInclude Include="Library\VerticesManager.h" />
+    <ClInclude Include="Library\VertexManager.h" />
     <ClInclude Include="Library\XFile.h" />
     <ClInclude Include="Library\XFileManager.h" />
     <ClInclude Include="Library\GraphicsDevice.h" />
