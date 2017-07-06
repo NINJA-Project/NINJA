@@ -52,6 +52,11 @@ private:
 
 	//ˆÚ“®‘¬“x•Ï”
 	const float m_kRunSpeed;
+
+	enum PlayerTex
+	{
+		PLAYER_STANDING
+	};
 };
 
 #endif 

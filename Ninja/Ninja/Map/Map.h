@@ -22,6 +22,12 @@ public:
 	void Draw();
 
 private:
+	enum ChipID
+	{
+		NORMAL_BLOCK,	// 通常のブロック
+		LANDING_BLOCK,	// 乗り場ブロック
+		LANDING_BLOCK2,	// 仮の名前
+	};
 #pragma region メンバ変数
 	Library&								m_rLibrary;
 	std::vector<std::vector<std::string>>	m_csvData;

@@ -16,7 +16,7 @@ m_kWidth(80.0f),
 m_kHeight(120.0f),
 m_kRunSpeed(5.0f)
 {
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::Player_Standing1, m_kWidth, m_kHeight, 1.0f, 1.0f, 0.0f, 0.0f, 0.5f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::PLAYER, PLAYER_STANDING, m_kWidth, m_kHeight, 1.0f, 1.0f, 0.0f, 0.0f, 0.5f);
 	
 }
 
@@ -34,7 +34,7 @@ void Player::Control()
 //ÉvÉåÉCÉÑÅ[ï`âÊèàóù
 void Player::Draw()
 {
-	m_rLibrary.DrawLeftTop(ResourceManager::MainTex::Player_Standing1, m_Pos.x, m_Pos.y);
+	m_rLibrary.DrawLeftTop(ResourceManager::MainTex::PLAYER, PLAYER_STANDING, m_Pos.x, m_Pos.y);
 
 }
 

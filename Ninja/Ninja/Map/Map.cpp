@@ -18,9 +18,9 @@ m_kBlockHeight(64.0f)
 {
 	ResourceManager mapLoad;
 	mapLoad.CSVLoader(m_csvData);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP1, m_kBlockWidth, m_kBlockHeight, 0.25f, 1.0f, 0.0f, 0.0f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP2, m_kBlockWidth, m_kBlockHeight, 0.5f, 1.0f, 0.25f, 0.0f);
-	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP3, m_kBlockWidth, m_kBlockHeight, 0.75f, 1.0f, 0.5f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, NORMAL_BLOCK, m_kBlockWidth, m_kBlockHeight, 0.25f, 1.0f, 0.0f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, LANDING_BLOCK, m_kBlockWidth, m_kBlockHeight, 0.5f, 1.0f, 0.25f, 0.0f);
+	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, LANDING_BLOCK2, m_kBlockWidth, m_kBlockHeight, 0.75f, 1.0f, 0.5f, 0.0f);
 }
 
 Map::~Map()
@@ -42,7 +42,7 @@ void Map::Draw()
 		{
 			if (m_csvData[row][col] == "1")
 			{
-				m_rLibrary.DrawLeftTop(ResourceManager::MainTex::MAP_CHIP1, (col * m_kBlockWidth), (row * m_kBlockHeight));
+				m_rLibrary.DrawLeftTop(ResourceManager::MainTex::MAP_CHIP, NORMAL_BLOCK, (col * m_kBlockWidth), (row * m_kBlockHeight));
 			}
 		}
 		

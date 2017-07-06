@@ -11,7 +11,7 @@
 #include "Library\InputManager.h"
 #include "Library\Window.h"
 #include "Library\TextureFileManager.h"
-#include "Library\VerticesManager.h"
+#include "Library\VertexManager.h"
 #include "Library\SoundFileManager.h"
 #include "Library\XFileManager.h"
 #include "Library\Font.h"
@@ -25,7 +25,7 @@ m_pSoundDevice(nullptr),
 m_pInputManager(nullptr),
 m_pWindow(NULL),
 m_pTextureFileManager(NULL),
-m_pVerticesManager(NULL),
+m_pVertexManager(nullptr),
 m_pSoundFileManager(NULL),
 m_pXFileManager(NULL)
 {
@@ -39,7 +39,7 @@ Library::~Library()
 	SafeDelete(m_pInputManager);
 	SafeDelete(m_pSoundFileManager);
 	SafeDelete(m_pTextureFileManager);
-	SafeDelete(m_pVerticesManager);
+	SafeDelete(m_pVertexManager);
 	m_pSoundDevice->DestroyInstance();
 	m_pInputDevice->DestroyInstance();
 	m_pGraphicsDevice->DestroyInstance();
@@ -61,7 +61,7 @@ void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientH
 
 	m_pInputManager			= New InputManager;
 	m_pTextureFileManager	= New TextureFileManager;
-	m_pVerticesManager		= New VerticesManager;
+	m_pVertexManager		= New VertexManager;
 	m_pXFileManager			= New XFileManager;
 	m_pSoundFileManager		= New SoundFileManager;
 }
@@ -143,34 +143,34 @@ void Library::ReleaseTexture(int index_)
 }
 
 //---------------------VerticesManagerクラスのパブリック関数-------------------------
-void Library::SetTexSize(int index_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
+void Library::SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
-	m_pVerticesManager->SetTexSize(index_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
+	m_pVertexManager->SetTexSize(loadIndex_, drawIndex_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
 }
 
-void Library::DrawLeftTop(int index_, float posX_, float posY_)
+void Library::DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
-	m_pVerticesManager->DrawLeftTop(index_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(index_));
+	m_pVertexManager->DrawLeftTop(loadIndex_, drawIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
-void Library::DrawCenter(int index_, float posX_, float posY_)
+void Library::DrawCenter(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
-	m_pVerticesManager->DrawCenter(index_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(index_));
+	m_pVertexManager->DrawCenter(loadIndex_, drawIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
-void Library::SetColor(int index_, DWORD color_, int alpha_, int red_, int green_, int blue_)
+void Library::SetColor(int loadIndex_, int drawIndex_, DWORD color_, int alpha_, int red_, int green_, int blue_)
 {
-	m_pVerticesManager->SetColor(index_, color_, alpha_, red_, green_, blue_);
+	m_pVertexManager->SetColor(loadIndex_, drawIndex_, color_, alpha_, red_, green_, blue_);
 }
 
 void Library::ReleaseAllVirtices()
 {
-	m_pVerticesManager->ReleaseAllVirtices();
+	m_pVertexManager->ReleaseAllVirtices();
 }
 
-void Library::ReleaseVirtices(int index_)
+void Library::ReleaseVirtices(int loadIndex_, int drawIndex_)
 {
-	m_pVerticesManager->ReleaseVirtices(index_);
+	m_pVertexManager->ReleaseVirtices(loadIndex_, drawIndex_);
 }
 
 //---------------------SoundFileManagerクラスのパブリック関数--------------------------
