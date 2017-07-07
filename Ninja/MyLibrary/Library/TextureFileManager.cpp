@@ -37,12 +37,11 @@ LPDIRECT3DTEXTURE9 TextureFileManager::GetTextureFileData(int index_) const
 
 void TextureFileManager::ReleaseAllTexture()
 {
-	for (unsigned int i = 0; i < m_pTextureFile.size(); i++)
+	// @todo itrの変数名を後々変更する
+	for (auto& itr : m_pTextureFile)
 	{
-		delete m_pTextureFile[i];
+		delete itr;
 	}
-	m_pTextureFile.clear();
-	m_pTextureFile.shrink_to_fit();
 }
 
 void TextureFileManager::ReleaseTexture(int index_)

@@ -56,12 +56,11 @@ void SoundFileManager::SoundState(int index_, SoundMode soundMode_)
 
 void SoundFileManager::ReleaseAllSoundData()
 {
-	for (unsigned int i = 0; i < m_pSoundFile.size(); i++)
+	// @todo itrの変数名を後々変更する
+	for (auto& itr : m_pSoundFile)
 	{
-		delete m_pSoundFile[i];
+		delete itr;
 	}
-	m_pSoundFile.clear();
-	m_pSoundFile.shrink_to_fit();
 }
 
 void SoundFileManager::ReleaseSoundData(int index_)
