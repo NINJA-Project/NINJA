@@ -38,9 +38,6 @@ public:
 		PLAYER,					//プレイヤー
 	};
 #pragma endregion
-#pragma region マップチップID
-
-#pragma endregion
 
 
 public:
