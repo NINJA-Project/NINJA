@@ -27,7 +27,7 @@ void TextureFileManager::LoadTextureFile(int index_, const char* filePath_)
 void TextureFileManager::LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_)
 {
 	m_pTextureFile.emplace_back(New TextureFile);
-	m_pTextureFile[index_]->LoadTextuerMoreInfo(filePath_, (red_, green_, blue_, alpha_), isTwoPower_);
+	m_pTextureFile[index_]->LoadTextuerMoreInfo(filePath_, RGBAColor(red_, green_, blue_, alpha_), isTwoPower_);
 }
 
 LPDIRECT3DTEXTURE9 TextureFileManager::GetTextureFileData(int index_) const

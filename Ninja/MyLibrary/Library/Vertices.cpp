@@ -39,7 +39,7 @@ void Vertices::SetTexSize(float width_, float height_, float maxTu_, float maxTv
 	m_texDepth = depth_;
 }
 
-void Vertices::DrawLeftTop(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_)
+void Vertices::DrawLeftTop(const Vector2D& position_, const LPDIRECT3DTEXTURE9 pTextureData_)
 {
 	CUSTOMVERTEX vertex[4] =
 	{
@@ -59,7 +59,7 @@ void Vertices::DrawLeftTop(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE
 	m_pGraphicsDevice->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, vertex, sizeof(CUSTOMVERTEX));
 }
 
-void Vertices::DrawCenter(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_)
+void Vertices::DrawCenter(const Vector2D& position_, const LPDIRECT3DTEXTURE9 pTextureData_)
 {
 	CUSTOMVERTEX vertex[4] =
 	{

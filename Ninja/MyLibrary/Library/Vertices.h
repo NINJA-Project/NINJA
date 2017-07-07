@@ -8,6 +8,7 @@
 #define VERTICES_H
 
 #include <d3dx9.h>
+#include "Vector2D.h"
 
 struct CUSTOMVERTEX
 {
@@ -49,7 +50,7 @@ public:
 	 * @param [in] pTextureData_	テクスチャデータ
 	 * @note Libraryでテクスチャデータを取得する
 	 */
-	void DrawLeftTop(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_);
+	void DrawLeftTop(const Vector2D& position_, const LPDIRECT3DTEXTURE9 pTextureData_);
 
 	/**
 	* 中心からの描画関数
@@ -57,7 +58,7 @@ public:
 	* @param [in] pTextureData_	テクスチャデータ
 	* @note Libraryでテクスチャデータを取得する
 	*/
-	void DrawCenter(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_);
+	void DrawCenter(const Vector2D& position_, const LPDIRECT3DTEXTURE9 pTextureData_);
 
 	/**
 	 * 色の変更する関数

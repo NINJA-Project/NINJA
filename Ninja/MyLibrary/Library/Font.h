@@ -8,6 +8,7 @@
 #define FONT_H
 
 #include <d3dx9.h>
+#include "Vector2D.h"
 
 class Font
 {
@@ -36,7 +37,7 @@ public:
 	 * @note format_のデフォルト値は左寄せ
 	 * @note RGBのデフォルト値は255
 	 */
-	void DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD format_, int red_, int green_, int blue_);
+	void DrawFont(const char* pString_, const Vector2D& position_, DWORD format_, int red_, int green_, int blue_);
 
 #pragma region メンバ変数
 private:

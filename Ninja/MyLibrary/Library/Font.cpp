@@ -57,7 +57,7 @@ Font::~Font()
 	SafeRelease(m_pFont);
 }
 
-void Font::DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD format_, int red_, int green_, int blue_)
+void Font::DrawFont(const char* pString_, const Vector2D& position_, DWORD format_, int red_, int green_, int blue_)
 {
 	RECT rect;
 	{

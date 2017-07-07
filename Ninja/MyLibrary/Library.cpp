@@ -16,6 +16,7 @@
 #include "Library\XFileManager.h"
 #include "Library\Font.h"
 #include "Library\CommoSystem.h"
+#include "Library\Vector2D.h"
 
 
 Library::Library() :
@@ -82,7 +83,7 @@ int Library::GetWinHeight()
 }
 
 //---------------------DirectX9クラスのパブリック関数--------------------------------
-void Library::SetFVF(DWORD fvf_)
+void Library::SetFVF(const DWORD& fvf_)
 {
 	m_pGraphicsDevice->SetFVF(fvf_);
 }
@@ -221,11 +222,11 @@ void Library::ReleaseXFile(int index_)
 void Library::DrawFont(const char* pString_, float posX_, float posY_, DWORD format_, int red_, int green_, int blue_)
 {
 	Font font;
-	font.DrawFont(pString_, D3DXVECTOR2(posX_, posY_), format_, red_, green_, blue_);
+	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, red_, green_, blue_);
 }
 
 void Library::DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_, int red_, int green_, int blue_)
 {
 	Font font(width_, height_);
-	font.DrawFont(pString_, D3DXVECTOR2(posX_, posY_), format_, red_, green_, blue_);
+	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, red_, green_, blue_);
 }

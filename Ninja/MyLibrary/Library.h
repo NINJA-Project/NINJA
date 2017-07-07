@@ -14,6 +14,7 @@
 #include "Library\Singleton.h"
 #include <vector>
 
+
 #pragma region 前方宣言
 class GraphicsDevice;
 class InputManager;
@@ -97,7 +98,7 @@ public:		// Libraryクラスのパブリック関数
 	* 頂点フォーマット設定関数
 	* @param [in] fvf_ 頂点フォーマットの設定				@note デフォルト値は D3DFVF_CUSTOMVERTEX
 	*/
-	void SetFVF(DWORD fvf_ = D3DFVF_CUSTOMVERTEX);
+	void SetFVF(const DWORD& fvf_ = D3DFVF_CUSTOMVERTEX);
 
 	/**描画開始関数*/
 	void RenderStarting();
