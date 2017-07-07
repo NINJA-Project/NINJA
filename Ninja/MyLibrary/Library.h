@@ -12,8 +12,7 @@
 #include <dinput.h>
 #include <d3dx9.h>
 #include "Library\Singleton.h"
-
-
+#include <vector>
 
 #pragma region 前方宣言
 class GraphicsDevice;
@@ -74,6 +73,7 @@ public:		// Libraryクラスのパブリック関数
 	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note デフォルト値は false 
 	 */
 	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_ = false);
+
 
 #pragma region Windowクラスのパブリック関数
 	/**ウィンドウの更新関数*/
@@ -297,15 +297,15 @@ public:		// Libraryクラスのパブリック関数
 
 #pragma region メンバ変数
 private:
-	GraphicsDevice*			m_pGraphicsDevice;
-	InputDevice*			m_pInputDevice;
-	SoundDevice*			m_pSoundDevice;
-	InputManager*			m_pInputManager;
-	Window*					m_pWindow;
-	TextureFileManager*		m_pTextureFileManager;
-	VertexManager*			m_pVertexManager;
-	SoundFileManager*		m_pSoundFileManager;
-	XFileManager*			m_pXFileManager;
+	GraphicsDevice*					m_pGraphicsDevice;
+	InputDevice*					m_pInputDevice;
+	SoundDevice*					m_pSoundDevice;
+	InputManager*					m_pInputManager;
+	Window*							m_pWindow;
+	TextureFileManager*				m_pTextureFileManager;
+	std::vector<VertexManager*>		m_pVertexManager;
+	SoundFileManager*				m_pSoundFileManager;
+	XFileManager*					m_pXFileManager;
 #pragma endregion
 };
 
