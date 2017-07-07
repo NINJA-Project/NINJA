@@ -16,16 +16,22 @@ m_rLibrary(Library::GetInstance()),
 m_kBlockWidth(64.0f),
 m_kBlockHeight(64.0f)
 {
-	ResourceManager mapLoad;
-	mapLoad.CSVLoader(m_csvData);
+	ResourceManager* mapLoad = New ResourceManager;
+	if (!mapLoad->CSVLoader(m_csvData))
+	{
+#if _DEBUG
+		MyAssert(mapLoad, "csvÉfÅ[É^Ç™ì«Ç›çûÇ‹ÇÍÇƒÇ¢Ç‹ÇπÇÒ");
+#endif // _DEBUG
+	}
 	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, NORMAL_BLOCK, m_kBlockWidth, m_kBlockHeight, 0.25f, 1.0f, 0.0f, 0.0f);
 	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, LANDING_BLOCK, m_kBlockWidth, m_kBlockHeight, 0.5f, 1.0f, 0.25f, 0.0f);
 	m_rLibrary.SetTexSize(ResourceManager::MainTex::MAP_CHIP, LANDING_BLOCK2, m_kBlockWidth, m_kBlockHeight, 0.75f, 1.0f, 0.5f, 0.0f);
+	delete mapLoad;
 }
 
 Map::~Map()
 {
-
+	
 }
 
 void Map::Control()
