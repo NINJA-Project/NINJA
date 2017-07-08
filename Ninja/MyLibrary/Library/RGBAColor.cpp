@@ -29,7 +29,3 @@ b(b_),
 a(a_)
 {
 }
-
-RGBAColor::~RGBAColor()
-{
-}
