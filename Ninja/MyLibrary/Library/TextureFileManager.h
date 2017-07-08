@@ -35,9 +35,7 @@ public:
 	* @param [in]	red_			画像の赤の値
 	* @param [in]	green_			画像の緑の値
 	* @param [in]	blue_			画像の青の値
-	* @param [in]	isTowPower_		画像サイズの2の累乗がどうか
-	* @note argbのデフォルトは255
-	* @note isTowPower_のデフォルトはtrue
+	* @param [in]	isTowPower_		画像サイズの2の累乗がどうか			@note isTowPower_のデフォルト値はLibraryクラスにて true に設定
 	*/
 	void LoadMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_);
 

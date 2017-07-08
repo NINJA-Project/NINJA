@@ -28,10 +28,8 @@ public:
 	/**
 	 * 画像を詳細に読み込む関数
 	 * @param [in]	filePath_		画像のファイルパス
-	 * @param [in]	clor			RGBAの色設定
-	 * @param [in]	isTowPower_		画像サイズの2の累乗がどうか
-	 * @note colorのデフォルトは255
-	 * @note isTowPower_のデフォルトはtrue
+	 * @param [in]	color_			RGBAの色設定
+	 * @param [in]	isTowPower_		画像サイズの2の累乗がどうか		@note isTowPower_のデフォルト値はLibraryクラスにて true に設定
 	 */
 	void LoadMoreInfo(const char* filePath_, const RGBAColor& color_, bool isTwoPower_);
 
