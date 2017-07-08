@@ -23,7 +23,7 @@ public:
 	* @param [in]	index_		Xファイルの配列番号
 	* @param [in]	filePath_	Xファイルのパス
 	*/
-	void LoadXFile(int index_, const char* filePath_);
+	void Load(int index_, const char* filePath_);
 
 	/**
 	 * Xファイルの描画関数
@@ -47,8 +47,10 @@ public:
 	 */
 	void ReleaseXFile(int index_);
 
+#pragma region メンバ変数
 private:
 	std::vector<XFile*>	m_pXFile;
+#pragma endregion
 };
 
 #endif // !XFILEMANAGER_H
