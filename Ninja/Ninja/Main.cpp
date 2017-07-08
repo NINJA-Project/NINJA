@@ -30,7 +30,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	DWORD currentTime;
 	DWORD oldTime = gameFPS * timeGetTime();
 
-	while (!pLibrary->Update())
+	while (!pLibrary->UpdateWindow())
 	{
 		currentTime = gameFPS * timeGetTime();
 		if (currentTime - oldTime >= 1000)

@@ -22,10 +22,11 @@ public:
 	 * @param [in] pWindowName_		ゲームのタイトル
 	 * @param [in] clientWidth_		画面横幅のサイズ
 	 * @param [in] clientHeiht_		画面縦幅のサイズ
-	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note デフォルトはLibraryクラスで false に設定している
+	 * @param [in] isFullScreen_	フルスクリーンかどうか		@note isFullScreen_のデフォルト値はLibraryクラスにて false に設定
 	 */
 	void Create(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_);
 
+	/**ウィンドウの更新関数*/
 	bool Update();
 
 	/**
@@ -37,11 +38,19 @@ public:
 		return m_hwnd;
 	}
 
+	/**
+	* ウィンドの横幅取得関数
+	* @return m_clientWidth ウィンドウの横幅
+	*/
 	int GetWidth() const
 	{
 		return m_clientWidth;
 	}
 
+	/**
+	* ウィンドウの縦幅取得関数
+	* @return m_clientHeight ウィンドウの縦幅
+	*/
 	int GetHeight() const
 	{
 		return m_clientHeight;
@@ -49,10 +58,10 @@ public:
 
 #pragma region メンバ変数
 private:
-	int 	m_clientWidth;
-	int 	m_clientHeight;
+	int 	m_clientWidth;		//!< ウィンドウの横幅
+	int 	m_clientHeight;		//!< ウィンドウの縦幅
 	HWND	m_hwnd;				//!< ウィンドウハンドル
-	MSG		m_msg;
+	MSG		m_msg;				//!< メッセージ情報を格納する
 #pragma endregion
 
 };
