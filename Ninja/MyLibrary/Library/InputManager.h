@@ -13,7 +13,6 @@ class InputManager
 {
 #pragma region キーの状態enum
 private:
-	/// キーの状態
 	enum KeyState
 	{
 		KEY_PUSH,

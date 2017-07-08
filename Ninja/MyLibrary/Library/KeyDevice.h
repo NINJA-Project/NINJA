@@ -15,7 +15,6 @@ class KeyDevice
 {
 #pragma region キーの状態enum
 private:
-	/// キーの状態
 	enum State
 	{
 		KEY_PUSH,
