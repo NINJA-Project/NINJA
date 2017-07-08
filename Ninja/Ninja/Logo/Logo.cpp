@@ -16,7 +16,7 @@ m_height(height_),
 m_texindex(texindex_),
 m_pFilePath(pFilePath_)
 {
-	m_rLibrary.LoadTextureFile(m_texindex, m_pFilePath);
+	m_rLibrary.LoadTexture(m_texindex, m_pFilePath);
 //	m_rLibrary.SetTexSize(m_texindex, m_width, m_height);
 }
 

@@ -24,10 +24,10 @@ m_pGraphicsDevice(nullptr),
 m_pInputDevice(nullptr),
 m_pSoundDevice(nullptr),
 m_pInputManager(nullptr),
-m_pWindow(NULL),
-m_pTextureFileManager(NULL),
-m_pSoundFileManager(NULL),
-m_pXFileManager(NULL)
+m_pWindow(nullptr),
+m_pTextureFileManager(nullptr),
+m_pSoundFileManager(nullptr),
+m_pXFileManager(nullptr)
 {
 
 }
@@ -83,7 +83,7 @@ int Library::GetWinHeight()
 }
 
 //---------------------DirectX9クラスのパブリック関数--------------------------------
-void Library::SetFVF(const DWORD& fvf_)
+void Library::SetFVF(const DWORD fvf_)
 {
 	m_pGraphicsDevice->SetFVF(fvf_);
 }
@@ -121,14 +121,14 @@ KeyState Library::ChooseKey(int dik_)
 }
 
 //---------------------TextureFileManagerクラスのパブリック関数----------------------
-void Library::LoadTextureFile(int index_, const char* filePath_)
+void Library::LoadTexture(int index_, const char* filePath_)
 {
-	m_pTextureFileManager->LoadTextureFile(index_, filePath_);
+	m_pTextureFileManager->Load(index_, filePath_);
 }
 
 void Library::LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_)
 {
-	m_pTextureFileManager->LoadTextuerMoreInfo(index_, filePath_, alpha_, red_, green_, blue_, isTwoPower_);
+	m_pTextureFileManager->LoadMoreInfo(index_, filePath_, alpha_, red_, green_, blue_, isTwoPower_);
 }
 
 void Library::ReleaseAllTexture()
@@ -200,7 +200,7 @@ void Library::ReleaseSoundData(int index_)
 //---------------------XFileManagerクラスのパブリック関数------------------------------
 void Library::LoadXFile(int index_, const char* filePath_)
 {
-	m_pXFileManager->LoadXFile(index_, filePath_);
+	m_pXFileManager->Load(index_, filePath_);
 }
 
 void Library::DrawXFile(int index_)
@@ -222,11 +222,11 @@ void Library::ReleaseXFile(int index_)
 void Library::DrawFont(const char* pString_, float posX_, float posY_, DWORD format_, int red_, int green_, int blue_)
 {
 	Font font;
-	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, red_, green_, blue_);
+	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, RGBAColor(red_, green_, blue_));
 }
 
 void Library::DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_, int red_, int green_, int blue_)
 {
 	Font font(width_, height_);
-	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, red_, green_, blue_);
+	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, RGBAColor(red_, green_, blue_));
 }

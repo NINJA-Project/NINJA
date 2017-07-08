@@ -98,7 +98,7 @@ public:		// Libraryクラスのパブリック関数
 	* 頂点フォーマット設定関数
 	* @param [in] fvf_ 頂点フォーマットの設定				@note デフォルト値は D3DFVF_CUSTOMVERTEX
 	*/
-	void SetFVF(const DWORD& fvf_ = D3DFVF_CUSTOMVERTEX);
+	void SetFVF(const DWORD fvf_ = D3DFVF_CUSTOMVERTEX);
 
 	/**描画開始関数*/
 	void RenderStarting();
@@ -134,7 +134,7 @@ public:		// Libraryクラスのパブリック関数
 	* @param [in]	index_		読み込む画像の配列番号
 	* @param [in]	filePath_	画像のファイルパス
 	*/
-	void LoadTextureFile(int index_, const char* filePath_);
+	void LoadTexture(int index_, const char* filePath_);
 
 	/**
 	* 画像を詳細に読み込む関数

@@ -15,7 +15,6 @@ m_posX(posX_),
 m_posY(posY_),
 m_texIndex(texindex_)
 {
-	m_rLibrary.LoadTextureFile(m_texIndex, "Resource/Texture/Button.png");
 //	m_rLibrary.SetTexSize(m_texIndex, m_width, m_height);
 }
 
@@ -25,11 +24,6 @@ Button::~Button()
 
 bool Button::IsPush()
 {
-	if (m_rLibrary.ChooseKey(DIK_A) == PUSH)
-	{
-		return true;
-	}
-
 	return false;
 }
 
