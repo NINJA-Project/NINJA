@@ -21,7 +21,7 @@ SoundFile::~SoundFile()
 	SafeRelease(m_pDsoundBuffer);
 }
 
-void SoundFile::LoadSoundFile(const char* filePath_)
+void SoundFile::Load(const char* filePath_)
 {
 	char *pWaveData = NULL;
 

@@ -52,8 +52,10 @@ public:
 	 */
 	void ReleaseSoundData(int index_);
 
+#pragma region メンバ変数
 private:
 	std::vector<SoundFile*>	m_pSoundFile;
+#pragma endregion
 };
 
 #endif // !SOUNDFILEMANAGER_H

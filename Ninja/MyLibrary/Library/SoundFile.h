@@ -33,7 +33,7 @@ public:
 	 * 音楽ファイル(wav)の読み込み関数
 	 * @param [in]	filePath_	音楽のファイルパス
 	 */
-	void LoadSoundFile(const char* filePath_);
+	void Load(const char* filePath_);
 
 	/**
 	 * 音楽の再生状態を決める関数
