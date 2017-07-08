@@ -1,6 +1,6 @@
 ﻿/**
  * @file	Release.h
- * @breif	メモリリークの場所を教えてくれる定義ヘッダ
+ * @breif	解放関数のテンプレート化ヘッダ
  * @author	shibata
  */
 

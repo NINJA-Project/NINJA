@@ -1,6 +1,6 @@
 ﻿/**
  * @file	Debug.cpp
- * @breif	デバッグ機能が使用できるクラスヘッダ
+ * @breif	デバッグ機能が使用できるクラス実装
  * @author	shibata
  */
 

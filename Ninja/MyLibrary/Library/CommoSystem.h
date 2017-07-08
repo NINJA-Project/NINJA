@@ -1,5 +1,5 @@
 /**
-* @file	CommonSystem.h
+* @file		CommonSystem.h
 * @breif	共通システムのインクルードヘッダ
 * @author	shibata
 */
@@ -8,8 +8,8 @@
 #define COMMONSYSTEM_H
 
 /**
-* @attention	各hには絶対にインクルードしないこと
-* @note		インクルードする際はcppのみですること
+* @attention	各ヘッダには絶対にインクルードしないこと
+* @note			インクルードする際はcppのみですること
 */
 
 #include "Debug.h"

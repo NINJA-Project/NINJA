@@ -18,10 +18,6 @@ y(y_)
 {
 }
 
-Vector2D::~Vector2D()
-{
-}
-
 Vector2D& Vector2D::operator=(const Vector2D& vec2D_)
 {
 	Vector2D vec;

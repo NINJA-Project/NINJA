@@ -1,6 +1,6 @@
 ﻿/**
  * @file	Singleton.h
- * @breif	
+ * @breif	シングルトンパターンのテンプレート化クラスヘッダ
  * @author	shibata
  */
 
@@ -47,11 +47,10 @@ private:
 #if _DEBUG
 		if (nullptr == m_instance)
 		{
-			MyAssert(m_instance, "データが入っていません");
+			MyAssert(m_instance, "インスタンスが生成されていません");
 		}
 #endif // _DEBUG
 	}
-
 
 	Singleton(Singleton const&) = delete;
 	Singleton& operator=(Singleton const&) = delete;
@@ -59,8 +58,8 @@ private:
 
 #pragma region メンバ変数
 private:
-	static Type* m_instance;		// インスタンス変数
-	static bool	m_isCreateInstace;	// インスタンスが生成されたかどうか
+	static Type* m_instance;		//!< インスタンス変数
+	static bool	m_isCreateInstace;	//!< インスタンスが生成されたかどうか
 #pragma endregion
 };
 

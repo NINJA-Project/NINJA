@@ -20,10 +20,6 @@ z(z_)
 {
 }
 
-Vector3D::~Vector3D()
-{
-}
-
 Vector3D& Vector3D::operator=(const Vector3D& vec2D_)
 {
 	Vector3D vec;

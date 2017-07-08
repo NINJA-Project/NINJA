@@ -17,7 +17,6 @@ public:
 public:
 	Vector3D();
 	Vector3D(float x_, float y_, float z_);
-	~Vector3D();
 
 	// ‘ã“ü‰‰ŽZŽq
 	Vector3D& operator  = (const Vector3D& vec2D_);

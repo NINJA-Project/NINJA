@@ -16,7 +16,6 @@ public:
 public:
 	Vector2D();
 	Vector2D(float x_, float y_);
-	~Vector2D();
 
 	// ‘ã“ü‰‰ŽZŽq
 	Vector2D& operator  = (const Vector2D& vec2D_);

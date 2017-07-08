@@ -20,5 +20,4 @@
 //#define THREE
 //-------------------------------
 
-
 #endif // !DIRECTIVES_H
