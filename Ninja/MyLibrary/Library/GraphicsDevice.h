@@ -25,13 +25,13 @@ public:
 	 * @param [in]	hwnd_			ウィンドウハンドル
 	 * @param [in]	clientWidth_	画面横幅のサイズ
 	 * @param [in]	clientHeight_	画面縦幅のサイズ
-	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note デフォルトはLibraryクラスで false に設定している
+	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note isFullScreen_のデフォルト値はLibraryクラスにて false に設定
 	 */
 	void Initialize(HWND hwnd_, int clientWidth_, int clientHeight_, bool isFullScreen_);
 
 	/**
 	 * 頂点フォーマット設定関数
-	 * @param [in] fvf_ 頂点フォーマットの設定			@note デフォルトはLibraryクラスで D3DFVF_CUSTOMVERTEX に設定している
+	 * @param [in] fvf_ 頂点フォーマットの設定					@note fvf_のデフォルト値はLibraryクラスにて D3DFVF_CUSTOMVERTEX に設定
 	 */
 	void SetFVF(DWORD fvf_);
 
