@@ -36,7 +36,7 @@ public:
 	* キーボードデバイスの取得関数
 	* @return m_pKeyDevice キーボードデバイス
 	*/
-	LPDIRECTINPUTDEVICE8 GetKeyDevice()
+	LPDIRECTINPUTDEVICE8 GetKeyDevice() const
 	{
 		return m_pKeyDevice;
 	}
