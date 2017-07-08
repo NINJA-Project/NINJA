@@ -66,7 +66,7 @@ void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientH
 }
 
 //---------------------Windowクラスのパブリック関数----------------------------------
-bool Library::Update()
+bool Library::UpdateWindow()
 {
 	bool isUpdate = m_pWindow->Update();
 	return isUpdate;

@@ -28,7 +28,6 @@ class XFileManager;
 #pragma endregion 
 
 #pragma region サウンド状態のenum
-/// サウンドを鳴らす状態
 enum SoundMode
 {
 	PLAY,
@@ -41,7 +40,6 @@ enum SoundMode
 #pragma endregion
 
 #pragma region キー状態のenum
-/// キーの状態
 enum KeyState
 {
 	PUSH,
@@ -71,14 +69,14 @@ public:		// Libraryクラスのパブリック関数
 	 * @param [in] pWindowName_		ウィンドウタイトル
 	 * @param [in] clientWidth_		画面横幅のサイズ
 	 * @param [in] clientHeiht_		画面縦幅のサイズ
-	 * @param [in]	isFullScreen_	フルスクリーンかどうか		@note デフォルト値は false 
+	 * @param [in] isFullScreen_	フルスクリーンかどうか		@note isFullScreen_のデフォルト値は false 
 	 */
 	void Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_ = false);
 
 
 #pragma region Windowクラスのパブリック関数
 	/**ウィンドウの更新関数*/
-	bool Update();
+	bool UpdateWindow();
 
 	/**
 	 * ウィンドウ幅のサイズを取得してくる関数
@@ -96,7 +94,7 @@ public:		// Libraryクラスのパブリック関数
 #pragma region GraphicsDeviceクラスのパブリック関数
 	/**
 	* 頂点フォーマット設定関数
-	* @param [in] fvf_ 頂点フォーマットの設定				@note デフォルト値は D3DFVF_CUSTOMVERTEX
+	* @param [in] fvf_ 頂点フォーマットの設定				@note fvf_のデフォルト値は D3DFVF_CUSTOMVERTEX
 	*/
 	void SetFVF(const DWORD fvf_ = D3DFVF_CUSTOMVERTEX);
 
@@ -140,15 +138,13 @@ public:		// Libraryクラスのパブリック関数
 	* 画像を詳細に読み込む関数
 	* @param [in]	index_			読み込む画像の配列番号
 	* @param [in]	filePath_		画像のファイルパス
-	* @param [in]	alpha_			画像の透過の値
-	* @param [in]	red_			画像の赤の値
-	* @param [in]	green_			画像の緑の値
-	* @param [in]	blue_			画像の青の値
-	* @param [in]	isTowPower_		画像サイズの2の累乗がどうか
-	* @note argbのデフォルトは
-	* @note isTowPower_のデフォルトはtrue
+	* @param [in]	alpha_			画像の透過の値					
+	* @param [in]	red_			画像の赤の値					
+	* @param [in]	green_			画像の緑の値					
+	* @param [in]	blue_			画像の青の値					
+	* @param [in]	isTowPower_		画像サイズの2の累乗がどうか		@note isTowPower_のデフォルト値は false 
 	*/
-	void LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_ = 255, int red_ = 255, int green_ = 255, int blue_ = 255, bool isTwoPower_ = true);
+	void LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_ = true);
 
 	/**全てのテクスチャの解放関数*/
 	void ReleaseAllTexture();
@@ -163,23 +159,22 @@ public:		// Libraryクラスのパブリック関数
 #pragma region VerticesManagerのパブリック関数
 	/**
 	* 画像サイズの設定する関数
-	* @param [in] index_	頂点情報の配列番号
-	* @param [in] width_	描画の横幅
-	* @param [in] height_	描画の縦幅
-	* @param [in] maxTu_	テクスチャの最大x座標
-	* @param [in] maxTv_	テクスチャの最大y座標
-	* @param [in] minTu_	テクスチャの最小x座標
-	* @param [in] minTv_	テクスチャの最小y座標
-	* @param [in] depth_	描画の奥行き
-	* @note depth_のデフォルト値は0.5f
-	* @note maxTu, maxTvのデフォルト値は1.0f
-	* @note minTu, minTvのデフォルト値は0.0f
+	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	* @param [in] drawIndex_	描画する頂点情報の配列番号
+	* @param [in] width_		描画の横幅
+	* @param [in] height_		描画の縦幅
+	* @param [in] maxTu_		テクスチャの最大x座標		@note maxTu_のデフォルト値は 1.0f 
+	* @param [in] maxTv_		テクスチャの最大y座標		@note maxTv_のデフォルト値は 1.0f 
+	* @param [in] minTu_		テクスチャの最小x座標		@note minTu_のデフォルト値は 0.0f 
+	* @param [in] minTv_		テクスチャの最小y座標		@note minTv_のデフォルト値は 0.0f 
+	* @param [in] depth_		描画の奥行き				@note depth_のデフォルト値は 0.5f 
 	*/
 	void SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_ = 1.0f, float maxTv_ = 1.0f, float minTu_ = 0.0f, float minTv_ = 0.0f, float depth_ = 0.5f);
 
 	/**
 	* 左上からの描画関数
-	* @param [in] index_		頂点情報の配列番号
+	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	* @param [in] drawIndex_	描画する頂点情報の配列番号
 	* @param [in] posX_			x座標
 	* @param [in] posY_			y座標
 	*/
@@ -187,7 +182,8 @@ public:		// Libraryクラスのパブリック関数
 
 	/**
 	* 中心からの描画関数
-	* @param [in] index_		頂点情報の配列番号
+	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	* @param [in] drawIndex_	描画する頂点情報の配列番号
 	* @param [in] posX_			x座標
 	* @param [in] posY_			y座標
 	*/
@@ -195,15 +191,15 @@ public:		// Libraryクラスのパブリック関数
 
 	/**
 	* 色の変更する関数
-	* @param [in] index_	頂点情報の配列番号
-	* @param [in] color_	変更したRGBAの最終的な値
-	* @param [in] alpha_	変更する透過の値
-	* @param [in] red_		変更する赤の値
-	* @param [in] green_	変更する緑の値
-	* @param [in] blue_	変更する青の値
-	* @note rbgaのデフォルト値は255
+	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	* @param [in] drawIndex_	描画する頂点情報の配列番号
+	* @param [in] color_		変更したRGBAの最終的な値
+	* @param [in] alpha_		変更する透過の値
+	* @param [in] red_			変更する赤の値
+	* @param [in] green_		変更する緑の値
+	* @param [in] blue_			変更する青の値
 	*/
-	void SetColor(int loadIndex_, int drawIndex_, DWORD color_, int alpha_ = 255, int red_ = 255, int green_ = 255, int blue_ = 255);
+	void SetColor(int loadIndex_, int drawIndex_, DWORD color_, int alpha_, int red_, int green_, int blue_);
 
 	/**全ての頂点データの解放関数*/
 	void ReleaseAllVirtices();
@@ -243,14 +239,14 @@ public:		// Libraryクラスのパブリック関数
 #pragma region XFileManagerクラスのパブリック関数
 	/**
 	* Xファイルの読み込み関数
-	* @param [in]	index_		Xファイルの配列番号
+	* @param [in]	index_		読み込むXファイルの配列番号
 	* @param [in]	filePath_	Xファイルのパス
 	*/
 	void LoadXFile(int index_, const char* filePath_);
 
 	/**
 	* Xファイルの描画関数
-	* @param [in] index_
+	* @param [in] index_		描画するXファイルの配列番号(読み込んだ配列番号と同じ)
 	*/
 	void DrawXFile(int index_);
 
@@ -270,12 +266,10 @@ public:		// Libraryクラスのパブリック関数
 	* @param [in] pString_		描画する文字列
 	* @param [in] posX_			描画する文字のX座標
 	* @param [in] posY_			描画する文字のY座標
-	* @param [in] format_		文字のフォーマット
-	* @param [in] red_			文字のR値
-	* @param [in] green_		文字のG値
-	* @param [in] blue_			文字のB値
-	* @note format_のデフォルト値は左寄せ
-	* @note RGBのデフォルト値は255
+	* @param [in] format_		文字のフォーマット		@note format_のデフォルト値は 左寄せ
+	* @param [in] red_			文字のR値				@note red_のデフォルト値は 255
+	* @param [in] green_		文字のG値				@note green_のデフォルト値は 255
+	* @param [in] blue_			文字のB値				@note blue_のデフォルト値は 255
 	*/
 	void DrawFont(const char* pString_, float posX_, float posY_, DWORD format_ = DT_LEFT, int red_ = 255, int green_ = 255, int blue_ = 255);
 
@@ -286,12 +280,10 @@ public:		// Libraryクラスのパブリック関数
 	* @param [in] pString_		描画する文字列
 	* @param [in] posX_			描画する文字のX座標
 	* @param [in] posY_			描画する文字のY座標
-	* @param [in] format_		文字のフォーマット
-	* @param [in] red_			文字のR値
-	* @param [in] green_		文字のG値
-	* @param [in] blue_			文字のB値
-	* @note format_のデフォルト値は左寄せ
-	* @note RGBのデフォルト値は255
+	* @param [in] format_		文字のフォーマット		@note format_のデフォルト値は 左寄せ
+	* @param [in] red_			文字のR値				@note red_のデフォルト値は 255
+	* @param [in] green_		文字のG値				@note green_のデフォルト値は 255
+	* @param [in] blue_			文字のB値				@note blue_のデフォルト値は 255
 	*/
 	void DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_ = DT_LEFT, int red_ = 255, int green_ = 255, int blue_ = 255);
 #pragma endregion
