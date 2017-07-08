@@ -34,24 +34,8 @@ public:
 #pragma region メインシーンのテクスチャID
 	enum MainTex
 	{
-		MAP_CHIP1,
-		MAP_CHIP2,
-		MAP_CHIP3,
-		Player_Standing1,		//プレイヤー立ち絵
-		//Player_Standeing2,		//プレイヤー立ち絵2
-	//	Player_Run1,			//プレイヤー走り
-	//	Player_Run2,			//プレイヤー走り2
-	//	Player_Run3,			//プレイヤー走り3
-
-	};
-#pragma endregion
-#pragma region マップチップID
-	enum ChipID
-	{
-		NONE,			// なにもなし
-		NORMAL_BLOCK,	// 通常のブロック
-		LANDING_BLOCK,	// 乗り場ブロック
-		LANDING_BLOCK2,	// 仮の名前
+		MAP_CHIP,
+		PLAYER,					//プレイヤー
 	};
 #pragma endregion
 

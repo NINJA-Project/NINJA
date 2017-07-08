@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -78,19 +78,23 @@
     <ClCompile Include="Library\Camera.cpp" />
     <ClCompile Include="Library\Font.cpp" />
     <ClCompile Include="Library\Debug.cpp" />
-    <ClCompile Include="Library\DirectX9.cpp" />
+    <ClCompile Include="Library\fRect.cpp" />
+    <ClCompile Include="Library\GraphicsDevice.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="Library\InputDvice.cpp" />
-    <ClCompile Include="Library\InputKey.cpp" />
+    <ClCompile Include="Library\KeyDevice.cpp" />
     <ClCompile Include="Library\InputManager.cpp" />
     <ClCompile Include="Library\Light.cpp" />
+    <ClCompile Include="Library\RGBAColor.cpp" />
     <ClCompile Include="Library\SoundFile.cpp" />
     <ClCompile Include="Library\SoundFileManager.cpp" />
-    <ClCompile Include="Library\SoundInterface.cpp" />
+    <ClCompile Include="Library\SoundDevice.cpp" />
     <ClCompile Include="Library\TextureFile.cpp" />
     <ClCompile Include="Library\TextureFileManager.cpp" />
+    <ClCompile Include="Library\Vector2D.cpp" />
+    <ClCompile Include="Library\Vector3D.cpp" />
     <ClCompile Include="Library\Vertices.cpp" />
-    <ClCompile Include="Library\VerticesManager.cpp" />
+    <ClCompile Include="Library\VertexManager.cpp" />
     <ClCompile Include="Library\Window.cpp" />
     <ClCompile Include="Library\XFile.cpp" />
     <ClCompile Include="Library\XFileManager.cpp" />
@@ -98,22 +102,27 @@
   <ItemGroup>
     <ClInclude Include="Library\Camera.h" />
     <ClInclude Include="Library\CommoSystem.h" />
+    <ClInclude Include="Library\Directives.h" />
+    <ClInclude Include="Library\fRect.h" />
     <ClInclude Include="Library\Release.h" />
     <ClInclude Include="Library\Font.h" />
     <ClInclude Include="Library\Debug.h" />
-    <ClInclude Include="Library\InputKey.h" />
+    <ClInclude Include="Library\KeyDevice.h" />
     <ClInclude Include="Library\InputManager.h" />
     <ClInclude Include="Library\Light.h" />
+    <ClInclude Include="Library\RGBAColor.h" />
     <ClInclude Include="Library\SoundFile.h" />
     <ClInclude Include="Library\SoundFileManager.h" />
+    <ClInclude Include="Library\Vector2D.h" />
+    <ClInclude Include="Library\Vector3D.h" />
     <ClInclude Include="Library\Vertices.h" />
-    <ClInclude Include="Library\VerticesManager.h" />
+    <ClInclude Include="Library\VertexManager.h" />
     <ClInclude Include="Library\XFile.h" />
     <ClInclude Include="Library\XFileManager.h" />
-    <ClInclude Include="Library\DirectX9.h" />
+    <ClInclude Include="Library\GraphicsDevice.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Library\InputDvice.h" />
-    <ClInclude Include="Library\SoundInterface.h" />
+    <ClInclude Include="Library\SoundDevice.h" />
     <ClInclude Include="Library\TextureFile.h" />
     <ClInclude Include="Library\TextureFileManager.h" />
     <ClInclude Include="Library\Window.h" />

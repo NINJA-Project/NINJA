@@ -5,12 +5,11 @@
  */
 
 #include "XFile.h"
-#include "DirectX9.h"
-#include "Release.h"
-
+#include "GraphicsDevice.h"
+#include "CommoSystem.h"
 
 XFile::XFile() : 
-m_pD3Device(DirectX9::GetInstance().GetDevice()),
+m_pD3Device(GraphicsDevice::GetInstance().GetDevice()),
 m_pMesh(NULL),
 m_pMeshMaterials(NULL),
 m_pMeshTextures(NULL),
@@ -26,9 +25,9 @@ XFile::~XFile()
 	SafeRelease(m_pMesh);
 }
 
-bool XFile::LoadXFile(const char* filePath_)
+void XFile::Load(const char* filePath_)
 {
-	LPD3DXBUFFER pD3DXMtrlBuffer = NULL;
+	LPD3DXBUFFER pD3DXMtrlBuffer = nullptr;
 
 	if (FAILED(D3DXLoadMeshFromX(
 		filePath_,
@@ -40,8 +39,7 @@ bool XFile::LoadXFile(const char* filePath_)
 		&m_dwNumMaterials,		// 隣接データのマテリアルの数が返ってくる
 		&m_pMesh)))				// メッシュインターフェイスの情報
 	{
-		MessageBox(NULL, "Xファイルの読み込みに失敗しました", NULL, MB_OK);
-		return false;
+		MyAssert(m_pMesh, "Xファイルの読み込みに失敗しました");
 	}
 
 	D3DXMATERIAL* d3dxMaterials = (D3DXMATERIAL*)pD3DXMtrlBuffer->GetBufferPointer();		// マテリアル・バッファのポインタを適切な初期化する
@@ -61,14 +59,11 @@ bool XFile::LoadXFile(const char* filePath_)
 				d3dxMaterials[i].pTextureFilename,
 				&m_pMeshTextures[i])))
 			{
-				MessageBox(NULL, "テクスチャの読み込みに失敗しました", NULL, MB_OK);
-				return false;
+				MyAssert(m_pMesh, "Xファイルのテクスチャの読み込みに失敗しました");
 			}
 		}
 	}
-
 	pD3DXMtrlBuffer->Release();
-	return true;
 }
 
 void XFile::DrawXFile()

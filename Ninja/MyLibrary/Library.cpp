@@ -1,32 +1,33 @@
 ﻿/**
  * @file	Library.cpp
- * @breif	ライブラリ全体の通り道のクラス実装
+ * @breif	ライブラリ全体の統括クラス実装
  * @author	shibata
  */
 
 #include "Library.h"
-#include "Library\DirectX9.h"
+#include "Library\GraphicsDevice.h"
 #include "Library\InputDvice.h"
-#include "Library\SoundInterface.h"
+#include "Library\SoundDevice.h"
 #include "Library\InputManager.h"
 #include "Library\Window.h"
 #include "Library\TextureFileManager.h"
-#include "Library\VerticesManager.h"
+#include "Library\VertexManager.h"
 #include "Library\SoundFileManager.h"
 #include "Library\XFileManager.h"
 #include "Library\Font.h"
 #include "Library\CommoSystem.h"
+#include "Library\Vector2D.h"
+
 
 Library::Library() :
-m_pDirectX9(NULL),
-m_pInputDevice(NULL),
-m_pSoundInterface(NULL),
-m_pInputManager(NULL),
-m_pWindow(NULL),
-m_pTextureFileManager(NULL),
-m_pVerticesManager(NULL),
-m_pSoundFileManager(NULL),
-m_pXFileManager(NULL)
+m_pGraphicsDevice(nullptr),
+m_pInputDevice(nullptr),
+m_pSoundDevice(nullptr),
+m_pInputManager(nullptr),
+m_pWindow(nullptr),
+m_pTextureFileManager(nullptr),
+m_pSoundFileManager(nullptr),
+m_pXFileManager(nullptr)
 {
 
 }
@@ -38,36 +39,34 @@ Library::~Library()
 	SafeDelete(m_pInputManager);
 	SafeDelete(m_pSoundFileManager);
 	SafeDelete(m_pTextureFileManager);
-	SafeDelete(m_pVerticesManager);
-	m_pDirectX9->DestroyInstance();
+	ReleaseAllVirtices();
+	m_pSoundDevice->DestroyInstance();
 	m_pInputDevice->DestroyInstance();
-	m_pSoundInterface->DestroyInstance();
+	m_pGraphicsDevice->DestroyInstance();
 }
 
-void Library::InitLibrary(const char* titleName_, int clientWidth_, int clientHeight_, bool isFullScreen_)
+void Library::Initialize(const char* pWindowName_, int clientWidth_, int clientHeight_, bool isFullScreen_)
 {
 	m_pWindow = New Window;
-	m_pWindow->Create(titleName_, clientWidth_, clientHeight_, isFullScreen_);
+	m_pWindow->Create(pWindowName_, clientWidth_, clientHeight_, isFullScreen_);
 
-	m_pDirectX9 = &DirectX9::GetInstance();
-	m_pDirectX9->InitDirectX(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_);
+	m_pGraphicsDevice = &GraphicsDevice::GetInstance();
+	m_pGraphicsDevice->Initialize(m_pWindow->GetHwnd(), clientWidth_, clientHeight_, isFullScreen_);
 
 	m_pInputDevice = &InputDevice::GetInstance();
-	m_pInputDevice->InitInput();
-	m_pInputDevice->InitInputKey(m_pWindow->GetHwnd());
+	m_pInputDevice->Initialize(m_pWindow->GetHwnd());
 
-	m_pSoundInterface = &SoundInterface::GetInstance();
-	m_pSoundInterface->InitSound(m_pWindow->GetHwnd());
+	m_pSoundDevice = &SoundDevice::GetInstance();
+	m_pSoundDevice->Initialize(m_pWindow->GetHwnd());
 
 	m_pInputManager			= New InputManager;
 	m_pTextureFileManager	= New TextureFileManager;
-	m_pVerticesManager		= New VerticesManager;
 	m_pXFileManager			= New XFileManager;
 	m_pSoundFileManager		= New SoundFileManager;
 }
 
 //---------------------Windowクラスのパブリック関数----------------------------------
-bool Library::Update()
+bool Library::UpdateWindow()
 {
 	bool isUpdate = m_pWindow->Update();
 	return isUpdate;
@@ -84,29 +83,24 @@ int Library::GetWinHeight()
 }
 
 //---------------------DirectX9クラスのパブリック関数--------------------------------
-void Library::SetFVF(DWORD fvf_)
+void Library::SetFVF(const DWORD fvf_)
 {
-	m_pDirectX9->SetFVF(fvf_);
+	m_pGraphicsDevice->SetFVF(fvf_);
 }
 
-void Library::DrawStart()
+void Library::RenderStarting()
 {
-	m_pDirectX9->DrawStart();
+	m_pGraphicsDevice->RenderStarting();
 }
 
-void Library::DrawEnd()
+void Library::RenderEnding()
 {
-	m_pDirectX9->DrawEnd();
-}
-
-void Library::Init3DDraw()
-{
-	m_pDirectX9->Init3DDraw();
+	m_pGraphicsDevice->RenderEnding();
 }
 
 LPDIRECT3DDEVICE9 Library::GetDevice()
 {
-	return m_pDirectX9->GetDevice();
+	return m_pGraphicsDevice->GetDevice();
 }
 
 //---------------------InputManagerクラスのパブリック関数----------------------------
@@ -120,21 +114,21 @@ void Library::UpdateKey()
 	m_pInputManager->UpdateKey();
 }
 
-KeyState Library::CheckKey(int dik_)
+KeyState Library::ChooseKey(int dik_)
 {
-	KeyState keyState = static_cast<KeyState>(m_pInputManager->CheckKey(dik_));
+	KeyState keyState = static_cast<KeyState>(m_pInputManager->ChooseKey(dik_));
 	return keyState;
 }
 
 //---------------------TextureFileManagerクラスのパブリック関数----------------------
-void Library::LoadTextureFile(int index_, const char* filePath_)
+void Library::LoadTexture(int index_, const char* filePath_)
 {
-	m_pTextureFileManager->LoadTextureFile(index_, filePath_);
+	m_pTextureFileManager->Load(index_, filePath_);
 }
 
 void Library::LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_)
 {
-	m_pTextureFileManager->LoadTextuerMoreInfo(index_, filePath_, alpha_, red_, green_, blue_, isTwoPower_);
+	m_pTextureFileManager->LoadMoreInfo(index_, filePath_, alpha_, red_, green_, blue_, isTwoPower_);
 }
 
 void Library::ReleaseAllTexture()
@@ -148,34 +142,38 @@ void Library::ReleaseTexture(int index_)
 }
 
 //---------------------VerticesManagerクラスのパブリック関数-------------------------
-void Library::SetTexSize(int index_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
+void Library::SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
-	m_pVerticesManager->SetTexSize(index_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
+	m_pVertexManager.emplace_back(New VertexManager);
+	m_pVertexManager[drawIndex_]->SetTexSize(loadIndex_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
 }
 
-void Library::DrawLeftTop(int index_, float posX_, float posY_)
+void Library::DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
-	m_pVerticesManager->DrawLeftTop(index_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(index_));
+	m_pVertexManager[drawIndex_]->DrawLeftTop(loadIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
-void Library::DrawCenter(int index_, float posX_, float posY_)
+void Library::DrawCenter(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
-	m_pVerticesManager->DrawCenter(index_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(index_));
+	m_pVertexManager[drawIndex_]->DrawCenter(loadIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
-void Library::SetColor(int index_, DWORD color_, int alpha_, int red_, int green_, int blue_)
+void Library::SetColor(int loadIndex_, int drawIndex_, DWORD color_, int alpha_, int red_, int green_, int blue_)
 {
-	m_pVerticesManager->SetColor(index_, color_, alpha_, red_, green_, blue_);
+	m_pVertexManager[drawIndex_]->SetColor(loadIndex_, color_, alpha_, red_, green_, blue_);
 }
 
 void Library::ReleaseAllVirtices()
 {
-	m_pVerticesManager->ReleaseAllVirtices();
+	for (auto& itr : m_pVertexManager)
+	{
+		delete itr;
+	}
 }
 
-void Library::ReleaseVirtices(int index_)
+void Library::ReleaseVirtices(int loadIndex_, int drawIndex_)
 {
-	m_pVerticesManager->ReleaseVirtices(index_);
+	m_pVertexManager[drawIndex_]->ReleaseVirtices(loadIndex_);
 }
 
 //---------------------SoundFileManagerクラスのパブリック関数--------------------------
@@ -202,7 +200,7 @@ void Library::ReleaseSoundData(int index_)
 //---------------------XFileManagerクラスのパブリック関数------------------------------
 void Library::LoadXFile(int index_, const char* filePath_)
 {
-	m_pXFileManager->LoadXFile(index_, filePath_);
+	m_pXFileManager->Load(index_, filePath_);
 }
 
 void Library::DrawXFile(int index_)
@@ -224,11 +222,11 @@ void Library::ReleaseXFile(int index_)
 void Library::DrawFont(const char* pString_, float posX_, float posY_, DWORD format_, int red_, int green_, int blue_)
 {
 	Font font;
-	font.DrawFont(pString_, D3DXVECTOR2(posX_, posY_), format_, red_, green_, blue_);
+	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, RGBAColor(red_, green_, blue_));
 }
 
 void Library::DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_, int red_, int green_, int blue_)
 {
 	Font font(width_, height_);
-	font.DrawFont(pString_, D3DXVECTOR2(posX_, posY_), format_, red_, green_, blue_);
+	font.DrawFont(pString_, Vector2D(posX_, posY_), format_, RGBAColor(red_, green_, blue_));
 }

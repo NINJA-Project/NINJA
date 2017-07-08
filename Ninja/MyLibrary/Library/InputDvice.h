@@ -9,6 +9,13 @@
 
 #define DIRECTINPUT_VERSION 0x0800
 
+#pragma region デバイスの種類
+#define KEY
+#define MOUSE
+#define MAMEPAD
+#pragma endregion
+
+
 #include <dinput.h>
 #include "Singleton.h"
 
@@ -19,36 +26,42 @@ private:
 	/**コンストラクタ*/
 	InputDevice();
 	/**デストラクタ*/
-	virtual ~InputDevice();
+	~InputDevice();
 
 public:
-	/**
-	 * DirectInputの初期化関数
-	 * @retval true		初期化成功
-	 * @retval false	初期化失敗
-	 */
-	bool InitInput();
+	/**初期化関数*/
+	void Initialize(HWND hwnd_);
 
 	/**
-	 * キーボードデバイスの生成関数
-	 * @param [in]	hWnd_	ウィンドウハンドル
-	 * @retval		true	生成成功
-	 * @retval		false	生成失敗
-	 */
-	bool InitInputKey(HWND hWnd_);
-
-	/**
-	 * キーボードデバイスの取得関数
-	 * @return m_pKeyDevice キーボードデバイス
-	 */
-	LPDIRECTINPUTDEVICE8 GetKeyDevice()
+	* キーボードデバイスの取得関数
+	* @return m_pKeyDevice キーボードデバイス
+	*/
+	LPDIRECTINPUTDEVICE8 GetKeyDevice() const
 	{
 		return m_pKeyDevice;
 	}
+private:
+#pragma region 各デバイスの初期化
+	/**
+	* キーボードデバイスの生成関数
+	* @param [in]	hwnd_	ウィンドウハンドル
+	*/
+	void InitializeKeyDevice(HWND hwnd_);
 
+	/**
+	* マウスデバイスの生成関数
+	* @param [in]	hwnd_	ウィンドウハンドル
+	*/
+
+	void InitializeMouseDevice(HWND hwnd_);
+#pragma endregion
+
+
+#pragma region メンバ変数
 private:
 	LPDIRECTINPUT8			m_pDinput;		//!< DirectInputのインターフェイス
 	LPDIRECTINPUTDEVICE8	m_pKeyDevice;	//!< DirectInputのキーボード用デバイス
+#pragma endregion
 };
 
 #endif // !INPUTDEVICE_H

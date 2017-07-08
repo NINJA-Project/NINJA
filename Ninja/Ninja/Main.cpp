@@ -24,14 +24,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	pDebug->CheckMemoryLeaK();
 
-	pLibrary->InitLibrary(title, clientWidth, clientHeight, false);
-	pLibrary->Init3DDraw();
+	pLibrary->Initialize(title, clientWidth, clientHeight);
 
 	pGameManager = New GameManager;
 	DWORD currentTime;
 	DWORD oldTime = gameFPS * timeGetTime();
 
-	while (!pLibrary->Update())
+	while (!pLibrary->UpdateWindow())
 	{
 		currentTime = gameFPS * timeGetTime();
 		if (currentTime - oldTime >= 1000)

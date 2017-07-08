@@ -8,14 +8,6 @@
     <Filter Include="Library\InputDvice">
       <UniqueIdentifier>{aaed0762-8042-4f69-b00a-a524d8ca4b43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\DirectX9">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Library\SoundInterface">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Library\TextureFileManager">
       <UniqueIdentifier>{93508dab-db3e-41f9-889b-2f2eaef0435c}</UniqueIdentifier>
     </Filter>
@@ -27,12 +19,6 @@
     </Filter>
     <Filter Include="Library\SoundFileManager\SoundFile">
       <UniqueIdentifier>{cb538a3c-cfa3-480a-a04d-fc052c0bc2e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Library\VerticesManager">
-      <UniqueIdentifier>{7926de6b-4835-4c92-af05-c05ca46f6553}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Library\VerticesManager\Vertices">
-      <UniqueIdentifier>{10a3bbd3-860a-459a-9f79-b5831f3f7659}</UniqueIdentifier>
     </Filter>
     <Filter Include="Library\XFileManager">
       <UniqueIdentifier>{4e46d3e9-0073-464a-9418-503fbf15d686}</UniqueIdentifier>
@@ -46,9 +32,6 @@
     <Filter Include="Library\InputManager">
       <UniqueIdentifier>{7669550e-2e22-4460-9ef5-c0a7d4554915}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\InputManager\InputKey">
-      <UniqueIdentifier>{96eb70fe-6c89-4763-9aae-07324d1903e5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\Font">
       <UniqueIdentifier>{30827307-f3fa-4984-ac96-35f67bd2628e}</UniqueIdentifier>
     </Filter>
@@ -57,9 +40,6 @@
     </Filter>
     <Filter Include="CommonSystem\Camera">
       <UniqueIdentifier>{0144ea49-fa6f-416b-beaf-ba7416e270bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CommonSystem\Light">
-      <UniqueIdentifier>{d80fd5d6-f444-4fe1-a6d8-60f243361d0c}</UniqueIdentifier>
     </Filter>
     <Filter Include="CommonSystem\Singleton">
       <UniqueIdentifier>{3fb2c811-9ea9-4ce5-a08e-c3cab82f8cf1}</UniqueIdentifier>
@@ -70,19 +50,45 @@
     <Filter Include="CommonSystem\Release">
       <UniqueIdentifier>{9b7642dd-0ba7-4d34-adae-4be432cbe0b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Library\GraphicsDevice">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Library\SoundDevice">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Library\InputManager\KeyDevice">
+      <UniqueIdentifier>{96eb70fe-6c89-4763-9aae-07324d1903e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Vector2D">
+      <UniqueIdentifier>{31784c21-0f39-49aa-92e1-c2e2ecd111b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Vector3D">
+      <UniqueIdentifier>{ea5150da-765b-44cb-9a83-82f13dc5bce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\fRect">
+      <UniqueIdentifier>{22846e78-7c7c-4c62-bb30-950f667386d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\Light">
+      <UniqueIdentifier>{d80fd5d6-f444-4fe1-a6d8-60f243361d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonSystem\RGBAColor">
+      <UniqueIdentifier>{4375aae3-969b-43e6-ac55-78589030e392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\VertexManager">
+      <UniqueIdentifier>{7926de6b-4835-4c92-af05-c05ca46f6553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\VertexManager\Vertices">
+      <UniqueIdentifier>{10a3bbd3-860a-459a-9f79-b5831f3f7659}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="Library\DirectX9.cpp">
-      <Filter>Library\DirectX9</Filter>
-    </ClCompile>
     <ClCompile Include="Library\InputDvice.cpp">
       <Filter>Library\InputDvice</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\SoundInterface.cpp">
-      <Filter>Library\SoundInterface</Filter>
     </ClCompile>
     <ClCompile Include="Library\TextureFile.cpp">
       <Filter>Library\TextureFileManager\TextureFile</Filter>
@@ -96,12 +102,6 @@
     <ClCompile Include="Library\SoundFileManager.cpp">
       <Filter>Library\SoundFileManager</Filter>
     </ClCompile>
-    <ClCompile Include="Library\Vertices.cpp">
-      <Filter>Library\VerticesManager\Vertices</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\VerticesManager.cpp">
-      <Filter>Library\VerticesManager</Filter>
-    </ClCompile>
     <ClCompile Include="Library\XFile.cpp">
       <Filter>Library\XFileManager\XFile</Filter>
     </ClCompile>
@@ -113,9 +113,6 @@
     </ClCompile>
     <ClCompile Include="Library\InputManager.cpp">
       <Filter>Library\InputManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\InputKey.cpp">
-      <Filter>Library\InputManager\InputKey</Filter>
     </ClCompile>
     <ClCompile Include="Library\Font.cpp">
       <Filter>Library\Font</Filter>
@@ -129,19 +126,40 @@
     <ClCompile Include="Library\Debug.cpp">
       <Filter>CommonSystem\Debug</Filter>
     </ClCompile>
+    <ClCompile Include="Library\GraphicsDevice.cpp">
+      <Filter>Library\GraphicsDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\SoundDevice.cpp">
+      <Filter>Library\SoundDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\KeyDevice.cpp">
+      <Filter>Library\InputManager\KeyDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Vector2D.cpp">
+      <Filter>CommonSystem\Vector2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Vector3D.cpp">
+      <Filter>CommonSystem\Vector3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\fRect.cpp">
+      <Filter>CommonSystem\fRect</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\RGBAColor.cpp">
+      <Filter>CommonSystem\RGBAColor</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\VertexManager.cpp">
+      <Filter>Library\VertexManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Vertices.cpp">
+      <Filter>Library\VertexManager\Vertices</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library.h">
       <Filter>Library</Filter>
     </ClInclude>
-    <ClInclude Include="Library\DirectX9.h">
-      <Filter>Library\DirectX9</Filter>
-    </ClInclude>
     <ClInclude Include="Library\InputDvice.h">
       <Filter>Library\InputDvice</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\SoundInterface.h">
-      <Filter>Library\SoundInterface</Filter>
     </ClInclude>
     <ClInclude Include="Library\TextureFile.h">
       <Filter>Library\TextureFileManager\TextureFile</Filter>
@@ -156,10 +174,7 @@
       <Filter>Library\SoundFileManager</Filter>
     </ClInclude>
     <ClInclude Include="Library\Vertices.h">
-      <Filter>Library\VerticesManager\Vertices</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\VerticesManager.h">
-      <Filter>Library\VerticesManager</Filter>
+      <Filter>Library\VertexManager\Vertices</Filter>
     </ClInclude>
     <ClInclude Include="Library\XFile.h">
       <Filter>Library\XFileManager\XFile</Filter>
@@ -172,9 +187,6 @@
     </ClInclude>
     <ClInclude Include="Library\InputManager.h">
       <Filter>Library\InputManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\InputKey.h">
-      <Filter>Library\InputManager\InputKey</Filter>
     </ClInclude>
     <ClInclude Include="Library\Font.h">
       <Filter>Library\Font</Filter>
@@ -196,6 +208,33 @@
     </ClInclude>
     <ClInclude Include="Library\CommoSystem.h">
       <Filter>CommonSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\GraphicsDevice.h">
+      <Filter>Library\GraphicsDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Directives.h">
+      <Filter>CommonSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\SoundDevice.h">
+      <Filter>Library\SoundDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\KeyDevice.h">
+      <Filter>Library\InputManager\KeyDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Vector2D.h">
+      <Filter>CommonSystem\Vector2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Vector3D.h">
+      <Filter>CommonSystem\Vector3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\fRect.h">
+      <Filter>CommonSystem\fRect</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\RGBAColor.h">
+      <Filter>CommonSystem\RGBAColor</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\VertexManager.h">
+      <Filter>Library\VertexManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

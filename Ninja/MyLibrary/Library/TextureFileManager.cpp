@@ -18,16 +18,16 @@ TextureFileManager::~TextureFileManager()
 	ReleaseAllTexture();
 }
 
-void TextureFileManager::LoadTextureFile(int index_, const char* filePath_)
+void TextureFileManager::Load(int index_, const char* filePath_)
 {
 	m_pTextureFile.emplace_back(New TextureFile);
-	m_pTextureFile[index_]->LoadTextureFile(filePath_);
+	m_pTextureFile[index_]->Load(filePath_);
 }
 
-void TextureFileManager::LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_)
+void TextureFileManager::LoadMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_)
 {
 	m_pTextureFile.emplace_back(New TextureFile);
-	m_pTextureFile[index_]->LoadTextuerMoreInfo(filePath_, (red_, green_, blue_, alpha_), isTwoPower_);
+	m_pTextureFile[index_]->LoadMoreInfo(filePath_, RGBAColor(red_, green_, blue_, alpha_), isTwoPower_);
 }
 
 LPDIRECT3DTEXTURE9 TextureFileManager::GetTextureFileData(int index_) const
@@ -37,12 +37,11 @@ LPDIRECT3DTEXTURE9 TextureFileManager::GetTextureFileData(int index_) const
 
 void TextureFileManager::ReleaseAllTexture()
 {
-	for (unsigned int i = 0; i < m_pTextureFile.size(); i++)
+	// @todo itrの変数名を後々変更する
+	for (auto& itr : m_pTextureFile)
 	{
-		delete m_pTextureFile[i];
+		delete itr;
 	}
-	m_pTextureFile.clear();
-	m_pTextureFile.shrink_to_fit();
 }
 
 void TextureFileManager::ReleaseTexture(int index_)

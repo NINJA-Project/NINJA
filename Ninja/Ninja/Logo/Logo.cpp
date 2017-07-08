@@ -18,8 +18,8 @@ m_height(height_),
 m_texindex(texindex_),
 m_pFilePath(pFilePath_)
 {
-	m_rLibrary.LoadTextureFile(m_texindex, m_pFilePath);
-	m_rLibrary.SetTexSize(m_texindex, m_width, m_height);
+	m_rLibrary.LoadTexture(m_texindex, m_pFilePath);
+//	m_rLibrary.SetTexSize(m_texindex, m_width, m_height);
 }
 
 Logo::~Logo()
@@ -28,5 +28,5 @@ Logo::~Logo()
 
 void Logo::Draw()
 {
-	m_rLibrary.DrawCenter(m_texindex, m_posX, m_posY);
+//	m_rLibrary.DrawCenter(m_texindex, m_posX, m_posY);
 }

@@ -5,12 +5,12 @@
  */
 
 #include "Font.h"
-#include "DirectX9.h"
-#include "Release.h"
+#include "GraphicsDevice.h"
+#include "CommoSystem.h"
 
 Font::Font() : 
-m_pFont(NULL),
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
+m_pFont(nullptr),
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
 		m_pGraphicsDevice,
@@ -26,13 +26,13 @@ m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
 		TEXT("ＭＳ　Ｐゴシック"),
 		&m_pFont)))
 	{
-		MessageBox(NULL, "フォントクラスが作成されませんでした", NULL, MB_OK);
+		MyAssert(m_pFont, "Fontの初期化に失敗しました");
 	}
 }
 
 Font::Font(int width_, int height_) : 
-m_pFont(NULL),
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
+m_pFont(nullptr),
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 	if (FAILED(D3DXCreateFont(
 		m_pGraphicsDevice,
@@ -48,7 +48,7 @@ m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
 		TEXT("ＭＳ　Ｐゴシック"),
 		&m_pFont)))
 	{
-		MessageBox(NULL, "フォントクラスが作成されませんでした", NULL, MB_OK);
+		MyAssert(m_pFont, "Fontの初期化に失敗しました");
 	}
 }
 
@@ -57,7 +57,7 @@ Font::~Font()
 	SafeRelease(m_pFont);
 }
 
-void Font::DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD format_, int red_, int green_, int blue_)
+void Font::DrawFont(const char* pString_, const Vector2D& position_, const DWORD format_, const RGBAColor& color_)
 {
 	RECT rect;
 	{
@@ -76,7 +76,6 @@ void Font::DrawFont(const char* pString_, const D3DXVECTOR2& position_, DWORD fo
 		-1,
 		&rect,
 		format_,
-		D3DCOLOR_XRGB(red_, green_, blue_)
+		D3DCOLOR_XRGB(color_.r, color_.g, color_.b)
 		);
-
 }

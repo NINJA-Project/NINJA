@@ -5,10 +5,10 @@
  */
 
 #include "Camera.h"
-#include "DirectX9.h"
+#include "GraphicsDevice.h"
 
 Camera::Camera() : 
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice()),
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice()),
 m_winWidth(0),
 m_winHeight(0)
 {

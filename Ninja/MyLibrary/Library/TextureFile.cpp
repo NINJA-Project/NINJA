@@ -5,12 +5,12 @@
  */
 
 #include "TextureFile.h"
-#include "DirectX9.h"
-#include "Release.h"
+#include "GraphicsDevice.h"
+#include "CommoSystem.h"
 
 TextureFile::TextureFile() : 
 m_pTexture(NULL),
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice())
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice())
 {
 
 }
@@ -20,17 +20,15 @@ TextureFile::~TextureFile()
 	SafeRelease(m_pTexture);
 }
 
-bool TextureFile::LoadTextureFile(const char* filePath_)
+void TextureFile::Load(const char* filePath_)
 {
 	if (FAILED(D3DXCreateTextureFromFile(m_pGraphicsDevice, filePath_, &m_pTexture)))
 	{
-		MessageBox(NULL, "画像が読み込めませんでした。", NULL, MB_OK);
-		return false;
+		MyAssert(m_pTexture, "画像が読み込めませんでした");
 	}
-	return true;
 }
 
-bool TextureFile::LoadTextuerMoreInfo(const char* filePath_, const D3DXCOLOR& color, bool isTwoPower_)
+void TextureFile::LoadMoreInfo(const char* filePath_, const RGBAColor& color_, bool isTwoPower_)
 {
 	if (isTwoPower_)	// 2の累乗なら
 	{
@@ -45,14 +43,13 @@ bool TextureFile::LoadTextuerMoreInfo(const char* filePath_, const D3DXCOLOR& co
 			D3DPOOL_DEFAULT,
 			D3DX_FILTER_NONE,
 			D3DX_DEFAULT,
-			D3DCOLOR_ARGB(static_cast<int>(color.a), static_cast<int>(color.r), static_cast<int>(color.g), static_cast<int>(color.b)),
+			D3DCOLOR_ARGB(color_.a, color_.r, color_.g, color_.b),
 			NULL,
 			NULL,
 			&m_pTexture
 			))
 		{
-			MessageBox(0, "画像の読み込みに失敗しました。", NULL, MB_OK);
-			return false;
+			MyAssert(m_pTexture, "画像が読み込めませんでした");
 		}
 	}
 	else			// 2の累乗でないのなら
@@ -68,15 +65,13 @@ bool TextureFile::LoadTextuerMoreInfo(const char* filePath_, const D3DXCOLOR& co
 			D3DPOOL_MANAGED,
 			D3DX_FILTER_NONE,
 			D3DX_FILTER_NONE,
-			D3DCOLOR_ARGB(static_cast<int>(color.a), static_cast<int>(color.r), static_cast<int>(color.g), static_cast<int>(color.b)),
+			D3DCOLOR_ARGB(color_.a, color_.r, color_.g, color_.b),
 			NULL,
 			NULL,
 			&m_pTexture
 			)))
 		{
-			MessageBox(0, "画像の読み込みに失敗しました。", NULL, MB_OK);
-			return false;
+			MyAssert(m_pTexture, "画像が読み込めませんでした");
 		}
 	}
-	return true;
 }

@@ -25,7 +25,7 @@ public:
 	* @param [in]	index_		読み込む画像の配列番号
 	* @param [in]	filePath_	画像のファイルパス
 	*/
-	void LoadTextureFile(int index_, const char* filePath_);
+	void Load(int index_, const char* filePath_);
 
 	/**
 	* 画像を詳細に読み込む関数
@@ -35,11 +35,9 @@ public:
 	* @param [in]	red_			画像の赤の値
 	* @param [in]	green_			画像の緑の値
 	* @param [in]	blue_			画像の青の値
-	* @param [in]	isTowPower_		画像サイズの2の累乗がどうか
-	* @note argbのデフォルトは255
-	* @note isTowPower_のデフォルトはtrue
+	* @param [in]	isTowPower_		画像サイズの2の累乗がどうか			@note isTowPower_のデフォルト値はLibraryクラスにて true に設定
 	*/
-	void LoadTextuerMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_);
+	void LoadMoreInfo(int index_, const char* filePath_, int alpha_, int red_, int green_, int blue_, bool isTwoPower_);
 
 	/**
 	* 画像データの取得関数
@@ -57,8 +55,10 @@ public:
 	 */
 	void ReleaseTexture(int index_);
 
+#pragma region メンバ変数
 private:
 	std::vector<TextureFile*> m_pTextureFile;
+#pragma endregion
 };
 
 #endif // !TEXTUREFILEMANAGER_H

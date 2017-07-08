@@ -21,47 +21,21 @@ SoundFileManager::~SoundFileManager()
 void SoundFileManager::LoadSoundFile(int index_, const char* filePath_)
 {
 	m_pSoundFile.emplace_back(New SoundFile);
-	m_pSoundFile[index_]->LoadSoundFile(filePath_);
+	m_pSoundFile[index_]->Load(filePath_);
 }
 
 void SoundFileManager::SoundState(int index_, SoundMode soundMode_)
 {
-	switch (soundMode_)
-	{
-	case SoundMode::PLAY:
-		m_pSoundFile[index_]->SoundState(SoundFile::Mode::PLAY);
-		break;
-
-	case SoundMode::LOOP:
-		m_pSoundFile[index_]->SoundState(SoundFile::Mode::LOOP);
-		break;
-
-	case SoundMode::STOP:
-		m_pSoundFile[index_]->SoundState(SoundFile::Mode::STOP);
-		break;
-
-	case SoundMode::RESET:
-		m_pSoundFile[index_]->SoundState(SoundFile::Mode::RESET);
-		break;
-
-	case SoundMode::RESET_PLAY:
-		m_pSoundFile[index_]->SoundState(SoundFile::Mode::RESET_PLAY);
-		break;
-
-	case SoundMode::RESET_STOP:
-		m_pSoundFile[index_]->SoundState(SoundFile::Mode::RESET_STOP);
-		break;
-	}
+	m_pSoundFile[index_]->SoundState(static_cast<SoundFile::Mode>(soundMode_));
 }
 
 void SoundFileManager::ReleaseAllSoundData()
 {
-	for (unsigned int i = 0; i < m_pSoundFile.size(); i++)
+	// @todo itrの変数名を後々変更する
+	for (auto& itr : m_pSoundFile)
 	{
-		delete m_pSoundFile[i];
+		delete itr;
 	}
-	m_pSoundFile.clear();
-	m_pSoundFile.shrink_to_fit();
 }
 
 void SoundFileManager::ReleaseSoundData(int index_)

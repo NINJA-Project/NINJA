@@ -30,9 +30,9 @@ bool GameManager::Update()
 	m_pSceneTransition->Control();
 
 	m_rLibrary.SetFVF();
-	m_rLibrary.DrawStart();
+	m_rLibrary.RenderStarting();
 	m_pSceneTransition->Render();
-	m_rLibrary.DrawEnd();
+	m_rLibrary.RenderEnding();
 
 	return m_isGameEnd;
 }

@@ -5,10 +5,10 @@
  */
 
 #include "Vertices.h"
-#include "DirectX9.h"
+#include "GraphicsDevice.h"
 
 Vertices::Vertices() :
-m_pGraphicsDevice(DirectX9::GetInstance().GetDevice()),
+m_pGraphicsDevice(GraphicsDevice::GetInstance().GetDevice()),
 m_texWidth(NULL),
 m_texHeight(NULL),
 m_texDepth(NULL),
@@ -36,10 +36,10 @@ void Vertices::SetTexSize(float width_, float height_, float maxTu_, float maxTv
 	m_texMaxTv  = maxTv_;
 	m_texMinTu  = minTu_;
 	m_texMinTv  = minTv_;
-	m_texDepth = depth_;
+	m_texDepth	= depth_;
 }
 
-void Vertices::DrawLeftTop(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_)
+void Vertices::DrawLeftTop(const Vector2D& position_, const LPDIRECT3DTEXTURE9& pTextureData_)
 {
 	CUSTOMVERTEX vertex[4] =
 	{
@@ -59,7 +59,7 @@ void Vertices::DrawLeftTop(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE
 	m_pGraphicsDevice->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, vertex, sizeof(CUSTOMVERTEX));
 }
 
-void Vertices::DrawCenter(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9 pTextureData_)
+void Vertices::DrawCenter(const Vector2D& position_, const LPDIRECT3DTEXTURE9& pTextureData_)
 {
 	CUSTOMVERTEX vertex[4] =
 	{
@@ -80,16 +80,16 @@ void Vertices::DrawCenter(const D3DXVECTOR2& position_, const LPDIRECT3DTEXTURE9
 
 }
 
-void Vertices::SetColor(DWORD& color_, int alpha_, int red_, int green_, int blue_)
+void Vertices::SetColor(DWORD& afterColor_, const RGBAColor& setColor_)
 {
 	{
-		DWORD preColor = D3DCOLOR_ARGB(alpha_, red_, green_, blue_);
+		DWORD preColor = D3DCOLOR_ARGB(setColor_.a, setColor_.r, setColor_.g, setColor_.b);
 
-		color_ = preColor;
+		afterColor_ = preColor;
 	}
 
 	for (int i = 0; i < 4; i++)
 	{
-		m_colors[i] = color_;
+		m_colors[i] = afterColor_;
 	}
 }

@@ -5,11 +5,12 @@
  */
 
 #include "Window.h"
+#include "Directives.h"
 
 Window::Window() :
 m_clientWidth(0),
 m_clientHeight(0),
-m_hWnd(NULL)
+m_hwnd(nullptr)
 {
 
 }
@@ -41,35 +42,37 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hWnd, iMsg, wParam, lParam);
 }
 
-void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, bool isFullScreen_)
+void Window::Create(const char* pWindowName_, int clientWidth_, int clientHeiht_, bool isFullScreen_)
 {
-	m_clientWidth	= clientWidth_;
-	m_clientHeight	= clientHeiht_;
+	m_clientWidth = clientWidth_;
+	m_clientHeight = clientHeiht_;
 
 	// ウィンドウ登録クラス
 	WNDCLASSEX windowClass;
 	{
-		windowClass.cbSize        = sizeof(windowClass);
-		windowClass.style         = CS_HREDRAW | CS_VREDRAW;
-		windowClass.lpfnWndProc   = WindowProc;
-		windowClass.cbClsExtra    = 0;
-		windowClass.cbWndExtra    = 0;
-		windowClass.hInstance     = GetModuleHandle(NULL);
-		windowClass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
-		windowClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+		windowClass.cbSize = sizeof(windowClass);
+		windowClass.style = CS_HREDRAW | CS_VREDRAW;
+		windowClass.lpfnWndProc = WindowProc;
+		windowClass.cbClsExtra = 0;
+		windowClass.cbWndExtra = 0;
+		windowClass.hInstance = GetModuleHandle(NULL);
+		windowClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+		windowClass.hCursor = LoadCursor(NULL, IDC_ARROW);
 		windowClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
-		windowClass.lpszMenuName  = NULL;
-		windowClass.lpszClassName = titleName_;
-		windowClass.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
+		windowClass.lpszMenuName = NULL;
+		windowClass.lpszClassName = pWindowName_;
+		windowClass.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
 		RegisterClassEx(&windowClass);
 	}
 
 	if (isFullScreen_)
 	{
-		m_hWnd = CreateWindow(
-			titleName_,
-			titleName_,
+
+
+		m_hwnd = CreateWindow(
+			pWindowName_,
+			pWindowName_,
 			WS_POPUP | WS_VISIBLE,
 			0,
 			0,
@@ -79,13 +82,13 @@ void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, 
 			NULL,
 			GetModuleHandle(NULL),
 			NULL
-			);
+		);
 	}
 	else
 	{
-		m_hWnd = CreateWindow(
-			titleName_,
-			titleName_,
+		m_hwnd = CreateWindow(
+			pWindowName_,
+			pWindowName_,
 			WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 			CW_USEDEFAULT,
 			CW_USEDEFAULT,
@@ -95,29 +98,29 @@ void Window::Create(const char* titleName_, int clientWidth_, int clientHeiht_, 
 			NULL,
 			GetModuleHandle(NULL),
 			NULL
-			);
+		);
 
 		// 正しい画面サイズを求めるための矩形を用意
 		RECT clientRect;
 		{
-			GetClientRect(m_hWnd, &clientRect);
+			GetClientRect(m_hwnd, &clientRect);
 
-			m_clientWidth  = m_clientWidth  + (m_clientWidth  - clientRect.right);
+			m_clientWidth = m_clientWidth + (m_clientWidth - clientRect.right);
 			m_clientHeight = m_clientHeight + (m_clientHeight - clientRect.bottom);
 		}
 
 		MoveWindow(
-			m_hWnd,
+			m_hwnd,
 			0,
 			0,
 			m_clientWidth,
 			m_clientHeight,
 			TRUE
-			);
+		);
 	}
 
-	ShowWindow(m_hWnd, SW_SHOW);
-	UpdateWindow(m_hWnd);
+	ShowWindow(m_hwnd, SW_SHOW);
+	UpdateWindow(m_hwnd);
 
  	ZeroMemory(&m_msg, sizeof(m_msg));
 }
