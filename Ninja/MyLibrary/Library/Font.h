@@ -31,12 +31,8 @@ public:
 	 * 文字を描画する関数
 	 * @param [in] pString_		描画する文字列
 	 * @param [in] position_	描画する文字の座標
-	 * @param [in] format_		文字のフォーマット
-	 * @param [in] red_			文字のR値
-	 * @param [in] green_		文字のG値
-	 * @param [in] blue_		文字のB値
-	 * @note format_のデフォルト値は左寄せ
-	 * @note RGBのデフォルト値は255
+	 * @param [in] format_		文字のフォーマット			@note format_のデフォルト値はLibraryクラスにて 左寄せ に設定
+	 * @param [in] color_		RGBの値						@note color_のデフォルト値はLibraryクラスにて 255 に設定
 	 */
 	void DrawFont(const char* pString_, const Vector2D& position_, const DWORD format_, const RGBAColor& color_);
 
