@@ -19,7 +19,6 @@ public:
 	RGBAColor();
 	RGBAColor(int r_, int g_, int b_);
 	RGBAColor(int r_, int g_, int b_, int a_);
-	~RGBAColor();
 
 	// @todo Œã‚É•K—v‚È•ªoperator‚ð’Ç‰Á‚·‚é
 };
