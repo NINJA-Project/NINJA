@@ -9,17 +9,7 @@
 
 #include <d3dx9.h>
 #include "Vector2D.h"
-
-struct CUSTOMVERTEX
-{
-	FLOAT x;		//!< 画面座標のx軸
-	FLOAT y;		//!< 画面座標のy軸
-	FLOAT z;		//!< 画面座標のz軸
-	FLOAT rhw;		//!< 同次座標
-	DWORD color;	//!< 色指定
-	FLOAT tu;		//!< テクスチャ座標のx軸
-	FLOAT tv;		//!< テクスチャ座標のy軸
-};
+#include "RGBAColor.h"
 
 class Vertices
 {
@@ -50,7 +40,7 @@ public:
 	 * @param [in] pTextureData_	テクスチャデータ
 	 * @note Libraryでテクスチャデータを取得する
 	 */
-	void DrawLeftTop(const Vector2D& position_, const LPDIRECT3DTEXTURE9 pTextureData_);
+	void DrawLeftTop(const Vector2D& position_, const LPDIRECT3DTEXTURE9& pTextureData_);
 
 	/**
 	* 中心からの描画関数
@@ -58,7 +48,7 @@ public:
 	* @param [in] pTextureData_	テクスチャデータ
 	* @note Libraryでテクスチャデータを取得する
 	*/
-	void DrawCenter(const Vector2D& position_, const LPDIRECT3DTEXTURE9 pTextureData_);
+	void DrawCenter(const Vector2D& position_, const LPDIRECT3DTEXTURE9& pTextureData_);
 
 	/**
 	 * 色の変更する関数
@@ -69,8 +59,24 @@ public:
 	 * @param [in] blue_	変更する青の値
 	 * @note rbgaのデフォルト値は255
 	 */
-	void SetColor(DWORD& color_, int alpha_, int red_, int green_, int blue_);
+	void SetColor(DWORD& afterColor_, const RGBAColor& setColor_);
 
+
+#pragma region CUSTOMVERTEX
+private:
+	struct CUSTOMVERTEX
+	{
+		FLOAT x;		//!< 画面座標のx軸
+		FLOAT y;		//!< 画面座標のy軸
+		FLOAT z;		//!< 画面座標のz軸
+		FLOAT rhw;		//!< 同次座標
+		DWORD color;	//!< 色指定
+		FLOAT tu;		//!< テクスチャ座標のx軸
+		FLOAT tv;		//!< テクスチャ座標のy軸
+	};
+#pragma endregion
+
+#pragma region メンバ変数
 private:
 	LPDIRECT3DDEVICE9	m_pGraphicsDevice;	//!< DirectX9から取ってきたデバイス
 	DWORD				m_colors[4];		//!< テクスチャの色
@@ -81,6 +87,7 @@ private:
 	float				m_texMaxTv;			//!< テクスチャのY軸最大座標
 	float				m_texMinTu;			//!< テクスチャのX軸最小座標
 	float				m_texMinTv;			//!< テクスチャのY軸最小座標
+#pragma endregion
 };
 
 #endif // !VERTICES_H

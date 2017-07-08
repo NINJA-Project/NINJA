@@ -34,9 +34,9 @@ void VertexManager::DrawCenter(int index_, float posX_, float posY_, const LPDIR
 	m_pVertices[index_]->DrawCenter({ posX_, posY_ }, pTextureData_);
 }
 
-void VertexManager::SetColor(int index_, DWORD color_, int alpha_, int red_, int green_, int blue_)
+void VertexManager::SetColor(int index_, DWORD& afterColor_, int alpha_, int red_, int green_, int blue_)
 {
-	m_pVertices[index_]->SetColor(color_, alpha_, red_, green_, blue_);
+	m_pVertices[index_]->SetColor(afterColor_, RGBAColor(alpha_, red_, green_, blue_));
 }
 
 void VertexManager::ReleaseAllVirtices()

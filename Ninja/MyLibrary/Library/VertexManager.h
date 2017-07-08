@@ -66,7 +66,7 @@ public:
 	* @param [in] blue_	変更する青の値
 	* @note rbgaのデフォルト値は255
 	*/
-	void SetColor(int index_, DWORD color_, int alpha_, int red_, int green_, int blue_);
+	void SetColor(int index_, DWORD& afterColor_, int alpha_, int red_, int green_, int blue_);
 
 	/**全ての頂点データの解放関数*/
 	void ReleaseAllVirtices();
@@ -77,8 +77,10 @@ public:
 	 */
 	void ReleaseVirtices(int index_);
 
+#pragma region メンバ変数
 private:
 	std::vector<Vertices*>	m_pVertices;
+#pragma endregion
 };
 
 #endif // !VERTICESMANAGER_H
