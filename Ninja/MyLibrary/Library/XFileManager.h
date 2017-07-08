@@ -20,14 +20,14 @@ public:
 
 	/**
 	* Xファイルの読み込み関数
-	* @param [in]	index_		Xファイルの配列番号
+	* @param [in]	index_		読み込むXファイルの配列番号
 	* @param [in]	filePath_	Xファイルのパス
 	*/
 	void Load(int index_, const char* filePath_);
 
 	/**
 	 * Xファイルの描画関数
-	 * @param [in] index_
+	 * @param [in] index_		描画するXファイルの配列番号(読み込んだ配列番号と同じ)
 	 */
 	void DrawXFile(int index_);
 
