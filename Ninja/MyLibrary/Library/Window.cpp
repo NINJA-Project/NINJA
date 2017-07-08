@@ -10,7 +10,7 @@
 Window::Window() :
 m_clientWidth(0),
 m_clientHeight(0),
-m_hwnd(NULL)
+m_hwnd(nullptr)
 {
 
 }

@@ -32,26 +32,29 @@ public:
 	 * ウィンドウハンドルの取得関数
 	 * @return m_hWnd ウィンドウハンドルのデータ
 	 */
-	HWND GetHwnd()
+	HWND GetHwnd() const
 	{
 		return m_hwnd;
 	}
 
-	int GetWidth()
+	int GetWidth() const
 	{
 		return m_clientWidth;
 	}
 
-	int GetHeight()
+	int GetHeight() const
 	{
 		return m_clientHeight;
 	}
 
+#pragma region メンバ変数
 private:
 	int 	m_clientWidth;
 	int 	m_clientHeight;
 	HWND	m_hwnd;				//!< ウィンドウハンドル
 	MSG		m_msg;
+#pragma endregion
+
 };
 
 #endif // !WINDOWCREATE_H
