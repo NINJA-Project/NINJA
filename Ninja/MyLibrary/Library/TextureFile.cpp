@@ -20,17 +20,15 @@ TextureFile::~TextureFile()
 	SafeRelease(m_pTexture);
 }
 
-bool TextureFile::LoadTextureFile(const char* filePath_)
+void TextureFile::Load(const char* filePath_)
 {
 	if (FAILED(D3DXCreateTextureFromFile(m_pGraphicsDevice, filePath_, &m_pTexture)))
 	{
-		MessageBox(NULL, "画像が読み込めませんでした。", NULL, MB_OK);
-		return false;
+		MyAssert(m_pTexture, "画像が読み込めませんでした");
 	}
-	return true;
 }
 
-bool TextureFile::LoadTextuerMoreInfo(const char* filePath_, const RGBAColor& color, bool isTwoPower_)
+void TextureFile::LoadMoreInfo(const char* filePath_, const RGBAColor& color_, bool isTwoPower_)
 {
 	if (isTwoPower_)	// 2の累乗なら
 	{
@@ -45,14 +43,13 @@ bool TextureFile::LoadTextuerMoreInfo(const char* filePath_, const RGBAColor& co
 			D3DPOOL_DEFAULT,
 			D3DX_FILTER_NONE,
 			D3DX_DEFAULT,
-			D3DCOLOR_ARGB(color.a, color.r, color.g, color.b),
+			D3DCOLOR_ARGB(color_.a, color_.r, color_.g, color_.b),
 			NULL,
 			NULL,
 			&m_pTexture
 			))
 		{
-			MessageBox(0, "画像の読み込みに失敗しました。", NULL, MB_OK);
-			return false;
+			MyAssert(m_pTexture, "画像が読み込めませんでした");
 		}
 	}
 	else			// 2の累乗でないのなら
@@ -68,15 +65,13 @@ bool TextureFile::LoadTextuerMoreInfo(const char* filePath_, const RGBAColor& co
 			D3DPOOL_MANAGED,
 			D3DX_FILTER_NONE,
 			D3DX_FILTER_NONE,
-			D3DCOLOR_ARGB(color.a, color.r, color.g, color.b),
+			D3DCOLOR_ARGB(color_.a, color_.r, color_.g, color_.b),
 			NULL,
 			NULL,
 			&m_pTexture
 			)))
 		{
-			MessageBox(0, "画像の読み込みに失敗しました。", NULL, MB_OK);
-			return false;
+			MyAssert(m_pTexture, "画像が読み込めませんでした");
 		}
 	}
-	return true;
 }

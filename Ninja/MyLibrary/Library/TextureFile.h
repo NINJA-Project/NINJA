@@ -22,22 +22,18 @@ public:
 	/**
 	 * 画像を読み込む関数
 	 * @param [in]	filePath_	画像のファイルパス
-	 * @retval		true		読み込み成功
-	 * @retval		false		読み込み失敗
 	 */
-	bool LoadTextureFile(const char* filePath_);
+	void Load(const char* filePath_);
 
 	/**
 	 * 画像を詳細に読み込む関数
 	 * @param [in]	filePath_		画像のファイルパス
 	 * @param [in]	clor			RGBAの色設定
 	 * @param [in]	isTowPower_		画像サイズの2の累乗がどうか
-	 * @retval		true			読み込み成功
-	 * @retval		false			読み込み失敗
 	 * @note colorのデフォルトは255
 	 * @note isTowPower_のデフォルトはtrue
 	 */
-	bool LoadTextuerMoreInfo(const char* filePath_, const RGBAColor& color, bool isTwoPower_);
+	void LoadMoreInfo(const char* filePath_, const RGBAColor& color_, bool isTwoPower_);
 
 	/**
 	 * 画像データの取得関数
@@ -48,9 +44,11 @@ public:
 		return m_pTexture;
 	}
 
+#pragma region メンバ変数
 private:
 	LPDIRECT3DTEXTURE9	m_pTexture;			//!< DirectXのテクスチャインターフェイス
 	LPDIRECT3DDEVICE9	m_pGraphicsDevice;	//!< DirectX9から取ってきたデバイス
+#pragma endregion
 };
 
 #endif // !TEXTUREFILE_H
