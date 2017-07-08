@@ -48,6 +48,11 @@ private:
 	*/
 	void InitializeKeyDevice(HWND hwnd_);
 
+	/**
+	* マウスデバイスの生成関数
+	* @param [in]	hwnd_	ウィンドウハンドル
+	*/
+
 	void InitializeMouseDevice(HWND hwnd_);
 #pragma endregion
 
