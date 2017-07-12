@@ -46,6 +46,9 @@
     <Filter Include="Main\GameManager\GameDataManager">
       <UniqueIdentifier>{5fc21a16-bad0-4de0-b926-da860a6ca733}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet">
+      <UniqueIdentifier>{fd1e788a-0108-487b-b8ba-74a1f51349f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -117,6 +120,15 @@
     <ClCompile Include="Scene\Scene.cpp">
       <Filter>Main\GameManager\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet\Bullet.cpp">
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet\BulletManager.cpp">
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet\Kunai.cpp">
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\Scene.h">
@@ -184,6 +196,15 @@
     </ClInclude>
     <ClInclude Include="GameManager\GameManager.h">
       <Filter>Main\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet\Bullet.h">
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet\BulletManager.h">
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet\Kunai.h">
+      <Filter>Main\GameManager\Scene\MainScene\ObjectManager\Character\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

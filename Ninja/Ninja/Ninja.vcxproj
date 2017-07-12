@@ -74,6 +74,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet\Bullet.cpp" />
+    <ClCompile Include="Bullet\BulletManager.cpp" />
+    <ClCompile Include="Bullet\Kunai.cpp" />
     <ClCompile Include="Button\Button.cpp" />
     <ClCompile Include="Character\Character.cpp" />
     <ClCompile Include="Character\CharacterManager.cpp" />
@@ -99,6 +102,9 @@
     <ClCompile Include="Ui\UiManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet\Bullet.h" />
+    <ClInclude Include="Bullet\BulletManager.h" />
+    <ClInclude Include="Bullet\Kunai.h" />
     <ClInclude Include="Button\Button.h" />
     <ClInclude Include="Character\Character.h" />
     <ClInclude Include="Character\CharacterManager.h" />
