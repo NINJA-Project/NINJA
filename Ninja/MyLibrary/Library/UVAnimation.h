@@ -16,6 +16,12 @@ public:
 	UVAnimation();
 	~UVAnimation();
 
+	void SetAnimaData(const fRect& texUV_, int animationNum_);
+
+	const fRect& GetCurrentUV() const
+	{
+		return m_currentAnimaData.m_texUV;
+	}
 
 #pragma region ƒƒ“ƒo•Ï”
 private:
@@ -33,6 +39,7 @@ private:
 #pragma endregion
 	std::vector<AnimaData>	m_animationData;
 	std::vector<int>		m_animationNumber;
+	AnimaData				m_currentAnimaData;
 #pragma endregion
 };
 
