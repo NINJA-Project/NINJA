@@ -91,6 +91,8 @@
     <ClCompile Include="Library\SoundDevice.cpp" />
     <ClCompile Include="Library\TextureFile.cpp" />
     <ClCompile Include="Library\TextureFileManager.cpp" />
+    <ClCompile Include="Library\UVAnimation.cpp" />
+    <ClCompile Include="Library\UVAnimationManager.cpp" />
     <ClCompile Include="Library\Vector2D.cpp" />
     <ClCompile Include="Library\Vector3D.cpp" />
     <ClCompile Include="Library\Vertices.cpp" />
@@ -113,6 +115,8 @@
     <ClInclude Include="Library\RGBAColor.h" />
     <ClInclude Include="Library\SoundFile.h" />
     <ClInclude Include="Library\SoundFileManager.h" />
+    <ClInclude Include="Library\UVAnimation.h" />
+    <ClInclude Include="Library\UVAnimationManager.h" />
     <ClInclude Include="Library\Vector2D.h" />
     <ClInclude Include="Library\Vector3D.h" />
     <ClInclude Include="Library\Vertices.h" />

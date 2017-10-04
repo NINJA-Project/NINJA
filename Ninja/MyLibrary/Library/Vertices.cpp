@@ -28,14 +28,14 @@ Vertices::~Vertices()
 
 }
 
-void Vertices::SetTexSize(float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
+void Vertices::SetTexSize(float width_, float height_, const fRect& UV_, float depth_)
 {
 	m_texWidth  = width_;
 	m_texHeight = height_;
-	m_texMaxTu  = maxTu_;
-	m_texMaxTv  = maxTv_;
-	m_texMinTu  = minTu_;
-	m_texMinTv  = minTv_;
+	m_texMaxTu  = UV_.rightTop;
+	m_texMaxTv  = UV_.rightBottom;
+	m_texMinTu  = UV_.leftTop;
+	m_texMinTv  = UV_.leftBottom;
 	m_texDepth	= depth_;
 }
 
@@ -43,16 +43,16 @@ void Vertices::DrawLeftTop(const Vector2D& position_, const LPDIRECT3DTEXTURE9& 
 {
 	CUSTOMVERTEX vertex[4] =
 	{
-		{		 0.0f,		  0.0f, m_texDepth, 1.0f, m_colors[0], m_texMinTu, m_texMinTv },
-		{  m_texWidth,		  0.0f, m_texDepth, 1.0f, m_colors[1], m_texMaxTu, m_texMinTv },
-		{  m_texWidth, m_texHeight, m_texDepth, 1.0f, m_colors[2], m_texMaxTu, m_texMaxTv },
-		{		 0.0f, m_texHeight, m_texDepth, 1.0f, m_colors[3], m_texMinTu, m_texMaxTv },
+		{ Vector3D(0.0f, 0.0f, m_texDepth),				 1.0f, m_colors[0], Vector2D(m_texMinTu, m_texMinTv) },
+		{ Vector3D(m_texWidth, 0.0f, m_texDepth),		 1.0f, m_colors[1], Vector2D(m_texMaxTu, m_texMinTv) },
+		{ Vector3D(m_texWidth, m_texHeight, m_texDepth), 1.0f, m_colors[2], Vector2D(m_texMaxTu, m_texMaxTv) },
+		{ Vector3D(0.0f, m_texHeight, m_texDepth),		 1.0f, m_colors[3], Vector2D(m_texMinTu, m_texMaxTv) },
 	};
 
 	for (int i = 0; i < 4; i++)
 	{
-		vertex[i].x += position_.x;
-		vertex[i].y += position_.y;
+		vertex[i].position.x += position_.x;
+		vertex[i].position.y += position_.y;
 	}
 
 	m_pGraphicsDevice->SetTexture(0, pTextureData_);
@@ -63,16 +63,16 @@ void Vertices::DrawCenter(const Vector2D& position_, const LPDIRECT3DTEXTURE9& p
 {
 	CUSTOMVERTEX vertex[4] =
 	{
-		{ -m_texWidth / 2.0f, -m_texHeight / 2.0f, m_texDepth, 1.0f, m_colors[0], m_texMinTu, m_texMinTv },
-		{  m_texWidth / 2.0f, -m_texHeight / 2.0f, m_texDepth, 1.0f, m_colors[1], m_texMaxTu, m_texMinTv },
-		{  m_texWidth / 2.0f,  m_texHeight / 2.0f, m_texDepth, 1.0f, m_colors[2], m_texMaxTu, m_texMaxTv },
-		{ -m_texWidth / 2.0f,  m_texHeight / 2.0f, m_texDepth, 1.0f, m_colors[3], m_texMinTu, m_texMaxTv },
+		{ Vector3D(-m_texWidth / 2.0f, -m_texHeight / 2.0f, m_texDepth), 1.0f, m_colors[0], Vector2D(m_texMinTu, m_texMinTv) },
+		{ Vector3D(m_texWidth / 2.0f, -m_texHeight / 2.0f, m_texDepth),  1.0f, m_colors[1], Vector2D(m_texMaxTu, m_texMinTv) },
+		{ Vector3D(m_texWidth / 2.0f,  m_texHeight / 2.0f, m_texDepth),  1.0f, m_colors[2], Vector2D(m_texMaxTu, m_texMaxTv) },
+		{ Vector3D(-m_texWidth / 2.0f,  m_texHeight / 2.0f, m_texDepth), 1.0f, m_colors[3], Vector2D(m_texMinTu, m_texMaxTv) },
 	};
 
 	for (int i = 0; i < 4; i++)
 	{
-		vertex[i].x += position_.x;
-		vertex[i].y += position_.y;
+		vertex[i].position.x += position_.x;
+		vertex[i].position.y += position_.y;
 	}
 
 	m_pGraphicsDevice->SetTexture(0, pTextureData_);
@@ -92,4 +92,12 @@ void Vertices::SetColor(DWORD& afterColor_, const RGBAColor& setColor_)
 	{
 		m_colors[i] = afterColor_;
 	}
+}
+
+void Vertices::SetUV(const fRect& currentUV_)
+{
+	m_texMaxTu = currentUV_.rightTop;
+	m_texMaxTv = currentUV_.rightBottom;
+	m_texMinTu = currentUV_.leftTop;
+	m_texMinTv = currentUV_.rightBottom;
 }

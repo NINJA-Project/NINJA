@@ -11,14 +11,17 @@
 class fRect
 {
 public:
-	float top;
-	float bottom;
-	float left;
-	float right;
+	float leftTop;
+	float rightTop;
+	float leftBottom;
+	float rightBottom;
 
 public:
 	fRect();
-	fRect(float top_, float bottom_, float left_, float right_);
+	fRect(float leftTop_, float rightTop_, float leftBottom_, float rightBottom_);
+
+	fRect& operator += (const fRect& vec2D_);
+
 };
 
 #endif // !FRECT_H

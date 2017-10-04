@@ -9,7 +9,9 @@
 
 #include <d3dx9.h>
 #include "Vector2D.h"
+#include "Vector3D.h"
 #include "RGBAColor.h"
+#include "fRect.h"
 
 class Vertices
 {
@@ -23,13 +25,10 @@ public:
 	 * 画像サイズの設定する関数
 	 * @param [in] width_	描画の横幅
 	 * @param [in] height_	描画の縦幅
-	 * @param [in] maxTu_	テクスチャの最大x座標		@note maxTu_のデフォルト値はLibraryクラスにて 1.0f に設定
-	 * @param [in] maxTv_	テクスチャの最大y座標		@note maxTv_のデフォルト値はLibraryクラスにて 1.0f に設定
-	 * @param [in] minTu_	テクスチャの最小x座標		@note minTu_のデフォルト値はLibraryクラスにて 0.0f に設定
-	 * @param [in] minTv_	テクスチャの最小y座標		@note minTv_のデフォルト値はLibraryクラスにて 0.0f に設定
+	 * @param [in] UV_		UVの値						@note UV_のデフォルト値はLibraryクラスにて各々設定している
 	 * @param [in] depth_	描画の奥行き				@note depth_のデフォルト値はLibraryクラスにて 0.5f に設定
 	 */
-	void SetTexSize(float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_);
+	void SetTexSize(float width_, float height_, const fRect& UV_, float depth_);
 
 	/**
 	 * 左上からの描画関数
@@ -52,18 +51,21 @@ public:
 	 */
 	void SetColor(DWORD& afterColor_, const RGBAColor& setColor_);
 
+	/**
+	 * UV座標を変更する関数
+	 * @param [in] currentUV_ 変更するUVの値
+	 */
+	void SetUV(const fRect& currentUV_);
+
 
 #pragma region CUSTOMVERTEX
 private:
 	struct CUSTOMVERTEX
 	{
-		FLOAT x;		//!< 画面座標のx軸
-		FLOAT y;		//!< 画面座標のy軸
-		FLOAT z;		//!< 画面座標のz軸
-		FLOAT rhw;		//!< 同次座標
-		DWORD color;	//!< 色指定
-		FLOAT tu;		//!< テクスチャ座標のx軸
-		FLOAT tv;		//!< テクスチャ座標のy軸
+		Vector3D	position;	//!< xyzの座標
+		FLOAT		rhw;		//!< 同次座標
+		DWORD		color;		//!< 色指定
+		Vector2D	UV;			//!< UV座標
 	};
 #pragma endregion
 

@@ -13,6 +13,7 @@
 #include <d3dx9.h>
 #include "Library\Singleton.h"
 #include <vector>
+#include"Library\fRect.h"
 
 
 #pragma region 前方宣言
@@ -25,6 +26,7 @@ class TextureFileManager;
 class VertexManager;
 class SoundFileManager;
 class XFileManager;
+class UVAnimationManager;
 #pragma endregion 
 
 #pragma region サウンド状態のenum
@@ -158,36 +160,55 @@ public:		// Libraryクラスのパブリック関数
 
 #pragma region VerticesManagerのパブリック関数
 	/**
-	* 画像サイズの設定する関数
-	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
-	* @param [in] drawIndex_	描画する頂点情報の配列番号
-	* @param [in] width_		描画の横幅
-	* @param [in] height_		描画の縦幅
-	* @param [in] maxTu_		テクスチャの最大x座標		@note maxTu_のデフォルト値は 1.0f 
-	* @param [in] maxTv_		テクスチャの最大y座標		@note maxTv_のデフォルト値は 1.0f 
-	* @param [in] minTu_		テクスチャの最小x座標		@note minTu_のデフォルト値は 0.0f 
-	* @param [in] minTv_		テクスチャの最小y座標		@note minTv_のデフォルト値は 0.0f 
-	* @param [in] depth_		描画の奥行き				@note depth_のデフォルト値は 0.5f 
-	*/
+	 * 画像サイズの設定する関数
+	 * @param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	 * @param [in] drawIndex_	描画する頂点情報の配列番号
+	 * @param [in] width_		描画の横幅
+	 * @param [in] height_		描画の縦幅
+	 * @param [in] maxTu_		テクスチャの最大x座標		@note maxTu_のデフォルト値は 1.0f 
+	 * @param [in] maxTv_		テクスチャの最大y座標		@note maxTv_のデフォルト値は 1.0f 
+	 * @param [in] minTu_		テクスチャの最小x座標		@note minTu_のデフォルト値は 0.0f 
+	 * @param [in] minTv_		テクスチャの最小y座標		@note minTv_のデフォルト値は 0.0f 
+	 * @param [in] depth_		描画の奥行き				@note depth_のデフォルト値は 0.5f 
+	 */
 	void SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_ = 1.0f, float maxTv_ = 1.0f, float minTu_ = 0.0f, float minTv_ = 0.0f, float depth_ = 0.5f);
 
 	/**
-	* 左上からの描画関数
-	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
-	* @param [in] drawIndex_	描画する頂点情報の配列番号
-	* @param [in] posX_			x座標
-	* @param [in] posY_			y座標
-	*/
+	 * 左上からの描画関数
+	 * @param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	 * @param [in] drawIndex_	描画する頂点情報の配列番号
+	 * @param [in] posX_		x座標
+	 * @param [in] posY_		y座標
+	 */
 	void DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_);
 
 	/**
-	* 中心からの描画関数
-	*v@param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
-	* @param [in] drawIndex_	描画する頂点情報の配列番号
-	* @param [in] posX_			x座標
-	* @param [in] posY_			y座標
-	*/
+	 * 左上を起点に描画されアニメーションする関数
+	 * @param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	 * @param [in] drawIndex_	描画する頂点情報の配列番号
+	 * @param [in] posX_		x座標
+	 * @param [in] posY_		y座標
+	 */
+	void DrawAnimeLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_);
+
+
+	/**
+	 * 中心からの描画関数
+	 * @param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	 * @param [in] drawIndex_	描画する頂点情報の配列番号
+	 * @param [in] posX_		x座標
+	 * @param [in] posY_		y座標
+	 */
 	void DrawCenter(int loadIndex_, int drawIndex_, float posX_, float posY_);
+
+	/**
+	 * 中心を起点に描画されアニメーションする関数
+	 * @param [in] loadIndex_	LoadTextureで読み込んだ画像の配列番号
+	 * @param [in] drawIndex_	描画する頂点情報の配列番号
+	 * @param [in] posX_		x座標
+	 * @param [in] posY_		y座標
+	 */
+	void DrawAnimeCenter(int loadIndex_, int drawIndex_, float posX_, float posY_);
 
 	/**
 	* 色の変更する関数
@@ -288,6 +309,10 @@ public:		// Libraryクラスのパブリック関数
 	void DrawFont(int width_, int height_, const char* pString_, float posX_, float posY_, DWORD format_ = DT_LEFT, int red_ = 255, int green_ = 255, int blue_ = 255);
 #pragma endregion
 
+#pragma region UVAnimationManagerのパブリック関数
+
+#pragma endregion
+
 #pragma region メンバ変数
 private:
 	GraphicsDevice*					m_pGraphicsDevice;
@@ -299,6 +324,7 @@ private:
 	std::vector<VertexManager*>		m_pVertexManager;
 	SoundFileManager*				m_pSoundFileManager;
 	XFileManager*					m_pXFileManager;
+	UVAnimationManager*				m_pUVAnimationManager;
 #pragma endregion
 };
 

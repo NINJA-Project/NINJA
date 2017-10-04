@@ -7,17 +7,27 @@
 #include "fRect.h"
 
 fRect::fRect() :
-top(0.0f),
-bottom(0.0f),
-left(0.0f),
-right(0.0f)
+leftTop(0.0f),
+rightTop(0.0f),
+leftBottom(0.0f),
+rightBottom(0.0f)
 {
 }
 
-fRect::fRect(float top_, float bottom_, float left_, float right_) : 
-top(top_),
-bottom(bottom_),
-left(left_),
-right(right_)
+fRect::fRect(float leftTop_, float rightTop_, float leftBottom_, float rightBottom_) :
+rightTop(rightTop_),
+rightBottom(rightBottom_),
+leftTop(leftTop_),
+leftBottom(leftBottom_)
 {
+}
+
+fRect& fRect::operator+=(const fRect& rect_)
+{
+	fRect rect;
+	rect.leftTop += rect_.leftTop;
+	rect.rightTop += rect_.rightTop;
+	rect.leftBottom += rect_.leftBottom;
+	rect.rightBottom += rect_.rightBottom;
+	return *this;
 }

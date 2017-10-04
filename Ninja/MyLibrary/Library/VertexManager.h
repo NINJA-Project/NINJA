@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <d3dx9.h>
+#include "fRect.h"
 
 class Vertices;
 
@@ -25,16 +26,10 @@ public:
 	* @param [in] index_	LoadTextureで読み込んだ画像の配列番号
 	* @param [in] width_	描画の横幅
 	* @param [in] height_	描画の縦幅
-	* @param [in] maxTu_	テクスチャの最大x座標
-	* @param [in] maxTv_	テクスチャの最大y座標
-	* @param [in] minTu_	テクスチャの最小x座標
-	* @param [in] minTv_	テクスチャの最小y座標
-	* @param [in] depth_	描画の奥行き
-	* @note depth_のデフォルト値は0.5f
-	* @note maxTu, maxTvのデフォルト値は1.0f
-	* @note minTu, minTvのデフォルト値は0.0f
+	* @param [in] UV_		UVの値						@note UV_のデフォルト値はLibraryクラスにて各々設定している
+	* @param [in] depth_	描画の奥行き				@note depth_のデフォルト値はLibraryクラスにて 0.5f に設定
 	*/
-	void SetTexSize(int index_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_);
+	void SetTexSize(int index_, float width_, float height_, const fRect& UV_, float depth_);
 
 	/**
 	* 左上からの描画関数
@@ -64,6 +59,14 @@ public:
 	* @param [in] blue_			変更する青の値
 	*/
 	void SetColor(int index_, DWORD& afterColor_, int alpha_, int red_, int green_, int blue_);
+
+	/**
+	* UV座標を変更する関数
+	* @pamra [in] index_		LoadTextureで読み込んだ画像の配列番号
+	* @param [in] currentUV_	変更するUVの値
+	*/
+	void SetUV(int index_, const fRect& currentUV_);
+
 
 	/**全ての頂点データの解放関数*/
 	void ReleaseAllVirtices();
