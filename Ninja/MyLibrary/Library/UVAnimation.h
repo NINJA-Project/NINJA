@@ -13,33 +13,62 @@
 class UVAnimation
 {
 public:
+	/**コンストラクタ*/
 	UVAnimation();
+	/**デストラクタ*/
 	~UVAnimation();
 
-	void SetAnimaData(const fRect& texUV_, int animationNum_);
+	/**
+	 * アニメーションのデータを設定する関数
+	 * @param [in] 
+	 * @param [in] 
+	 * @param [in] 
+	 * @param [in] 
+	 */
+	void CreateAnimationData(int tuCount_, int tvCount_, const fRect moveUVval_, float changeFlameTime_);
 
-	const fRect& GetCurrentUV() const
+	/**
+	* アニメーションの更新関数
+	* @retval		true		更新完了
+	* @retval		false		更新失敗
+	*/
+	bool UpData();
+
+	/**
+	 * アニメーションデータを入れ込む関数
+	 * @param [in] animeNum_		1種類のアニメーションの枚数
+	 * @param [in] isReverse_		反転アニメーションをさせるかどうか
+	 */
+	void SetAnimetionData(int animeNum_, bool isReverse_);
+
+	/**
+	 * 矩形情報の取得関数
+	 * @return m_currntAnimeData.UV 現在のUV
+	 */
+	fRect GetRect() const
 	{
-		return m_currentAnimaData.m_texUV;
+		return m_currntAnimeData.UV;
 	}
 
 #pragma region メンバ変数
 private:
 #pragma region アニメーションデータ構造体
-	struct AnimaData
+	struct AnimationData
 	{
-		fRect	m_texUV;
-		int		m_flameCount;
+		fRect	UV;
+		float	changeUVFlame;
 
-		AnimaData() :
-			m_texUV(0.0f, 0.0f, 0.0f, 0.0f),
-			m_flameCount(0)
+		AnimationData(const fRect& texUV_, float flame) :
+		UV(texUV_),
+		changeUVFlame(flame)
 		{}
 	};
 #pragma endregion
-	std::vector<AnimaData>	m_animationData;
-	std::vector<int>		m_animationNumber;
-	AnimaData				m_currentAnimaData;
+	std::vector<AnimationData>	m_animeData;
+	std::vector<int>			m_animeNumber;
+	AnimationData				m_currntAnimeData;
+	bool						m_isReverse;
+	int							m_currentFlame;
 #pragma endregion
 };
 

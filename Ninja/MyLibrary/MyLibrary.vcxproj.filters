@@ -82,8 +82,11 @@
     <Filter Include="Library\VertexManager\Vertices">
       <UniqueIdentifier>{10a3bbd3-860a-459a-9f79-b5831f3f7659}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\UVAnimation">
+    <Filter Include="Library\UVAnimationManager">
       <UniqueIdentifier>{c4cbdd21-7234-4336-9be1-d7be31726998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\UVAnimationManager\UVAnimation">
+      <UniqueIdentifier>{35d1fb53-5079-4784-a984-a24e5b283abe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -156,8 +159,11 @@
     <ClCompile Include="Library\Vertices.cpp">
       <Filter>Library\VertexManager\Vertices</Filter>
     </ClCompile>
+    <ClCompile Include="Library\UVAnimationManager.cpp">
+      <Filter>Library\UVAnimationManager</Filter>
+    </ClCompile>
     <ClCompile Include="Library\UVAnimation.cpp">
-      <Filter>Library\UVAnimation</Filter>
+      <Filter>Library\UVAnimationManager\UVAnimation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,9 +184,6 @@
     </ClInclude>
     <ClInclude Include="Library\SoundFileManager.h">
       <Filter>Library\SoundFileManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\Vertices.h">
-      <Filter>Library\VertexManager\Vertices</Filter>
     </ClInclude>
     <ClInclude Include="Library\XFile.h">
       <Filter>Library\XFileManager\XFile</Filter>
@@ -242,8 +245,14 @@
     <ClInclude Include="Library\VertexManager.h">
       <Filter>Library\VertexManager</Filter>
     </ClInclude>
+    <ClInclude Include="Library\UVAnimationManager.h">
+      <Filter>Library\UVAnimationManager</Filter>
+    </ClInclude>
     <ClInclude Include="Library\UVAnimation.h">
-      <Filter>Library\UVAnimation</Filter>
+      <Filter>Library\UVAnimationManager\UVAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Vertices.h">
+      <Filter>Library\VertexManager\Vertices</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

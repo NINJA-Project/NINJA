@@ -17,6 +17,7 @@
 #include "Library\Font.h"
 #include "Library\CommoSystem.h"
 #include "Library\Vector2D.h"
+#include "Library\UVAnimationManager.h"
 
 
 Library::Library() :
@@ -145,7 +146,7 @@ void Library::ReleaseTexture(int index_)
 void Library::SetTexSize(int loadIndex_, int drawIndex_, float width_, float height_, float maxTu_, float maxTv_, float minTu_, float minTv_, float depth_)
 {
 	m_pVertexManager.emplace_back(New VertexManager);
-	m_pVertexManager[drawIndex_]->SetTexSize(loadIndex_, width_, height_, maxTu_, maxTv_, minTu_, minTv_, depth_);
+	m_pVertexManager[drawIndex_]->SetTexSize(loadIndex_, width_, height_, fRect(maxTu_, maxTv_, minTu_, minTv_), depth_);
 }
 
 void Library::DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_)
@@ -153,7 +154,17 @@ void Library::DrawLeftTop(int loadIndex_, int drawIndex_, float posX_, float pos
 	m_pVertexManager[drawIndex_]->DrawLeftTop(loadIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
 
+void Library::DrawAnimeLeftTop(int loadIndex_, int drawIndex_, float posX_, float posY_)
+{
+	m_pVertexManager[drawIndex_]->DrawLeftTop(loadIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
+}
+
 void Library::DrawCenter(int loadIndex_, int drawIndex_, float posX_, float posY_)
+{
+	m_pVertexManager[drawIndex_]->DrawCenter(loadIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
+}
+
+void Library::DrawAnimeCenter(int loadIndex_, int drawIndex_, float posX_, float posY_)
 {
 	m_pVertexManager[drawIndex_]->DrawCenter(loadIndex_, posX_, posY_, m_pTextureFileManager->GetTextureFileData(loadIndex_));
 }
