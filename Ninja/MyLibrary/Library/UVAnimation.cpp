@@ -31,6 +31,7 @@ void UVAnimation::CreateAnimationData(int tuCount_, int tvCount_, const fRect mo
 bool UVAnimation::UpData()
 {
 	++m_currentFlame;
+	return true;
 }
 
 void UVAnimation::SetAnimetionData(int animeNum_, bool isReverse_)
